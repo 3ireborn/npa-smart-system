@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM - Generator Istikmal Syariah V5</title>
+    <title>NPA SMART SYSTEM - Generator Istikmal Syariah V8</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -20,14 +20,13 @@
 </head>
 <body class="bg-[#061b18] min-h-screen pb-20">
 
-    <!-- HEADER NPA -->
     <header class="bg-istikmal-light border-b border-[#d4af37]/20 p-4 shadow-md sticky top-0 z-50">
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="bg-[#d4af37] text-[#061b18] px-2.5 py-1 rounded font-black text-xs shadow-sm">NPA V5</div>
+                <div class="bg-[#d4af37] text-[#061b18] px-2.5 py-1 rounded font-black text-xs shadow-sm">NPA V8</div>
                 <h1 class="font-bold text-sm sm:text-base tracking-tight text-white font-montserrat">HTML Funnel Factory</h1>
             </div>
-            <div class="text-[10px] border border-[#d4af37]/50 text-[#d4af37] px-2.5 py-1 rounded-full font-semibold">100% Bebas Server</div>
+            <div class="text-[10px] border border-[#d4af37]/50 text-[#d4af37] px-2.5 py-1 rounded-full font-semibold">Mobiss Dropdown Sync</div>
         </div>
     </header>
 
@@ -35,35 +34,39 @@
         
         <div class="text-center mb-8">
             <h1 class="font-montserrat text-3xl font-extrabold text-[#d4af37] tracking-wide mb-2">ISTIKMAL SYARIAH</h1>
-            <p class="text-sm text-gray-300 font-semibold tracking-widest uppercase">Generator Premium V5 - Cetak HTML</p>
+            <p class="text-sm text-gray-300 font-semibold tracking-widest uppercase">Generator Premium V8 - Full Funnel</p>
         </div>
 
-        <!-- FORM INPUT UTAMA -->
         <div class="bg-[#102d28] p-6 rounded-2xl shadow-2xl border border-[#d4af37]/20 space-y-5">
             <div>
                 <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nama Lengkap Leader</label>
-                <input type="text" id="input-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none" placeholder="Contoh: Sugiarto Kurniawan">
+                <input type="text" id="input-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white outline-none focus:ring-2 focus:ring-[#d4af37]" placeholder="Contoh: Sugiarto Kurniawan">
             </div>
 
             <div>
                 <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nomor WhatsApp Jaringan</label>
-                <input type="number" id="input-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none" placeholder="Contoh: 628123456789">
+                <input type="number" id="input-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white outline-none focus:ring-2 focus:ring-[#d4af37]" placeholder="Contoh: 628123456789">
             </div>
 
             <div>
                 <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Jenjang Karir (Posisi)</label>
-                <select id="input-jabatan" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none appearance-none">
-                    <option value="Mitra 3IReborn">Mitra 3IReborn</option>
-                    <option value="Team Entrepreneur">Team Entrepreneur</option>
-                    <option value="Leader Entrepreneur">Leader Entrepreneur</option>
-                    <option value="Bronze Entrepreneur">Bronze Entrepreneur</option>
-                    <option value="Silver Entrepreneur" selected>Silver Entrepreneur</option>
-                    <option value="Gold Entrepreneur">Gold Entrepreneur</option>
-                    <option value="Diamond Executive">Diamond Executive</option>
-                    <option value="Royal Executive">Royal Executive</option>
-                    <option value="King Executive">King Executive</option>
-                    <option value="Queen 3IReborn">Queen 3IReborn</option>
-                </select>
+                <div class="relative">
+                    <select id="input-jabatan" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] appearance-none outline-none">
+                        <option value="Mitra 3IReborn">Mitra 3IReborn</option>
+                        <option value="Team Entrepreneur">Team Entrepreneur</option>
+                        <option value="Leader Entrepreneur">Leader Entrepreneur</option>
+                        <option value="Bronze Entrepreneur">Bronze Entrepreneur</option>
+                        <option value="Silver Entrepreneur" selected>Silver Entrepreneur</option>
+                        <option value="Gold Entrepreneur">Gold Entrepreneur</option>
+                        <option value="Diamond Executive">Diamond Executive</option>
+                        <option value="Royal Executive">Royal Executive</option>
+                        <option value="King Executive">King Executive</option>
+                        <option value="Queen 3IReborn">Queen 3IReborn</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-gray-400">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
             </div>
 
             <div>
@@ -79,11 +82,10 @@
             </div>
 
             <button onclick="racikSemuaFile()" class="w-full mt-8 bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-extrabold py-4 rounded-xl shadow-lg transition text-sm uppercase tracking-widest btn-pulse">
-                ⚙️ Cetak Paket Website Funnel
+                ⚙️ Cetak Paket Website Funnel V8
             </button>
         </div>
 
-        <!-- HASIL DOWNLOAD PACK -->
         <div id="download-box" class="hidden mt-8 space-y-4">
             <div class="flex items-center gap-3 mb-4">
                 <div class="h-px bg-[#d4af37]/30 flex-1"></div>
@@ -95,7 +97,7 @@
                 <p class="text-xs text-gray-300 text-center leading-relaxed mb-2">👇 Klik tombol di bawah satu per satu untuk men-download file website pribadi Anda:</p>
                 
                 <div class="flex items-center justify-between bg-[#0a1f1b] p-3 rounded-xl border border-gray-700">
-                    <span class="text-xs font-bold text-white">📘 1. Halaman Utama (Master)</span>
+                    <span class="text-xs font-bold text-white">📘 1. LP Master (Full Greget V8)</span>
                     <button onclick="unduhFile('master')" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-md">⬇️ Download index.html</button>
                 </div>
 
@@ -105,21 +107,14 @@
                 </div>
 
                 <div class="flex items-center justify-between bg-[#0a1f1b] p-3 rounded-xl border border-gray-700">
-                    <span class="text-xs font-bold text-rose-400">📝 3. Halaman Form Daftar</span>
+                    <span class="text-xs font-bold text-rose-400">📝 3. Form Mobiss Dropdown Sync</span>
                     <button onclick="unduhFile('daftar')" class="bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition shadow-md">⬇️ Download daftar.html</button>
                 </div>
             </div>
-
-            <div class="bg-blue-950/40 border border-blue-900 text-blue-300 text-xs p-4 rounded-xl leading-relaxed shadow-md">
-                💡 <b>Langkah Terakhir:</b> Masukkan ketiga file yang sudah ter-download tadi ke dalam satu folder di HP Anda, lalu langsung unggah folder tersebut ke <b>Netlify Drop</b>. Website replikasi premium Anda langsung mengudara secara mandiri!
-            </div>
         </div>
-
     </main>
 
-    <!-- CORE JAVASCRIPT -->
     <script>
-        // Default Avatar kalau tidak ada foto
         let fotoBase64 = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`;
         let filePack = { master: "", hot: "", daftar: "" };
 
@@ -142,50 +137,79 @@
             const leaderJabatan = document.getElementById('input-jabatan').value;
 
             // ==========================================
-            // TEMPLATE 1: INDEX.HTML (MASTER)
+            // TEMPLATE 1: INDEX.HTML (MASTER GREGET)
             // ==========================================
             filePack.master = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Istikmal Syariah - Bisnis Berkah</title>
+    <title>Istikmal Syariah - Bisnis Berkah Ke Tanah Suci</title>
     <script src="https://cdn.tailwindcss.com"></` + `script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         body { background-color: #061b18; color: white; font-family: sans-serif; }
+        .font-m { font-family: 'Montserrat', sans-serif; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center p-5 pt-12">
-    <div class="max-w-md w-full text-center space-y-6">
-        <h1 class="text-3xl font-bold text-[#d4af37] tracking-wider">ISTIKMAL SYARIAH</h1>
+<body class="min-h-screen flex flex-col items-center p-5 pt-12 pb-20">
+    <div class="max-w-md w-full text-center space-y-8">
         
-        <div class="inline-block relative">
-            <img src="${fotoBase64}" class="w-36 h-36 rounded-full object-cover border-4 border-[#d4af37] mx-auto shadow-lg">
-        </div>
+        <div class="space-y-5">
+            <h1 class="text-3xl font-black text-[#d4af37] tracking-wider font-m">ISTIKMAL SYARIAH</h1>
+            <div class="inline-block relative">
+                <img src="${fotoBase64}" class="w-36 h-36 rounded-full object-cover border-4 border-[#d4af37] mx-auto shadow-[0_0_25px_rgba(212,175,55,0.4)]">
+            </div>
+            
+            <h2 class="text-2xl font-extrabold text-white leading-tight px-2 font-m">
+                Bongkar Rahasia Berangkat Umroh + Punya Penghasilan Jutaan Tanpa Beban Finansial!
+            </h2>
+            
+            <p class="text-sm text-gray-300 px-4 leading-relaxed">
+                Jangan biarkan impian ke Tanah Suci menguap begitu saja. Di sini, niat suci Anda dipaksa wujud oleh sistem yang Aman, Legal, dan Terbukti melipatgandakan aset!
+            </p>
 
-        <h2 class="text-2xl font-extrabold px-2">Bisnis Berkah Mengantarkan Sampai Ke Mekah</h2>
-
-        <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 text-sm leading-relaxed text-gray-200">
-            Mulai rencanakan Umroh dengan cara sederhana.<br><span class="font-bold text-[#d4af37]">Sisihkan bukan sisakan.</span>
-            <div class="mt-4 pt-3 border-t border-gray-700 text-xs">
-                Dibimbing oleh:<br>
-                <span class="text-base font-bold text-white block mt-1">${leaderNama}</span>
-                <span class="text-xs text-[#d4af37] font-semibold">${leaderJabatan}</span>
+            <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 text-sm tracking-wide text-gray-200">
+                Sistem Cerdas Pengaman Keuangan Keluarga:<br><span class="font-bold text-[#d4af37] uppercase text-base tracking-widest block mt-1">"Sisihkan, Bukan Sisakan!"</span>
+                <div class="mt-4 pt-3 border-t border-gray-700 text-xs">
+                    Mentor & Partner Perjalanan Anda:<br>
+                    <span class="text-base font-bold text-white block mt-1">${leaderNama}</span>
+                    <span class="text-xs text-[#d4af37] font-semibold tracking-wider uppercase">${leaderJabatan}</span>
+                </div>
             </div>
         </div>
 
-        <div class="space-y-3 pt-4">
-            <a href="https://wa.me/${leaderWa}?text=Halo%20${encodeURIComponent(leaderNama)},%20saya%20tertarik%20dengan%20program%20Istikmal%20Syariah" target="_blank" class="block w-full bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-black py-4 rounded-xl text-center shadow-lg transition">Konsultasi Sekarang</a>
-            <a href="hot.html" class="block w-full bg-transparent border-2 border-gray-600 text-gray-400 hover:text-white font-bold py-3 rounded-xl text-center text-xs transition">Pelajari Alasan Harus Mulai Sekarang →</a>
+        <div class="bg-red-950/30 border border-red-900/40 p-5 rounded-2xl text-left space-y-3">
+            <h3 class="text-sm font-bold text-red-400 font-m uppercase tracking-wider flex items-center gap-2">
+                ⚠️ 3 Kerugian Fatal Jika Anda Menunda Hari Ini:
+            </h3>
+            <ul class="space-y-2 text-xs text-gray-300 leading-relaxed list-decimal pl-4">
+                <li><span class="font-bold text-white">Biaya Umroh Terus Naik:</span> Terkena dampak inflasi harga tiket pesawat & hotel makkah yang melambung setiap tahun.</li>
+                <li><span class="font-bold text-white">Fisik Terus Berkurang:</span> Menunda ibadah berarti menantang faktor usia. Berangkat di usia muda jauh lebih nikmat secara fisik.</li>
+                <li><span class="font-bold text-white">Kehilangan Hak Income Jaringan:</span> Slot posisi emas di bawah tim <b>3iReborn</b> terus diisi orang baru setiap detik. Menunda berarti membiarkan potensi jutaan rupiah Anda diambil orang lain!</li>
+            </ul>
+        </div>
+
+        <div class="space-y-3">
+            <a href="daftar.html" class="block w-full bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-black py-4 rounded-xl text-center shadow-lg transition text-sm uppercase tracking-widest font-m">Amankan Posisi & Daftar Sekarang</a>
+            <a href="hot.html" class="block w-full bg-transparent border-2 border-gray-600 text-gray-400 hover:text-white font-bold py-3 rounded-xl text-center text-xs transition">Pelajari Mengapa Ini Sangat Wajib & Aman →</a>
+        </div>
+
+        <div class="pt-6 border-t border-gray-800 text-left space-y-4">
+            <h3 class="text-lg font-bold text-[#d4af37] text-center font-m mb-4">Bukti Nyata Hasil Ekosistem</h3>
+            <div class="bg-[#0a1f1b] p-4 rounded-xl border border-gray-700 text-xs leading-relaxed">
+                <p class="text-gray-300 italic mb-2">"Alhamdulillah, lewat perantara wadah ini niat umroh saya yang tertunda bertahun-tahun langsung tembus terwujud karena polanya otomatis memaksa kita aman menabung, plus bonusnya cair terus tiap bulan!"</p>
+                <p class="font-bold text-white text-right">- H. Ahmad, Wiraswasta Tangerang</p>
+            </div>
         </div>
     </div>
 </body>
 </html>`;
 
             // ==========================================
-            // TEMPLATE 2: HOT.HTML (EDUKASI)
+            // TEMPLATE 2: HOT.HTML (TETAP)
             // ==========================================
-            filePack.hot = `<!DOCTYPE html>
+            filePack.hot = filePack.hot = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -222,67 +246,229 @@
 </html>`;
 
             // ==========================================
-            // TEMPLATE 3: DAFTAR.HTML (FORM)
+            // TEMPLATE 3: DAFTAR.HTML (FORM MOBISS SYNC - DROPDOWN KEREN V8)
             // ==========================================
             filePack.daftar = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Pendaftaran Istikmal Syariah</title>
+    <title>Form Registrasi Resmi Mobiss PRO</title>
     <script src="https://cdn.tailwindcss.com"></` + `script>
-    <style> body { background-color: #061b18; color: white; font-family: sans-serif; } </style>
+    <style> 
+        body { background-color: #061b18; color: white; font-family: sans-serif; } 
+        select { appearance: none; -webkit-appearance: none; }
+    </style>
 </head>
-<body class="min-h-screen p-5 pt-8 flex flex-col items-center">
-    <div class="max-w-md w-full space-y-6">
+<body class="min-h-screen p-5 pt-8 pb-20 flex flex-col items-center">
+    <div class="max-w-md w-full space-y-5">
         <div class="text-center">
-            <h1 class="text-2xl font-black text-[#d4af37] tracking-tight">FORM PENDAFTARAN</h1>
-            <p class="text-xs text-gray-400 mt-1 uppercase font-semibold tracking-widest">Istikmal Syariah Funnel</p>
+            <h1 class="text-2xl font-black text-[#d4af37] tracking-tight">FORM REGISTRASI</h1>
+            <p class="text-xs text-gray-400 mt-1 uppercase font-semibold tracking-widest">Sistem Validasi Akun Mobiss CAR</p>
         </div>
 
-        <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 space-y-4 shadow-xl">
+        <div class="bg-teal-950/40 border border-teal-800 p-4 rounded-xl text-xs text-teal-300 leading-relaxed">
+            ⚠️ <b>PENTING:</b> Menu bertanda panah menggunakan tipe pilihan instan (*Dropdown*). Sesuaikan input dengan data e-KTP Anda untuk mempercepat approval sistem Mobiss PT AJ CAR.
+        </div>
+
+        <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 shadow-2xl space-y-6">
+            
             <div>
-                <label class="block text-xs font-bold text-gray-400 mb-1">Nama Lengkap Anda</label>
-                <input type="text" id="f-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Masukkan nama lengkap">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-gray-400 mb-1">Nomor WhatsApp Aktif</label>
-                <input type="number" id="f-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Contoh: 0812345678">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-gray-400 mb-1">Kota Domisili Saat Ini</label>
-                <input type="text" id="f-kota" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Contoh: Tangerang">
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-gray-400 mb-1">Nama Ibu Kandung</label>
-                <input type="text" id="f-ibu" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Diperlukan untuk validasi akun syariah">
+                <h3 class="text-sm font-bold text-[#d4af37] border-b border-gray-700 pb-2 mb-3">1. Data Pribadi Identitas (Sesuai KTP)</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Nama Lengkap Anda</label>
+                        <input type="text" id="f-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Nomor Induk Kependudukan (NIK)</label>
+                        <input type="number" id="f-nik" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="16 Digit Angka NIK">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 mb-1">Tempat Lahir</label>
+                            <input type="text" id="f-tempat" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 mb-1">Tanggal Lahir</label>
+                            <input type="date" id="f-tgl" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-gray-300 outline-none">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Jenis Kelamin</label>
+                        <div class="relative">
+                            <select id="f-jk" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="Perempuan">Perempuan</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Agama</label>
+                        <div class="relative">
+                            <select id="f-agama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                                <option value="Islam">Islam</option>
+                                <option value="Kristen">Kristen</option>
+                                <option value="Katolik">Katolik</option>
+                                <option value="Hindu">Hindu</option>
+                                <option value="Buddha">Buddha</option>
+                                <option value="Khonghucu">Khonghucu</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <button onclick="kirimForm()" class="w-full bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-black py-4 rounded-xl text-center shadow-lg transition uppercase tracking-wide text-sm mt-4">
-                🚀 Setor Data Pendaftaran
+            <div>
+                <h3 class="text-sm font-bold text-[#d4af37] border-b border-gray-700 pb-2 mb-3">2. Klasifikasi Pekerjaan (Syarat Mutlak CAR)</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Kategori Pekerjaan Utama</label>
+                        <div class="relative">
+                            <select id="f-pekerjaan" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                                <option value="Karyawan Swasta">Karyawan Swasta</option>
+                                <option value="Wiraswasta / Pengusaha / Pedagang">Wiraswasta / Pengusaha / Pedagang</option>
+                                <option value="Pegawai Negeri Sipil (PNS) / BUMN">Pegawai Negeri Sipil (PNS) / BUMN</option>
+                                <option value="Ibu Rumah Tangga">Ibu Rumah Tangga</option>
+                                <option value="Mahasiswa / Pelajar">Mahasiswa / Pelajar</option>
+                                <option value="TNI / POLRI">TNI / POLRI</option>
+                                <option value="Buruh / Petani / Nelayan">Buruh / Petani / Nelayan</option>
+                                <option value="Profesional (Dokter/Pengacara/dll)">Profesional (Dokter/Pengacara/dll)</option>
+                                <option value="Lainnya / Tidak Bekerja">Lainnya / Tidak Bekerja</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Nama Perusahaan / Instansi / Detail Usaha</label>
+                        <input type="text" id="f-perusahaan" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Contoh: PT Swasta Jaya / Toko Sembako Mandiri">
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold text-[#d4af37] border-b border-gray-700 pb-2 mb-3">3. Kontak, Alamat & Ahli Waris</h3>
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Nomor WhatsApp Aktif</label>
+                        <input type="number" id="f-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none" placeholder="Contoh: 0812...">
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Alamat Domisili Lengkap (RT/RW, Kec, Kota)</label>
+                        <textarea id="f-alamat" rows="2" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none" placeholder="Isi alamat lengkap sekarang"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-bold text-gray-400 mb-1">Nama Gadis Ibu Kandung</label>
+                        <input type="text" id="f-ibu" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 mb-1">Nama Ahli Waris</label>
+                            <input type="text" id="f-waris" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                        </div>
+                        <div>
+                            <label class="block text-[11px] font-bold text-gray-400 mb-1">Hubungan Waris</label>
+                            <div class="relative">
+                                <select id="f-hub" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-2.5 text-sm text-white outline-none">
+                                    <option value="Suami / Istri">Suami / Istri</option>
+                                    <option value="Anak">Anak</option>
+                                    <option value="Orang Tua">Orang Tua</option>
+                                    <option value="Saudara Kandung">Saudara Kandung</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-400">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-bold text-[#d4af37] border-b border-gray-700 pb-2 mb-3">4. Pilihan Tabungan Premi Istikmal</h3>
+                <div class="relative">
+                    <select id="f-premi" class="w-full bg-[#d4af37] text-[#061b18] font-bold border-none rounded-lg p-3.5 text-sm outline-none">
+                        <option value="Premi Rp 350.000 / Bulan">Premi Rp 350.000 / Bulan (Rekomendasi Pemula)</option>
+                        <option value="Premi Rp 700.000 / Bulan">Premi Rp 700.000 / Bulan</option>
+                        <option value="Premi Rp 1.000.000 / Bulan">Premi Rp 1.000.000 / Bulan (Paket Pro)</option>
+                        <option value="Premi Rp 2.000.000 / Bulan">Premi Rp 2.000.000 / Bulan (Paket Platinum Fast-Track)</option>
+                    </select>
+                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#061b18]">
+                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="kirimDataMobiss()" class="w-full bg-green-600 hover:bg-green-500 text-white font-black py-4 rounded-xl text-center shadow-lg transition uppercase tracking-widest text-sm mt-4">
+                🚀 Setor Data Pendaftaran Resmi
             </button>
         </div>
-
-        <p class="text-[10px] text-gray-500 text-center leading-relaxed">Data pendaftaran Anda aman dan disetorkan kepada Pembimbing: <span class="text-gray-300 font-bold">${leaderNama}</span>.</p>
+        
+        <p class="text-[10px] text-gray-500 text-center leading-relaxed">
+            Sistem Enkripsi Terproteksi. Data dikirim langsung via enkripsi WhatsApp menuju Leader Resmi Anda: <br><span class="text-white font-bold">${leaderNama}</span>.
+        </p>
     </div>
 
     <script>
-        function kirimForm() {
-            const pNama = document.getElementById('f-nama').value.trim();
-            const pWa = document.getElementById('f-wa').value.trim();
-            const pKota = document.getElementById('f-kota').value.trim();
-            const pIbu = document.getElementById('f-ibu').value.trim();
+        function kirimDataMobiss() {
+            const nama = document.getElementById('f-nama').value.trim();
+            const nik = document.getElementById('f-nik').value.trim();
+            const tempat = document.getElementById('f-tempat').value.trim();
+            const tgl = document.getElementById('f-tgl').value;
+            const jk = document.getElementById('f-jk').value;
+            const agama = document.getElementById('f-agama').value;
+            const pekerjaan = document.getElementById('f-pekerjaan').value;
+            const perusahaan = document.getElementById('f-perusahaan').value.trim();
+            const wa = document.getElementById('f-wa').value.trim();
+            const alamat = document.getElementById('f-alamat').value.trim();
+            const ibu = document.getElementById('f-ibu').value.trim();
+            const waris = document.getElementById('f-waris').value.trim();
+            const hub = document.getElementById('f-hub').value;
+            const premi = document.getElementById('f-premi').value;
 
-            if(!pNama || !pWa) { alert('Mohon isi Nama dan WhatsApp Anda!'); return; }
+            if(!nama || !nik || !wa || !pekerjaan || !perusahaan || !ibu || !waris) { 
+                alert('⚠️ Validasi Gagal! Mohon lengkapi Data Diri, NIK, Kategori & Perusahaan Tempat Kerja, Ibu Kandung, dan Ahli Waris Anda sesuai KTP.'); 
+                return; 
+            }
 
-            const pesan = "*PENDAFTARAN ISTIKMAL SYARIAH*\\n\\nHalo Leader, saya mau mendaftar program Umroh.\\n\\n• Nama: " + pNama + "\\n• No WA: " + pWa + "\\n• Kota: " + pKota + "\\n• Ibu Kandung: " + pIbu + "\\n\\nMohon diproses!";
-            window.open('https://wa.me/${leaderWa}?text=' + encodeURIComponent(pesan), '_blank');
+            const text = "*📝 DATA REGISTRASI MITRA BARU MOBISS PRO*\\n" +
+                         "Program Istikmal Syariah 3i-Networks\\n\\n" +
+                         "*1. DATA IDENTITAS (KTP)*\\n" +
+                         "• Nama Lengkap: " + nama + "\\n" +
+                         "• NIK KTP: " + nik + "\\n" +
+                         "• TTL: " + tempat + ", " + tgl + "\\n" +
+                         "• Jenis Kelamin: " + jk + "\\n" +
+                         "• Agama: " + agama + "\\n\\n" +
+                         "*2. FILTER DATA PEKERJAAN (CAR RIGID)*\\n" +
+                         "• Kategori Kerja: " + pekerjaan + "\\n" +
+                         "• Perusahaan/Instansi: " + perusahaan + "\\n\\n" +
+                         "*3. KONTAK & DOMISILI*\\n" +
+                         "• No WhatsApp: " + wa + "\\n" +
+                         "• Alamat Lengkap: " + alamat + "\\n\\n" +
+                         "*4. AHLI WARIS & VALIDASI*\\n" +
+                         "• Ibu Kandung: " + ibu + "\\n" +
+                         "• Nama Waris: " + waris + "\\n" +
+                         "• Hubungan Waris: " + hub + "\\n\\n" +
+                         "*5. PILIHAN PREMI TABUNGAN*\\n" +
+                         "• Paket Tabungan: " + premi + "\\n\\n" +
+                         "_Data siap disalin & di-input langsung ke sistem aplikasi Mobiss Syariah._";
+
+            window.open('https://wa.me/${leaderWa}?text=' + encodeURIComponent(text), '_blank');
         }
-    </` + `script>
+    <\/script>
 </body>
 </html>`;
 
-            // Tampilkan kotak unduhan
             document.getElementById('download-box').classList.remove('hidden');
             document.getElementById('download-box').scrollIntoView({ behavior: 'smooth' });
         }
