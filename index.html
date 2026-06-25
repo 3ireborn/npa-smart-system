@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>NPA SMART SYSTEM V5 - Landing Page Builder PRO</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
         .scrollbar-hide::-webkit-scrollbar { width: 6px; height: 6px; }
         .scrollbar-hide::-webkit-scrollbar-track { background: #f1f1f1; }
@@ -13,8 +13,8 @@
         html, body { height: 100dvh; overflow: hidden; margin: 0; padding: 0; }
         .prev-html-render s { color: #ff4d4d; text-decoration: line-through; font-weight: normal; margin-right: 4px; }
         .prev-html-render badge { display: inline-block; background-color: #3b82f6; color: white; font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; margin-top: 4px; }
-        /* Blob shape for hero image */
         .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; }
+        @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }
     </style>
 </head>
 <body class="bg-gray-100 flex flex-col font-sans">
@@ -22,8 +22,8 @@
     <!-- TOP NAVIGATION BAR -->
     <header class="bg-blue-900 text-white p-3 flex justify-between items-center shadow-md z-20 flex-shrink-0">
         <div class="flex items-center gap-2">
-            <div id="tool-brand-box" class="bg-white text-blue-900 px-2 py-0.5 rounded font-black text-xs sm:text-sm">NPA V5</div>
-            <h1 id="tool-title-box" class="font-bold text-xs sm:text-base tracking-tight truncate max-w-[140px] sm:max-w-none">LP Builder 3IReborn</h1>
+            <div class="bg-white text-blue-900 px-2 py-0.5 rounded font-black text-xs sm:text-sm">NPA V5</div>
+            <h1 class="font-bold text-xs sm:text-base tracking-tight truncate max-w-[140px] sm:max-w-none">LP Builder 3IReborn</h1>
         </div>
         <div class="flex gap-1.5">
             <button onclick="copyHTML()" class="bg-gray-700 hover:bg-gray-800 text-white px-2.5 py-1.5 rounded-md font-semibold text-[11px] sm:text-xs transition shadow flex items-center">Salin Kode</button>
@@ -50,9 +50,10 @@
                     <div>
                         <label class="block text-[11px] font-semibold text-gray-600 mb-0.5">Warna Aksen Utama</label>
                         <select id="input-theme" onchange="updatePreview()" class="w-full border-gray-300 rounded p-1.5 text-xs bg-white border">
-                            <option value="blue">Biru (Profesional)</option>
-                            <option value="orange">Oranye (Kreatif / EduAct)</option>
                             <option value="green">Hijau (Sukses)</option>
+                            <option value="black">Hitam (Elegan)</option>
+                            <option value="gradient">Gradasi (Premium)</option>
+                            <option value="white">Putih (Minimalis Bersih)</option>
                         </select>
                     </div>
                 </div>
@@ -132,59 +133,58 @@
                     <div id="export-target" style="font-family: 'Poppins', sans-serif;" class="text-gray-800 antialiased bg-white min-h-screen relative prev-html-render">
                         
                         <!-- NAVBAR LOGO -->
-                        <nav class="absolute top-0 left-0 w-full p-6 z-20 flex justify-between items-center">
-                            <img id="prev-logo" src="" alt="Logo" class="hidden h-10 object-contain drop-shadow-sm">
-                            <a href="#cta-section" class="prev-cta-link hidden md:inline-block px-5 py-2 rounded-full text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5 theme-bg">Gabung Sekarang</a>
+                        <nav class="absolute top-0 left-0 w-full px-6 pt-8 pb-4 z-20 flex justify-between items-center">
+                            <img id="prev-logo" src="" alt="Logo" class="hidden h-14 md:h-20 object-contain drop-shadow-sm">
+                            <a href="#cta-section" class="prev-cta-link hidden md:inline-block px-6 py-2.5 rounded-full text-white font-bold text-sm shadow-md transition transform hover:-translate-y-0.5 theme-bg">Gabung Sekarang</a>
                         </nav>
 
-                        <!-- SPLIT HERO SECTION -->
-                        <section class="pt-28 pb-16 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-10">
-                            <!-- Left: Text -->
-                            <div class="lg:w-1/2 flex flex-col items-start text-left z-10">
-                                <span id="prev-tagline" class="inline-block py-1.5 px-4 rounded-full bg-slate-100 text-slate-600 text-[11px] sm:text-xs font-bold tracking-widest mb-4 border uppercase theme-text">TINGGALKAN CARA LAMA!</span>
-                                <h1 id="prev-judul" class="text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 mb-5">Revolusi Bisnis Anda dengan 3IReborn</h1>
-                                <p id="prev-hook" class="text-sm sm:text-base text-gray-600 mb-8 leading-relaxed">Dapatkan 10x Lipat Prospek Tanpa Pusing Follow-Up Manual. Sistem cerdas bekerja untuk Anda.</p>
-                                <a href="#" class="prev-cta-link inline-block px-8 py-3.5 rounded-full text-white font-bold shadow-xl transition transform hover:-translate-y-1 theme-bg theme-shadow">
-                                    <span class="prev-cta-text">Ya, Hubungi Saya Sekarang!</span>
-                                </a>
-                            </div>
-                            <!-- Right: Image with Blob -->
-                            <div class="lg:w-1/2 relative flex justify-center mt-8 lg:mt-0">
-                                <div class="absolute inset-0 blob-shape theme-bg opacity-10 scale-110"></div>
-                                <div class="absolute inset-0 blob-shape theme-bg opacity-20 scale-95 translate-x-4"></div>
-                                <img id="prev-photo" src="" alt="Hero Image" class="hidden relative z-10 w-full max-w-sm lg:max-w-md rounded-2xl shadow-2xl object-cover border-4 border-white">
+                        <!-- SPLIT HERO SECTION (WITH 2 COLORS HEADER) -->
+                        <section class="pt-32 pb-16 px-6 lg:px-12 w-full flex flex-col-reverse lg:flex-row items-center gap-10 theme-grad">
+                            <div class="max-w-7xl mx-auto w-full flex flex-col-reverse lg:flex-row items-center gap-10">
+                                <!-- Left: Text -->
+                                <div class="lg:w-1/2 flex flex-col items-start text-left z-10">
+                                    <span id="prev-tagline" class="inline-block py-1.5 px-4 rounded-full bg-white text-gray-700 shadow-sm text-[11px] sm:text-xs font-bold tracking-widest mb-4 border uppercase">TINGGALKAN CARA LAMA!</span>
+                                    <h1 id="prev-judul" class="text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 mb-5">Revolusi Bisnis Anda dengan 3IReborn</h1>
+                                    <p id="prev-hook" class="text-sm sm:text-base text-gray-700 mb-8 leading-relaxed font-medium">Dapatkan 10x Lipat Prospek Tanpa Pusing Follow-Up Manual. Sistem cerdas bekerja untuk Anda.</p>
+                                    <a href="#" class="prev-cta-link inline-block px-8 py-3.5 rounded-full text-white font-bold shadow-xl transition transform hover:-translate-y-1 theme-bg theme-shadow">
+                                        <span class="prev-cta-text">Ya, Hubungi Saya Sekarang!</span>
+                                    </a>
+                                </div>
+                                <!-- Right: Image with Blob -->
+                                <div class="lg:w-1/2 relative flex justify-center mt-8 lg:mt-0 w-full">
+                                    <div class="absolute inset-0 blob-shape theme-bg opacity-10 scale-105"></div>
+                                    <div class="absolute inset-0 blob-shape theme-bg opacity-20 scale-90 translate-x-4"></div>
+                                    <!-- Foto diatur max lebar 300px dan rasio portrait agar tidak kebesaran -->
+                                    <img id="prev-photo" src="" alt="Hero Image" class="hidden relative z-10 w-full max-w-[260px] lg:max-w-[320px] rounded-2xl shadow-2xl object-cover aspect-[3/4] border-4 border-white">
+                                </div>
                             </div>
                         </section>
 
                         <!-- BENEFIT CARDS SECTION -->
-                        <section class="py-16 px-6 bg-slate-50 border-t border-slate-100">
+                        <section class="py-16 px-6 bg-white">
                             <div class="max-w-6xl mx-auto">
                                 <div class="text-center mb-12">
                                     <h2 class="text-3xl font-bold text-gray-900 mb-3">Kenapa Harus Gabung di NPA System?</h2>
                                     <p class="text-gray-500">Fasilitas eksklusif yang akan melipatgandakan kecepatan bisnis Anda.</p>
                                 </div>
                                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                                    <!-- Card 1 -->
-                                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition border border-gray-100 group">
-                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl group-hover:scale-110 transition">🔗</div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">🔗</div>
                                         <h3 class="font-bold text-gray-900 mb-2">Tools Referral</h3>
                                         <p id="prev-b1" class="text-xs text-gray-600 leading-relaxed">Dapat Tools Generate Referral yang siap pakai dan terotomatisasi.</p>
                                     </div>
-                                    <!-- Card 2 -->
-                                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition border border-gray-100 group">
-                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl group-hover:scale-110 transition">📱</div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">📱</div>
                                         <h3 class="font-bold text-gray-900 mb-2">Tools Follow Up</h3>
                                         <p id="prev-b2" class="text-xs text-gray-600 leading-relaxed">Tools Follow up 139 eksklusif, baik untuk mengelola mitra maupun calon mitra.</p>
                                     </div>
-                                    <!-- Card 3 -->
-                                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition border border-gray-100 group">
-                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl group-hover:scale-110 transition">🤖</div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">🤖</div>
                                         <h3 class="font-bold text-gray-900 mb-2">AI FB Generator</h3>
                                         <p id="prev-b3" class="text-xs text-gray-600 leading-relaxed">Tools AI Generator Facebook Pro untuk membuat Caption yang berpola HOOK-MASALAH-SOLUSI-CTA-TAG.</p>
                                     </div>
-                                    <!-- Card 4 -->
-                                    <div class="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition border border-gray-100 group">
-                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl group-hover:scale-110 transition">💬</div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">💬</div>
                                         <h3 class="font-bold text-gray-900 mb-2">Grup Support WA</h3>
                                         <p id="prev-b4" class="text-xs text-gray-600 leading-relaxed">Group WA khusus yang berisi dukungan Tools Generate untuk membuat konten viral.</p>
                                     </div>
@@ -194,28 +194,26 @@
 
                         <!-- ABOUT ME & YOUTUBE SECTION -->
                         <section class="py-16 px-6 lg:px-12 max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
-                            <!-- About -->
-                            <div class="lg:w-1/2 flex items-center gap-6 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                            <div class="lg:w-1/2 flex items-center gap-6 bg-white p-6 rounded-3xl shadow-lg shadow-gray-100 border border-gray-100">
                                 <img id="prev-profile" src="" alt="Profile" class="hidden w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full border-4 theme-border shadow-md flex-shrink-0">
                                 <div>
-                                    <h3 class="text-sm font-bold tracking-widest uppercase mb-1 theme-text">About Me</h3>
-                                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Mari Sukses Bersama</h2>
-                                    <p id="prev-about" class="text-sm text-gray-600 leading-relaxed">Saya adalah Mentor dan Digital Creator yang siap mendampingi Anda membangun pasif income melalui sistem cerdas dan otomatis.</p>
+                                    <h3 class="text-xs font-bold tracking-widest uppercase mb-1 theme-text">About Me</h3>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Mari Sukses Bersama</h2>
+                                    <p id="prev-about" class="text-xs sm:text-sm text-gray-600 leading-relaxed">Saya adalah Mentor dan Digital Creator yang siap mendampingi Anda membangun pasif income melalui sistem cerdas dan otomatis.</p>
                                 </div>
                             </div>
-                            <!-- YouTube Player -->
                             <div class="lg:w-1/2 w-full">
-                                <div id="youtube-wrapper" class="hidden w-full aspect-video rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-gray-900 relative group">
+                                <div id="youtube-wrapper" class="hidden w-full aspect-video rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-gray-900 relative">
                                     <iframe id="prev-youtube-iframe" class="w-full h-full absolute inset-0" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </section>
 
-                        <!-- TESTIMONIALS -->
-                        <section class="py-16 px-6 bg-slate-50 border-t border-slate-100">
-                            <div class="max-w-5xl mx-auto">
+                        <!-- TESTIMONIALS (WARNA BLOK) -->
+                        <section class="py-16 px-6 bg-gray-50 border-t border-gray-100">
+                            <div class="max-w-6xl mx-auto">
                                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">Cerita Sukses Mereka</h2>
-                                <div id="prev-testimoni-container" class="grid sm:grid-cols-3 gap-6"></div>
+                                <div id="prev-testimoni-container" class="grid md:grid-cols-3 gap-6"></div>
                             </div>
                         </section>
 
@@ -228,21 +226,23 @@
                         </section>
 
                         <!-- BOTTOM CTA & FOOTER -->
-                        <footer id="cta-section" class="pt-20 pb-10 px-6 theme-bg text-center text-white relative overflow-hidden">
-                            <div class="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNmZmYiLz48L3N2Zz4=')]"></div>
+                        <footer id="cta-section" class="pt-20 pb-10 px-6 bg-gray-900 text-center text-white relative">
                             <div class="max-w-3xl mx-auto relative z-10">
                                 <h2 class="text-3xl sm:text-4xl font-bold mb-6">Siap Memulai Langkah Perubahan?</h2>
-                                <p class="text-white/80 mb-8 max-w-xl mx-auto">Jangan tunda lagi. Bergabung sekarang dan rasakan kemudahan mengelola bisnis jaringan dengan sistem terpusat.</p>
-                                <a href="#" class="prev-cta-link inline-block bg-white theme-text text-sm sm:text-base font-bold py-4 px-10 rounded-full shadow-2xl transition transform hover:-translate-y-1 mb-16">
+                                <p class="text-gray-300 mb-8 max-w-xl mx-auto">Jangan tunda lagi. Bergabung sekarang dan rasakan kemudahan mengelola bisnis jaringan dengan sistem terpusat.</p>
+                                <a href="#" class="prev-cta-link inline-block text-white text-sm sm:text-base font-bold py-4 px-10 rounded-full shadow-xl transition transform hover:-translate-y-1 mb-16 theme-bg theme-shadow">
                                     <span class="prev-cta-text">Ya, Hubungi Saya Sekarang!</span>
                                 </a>
                                 
                                 <!-- Legal & Socials -->
-                                <div class="border-t border-white/20 pt-8 flex flex-col items-center">
-                                    <div id="prev-sosmed-box" class="flex justify-center gap-6 font-bold mb-6 text-white/90 text-sm tracking-wide"></div>
-                                    <p id="prev-disclaimer" class="text-[10px] text-white/60 max-w-2xl mx-auto mb-4 leading-relaxed italic">DISCLAIMER: Hasil setiap individu dapat berbeda tergantung pada dedikasi dan pemahaman terhadap sistem yang diberikan.</p>
-                                    <div class="flex justify-center flex-wrap gap-2 mb-4" id="prev-tags"></div>
-                                    <p class="text-[11px] font-semibold text-white/80">© 2026 design powered @Npa Smart System.</p>
+                                <div class="border-t border-gray-800 pt-8 flex flex-col items-center">
+                                    <div id="prev-sosmed-box" class="flex justify-center gap-6 font-bold mb-6 text-gray-400 hover:text-white transition text-sm tracking-wide"></div>
+                                    <p id="prev-disclaimer" class="text-[10px] text-gray-500 max-w-2xl mx-auto mb-5 leading-relaxed italic opacity-80">DISCLAIMER: Hasil setiap individu dapat berbeda tergantung pada dedikasi dan pemahaman terhadap sistem yang diberikan.</p>
+                                    
+                                    <!-- Tagar dengan Opacity 40-50% -->
+                                    <div class="flex justify-center flex-wrap gap-2 mb-4 opacity-50" id="prev-tags"></div>
+                                    
+                                    <p class="text-[10px] font-semibold text-gray-500 opacity-60">© 2026 design powered @Npa Smart System.</p>
                                 </div>
                             </div>
                         </footer>
@@ -254,7 +254,7 @@
     </main>
 
     <script>
-        // Preset Default
+        // Preset Default Testimoni Sesuai Request
         let testimonis = [
             { id: 1, nama: "Queen Tini", teks: "NPA System benar-benar mengubah cara saya follow up prospek. Sangat otomatis!" },
             { id: 2, nama: "King Endri", teks: "Sistem referral dan AI Generator-nya luar biasa. Konten saya selalu FYP." },
@@ -262,11 +262,20 @@
         ];
         let faqs = [{ id: 1, tanya: "Apakah sistem ini cocok untuk pemula?", jawab: "Sangat cocok, karena sudah disediakan template dan panduan lengkap." }];
 
-        // Tema Warna Dinamis (Support Class Tailwind)
+        // Array Helper untuk menghapus class Tailwind tema sebelumnya
+        const allBg = ["bg-emerald-600", "bg-gray-900", "bg-gray-200", "bg-gradient-to-r", "from-indigo-600", "to-purple-600"];
+        const allText = ["text-emerald-600", "text-gray-900", "text-gray-600", "text-purple-600", "text-white"];
+        const allBorder = ["border-emerald-600", "border-gray-900", "border-gray-300", "border-purple-600"];
+        const allShadow = ["shadow-emerald-600/40", "shadow-gray-900/40", "shadow-gray-300", "shadow-purple-600/40"];
+        const allBgLite = ["bg-emerald-50", "bg-gray-100", "bg-white", "bg-purple-50"];
+        const allGrad = ["bg-gradient-to-b", "from-emerald-50", "from-gray-100", "from-gray-50", "from-indigo-50", "to-white"];
+
+        // Konfigurasi Tema Warna (Putih, Hitam, Hijau, Gradasi)
         const themes = {
-            blue: { bg: "bg-blue-600", text: "text-blue-600", border: "border-blue-600", shadow: "shadow-blue-600/40", bglite: "bg-blue-50" },
-            orange: { bg: "bg-orange-500", text: "text-orange-600", border: "border-orange-500", shadow: "shadow-orange-500/40", bglite: "bg-orange-50" },
-            green: { bg: "bg-emerald-600", text: "text-emerald-600", border: "border-emerald-600", shadow: "shadow-emerald-600/40", bglite: "bg-emerald-50" }
+            green: { bg: "bg-emerald-600", text: "text-emerald-600", border: "border-emerald-600", shadow: "shadow-emerald-600/40", bglite: "bg-emerald-50", grad: "bg-gradient-to-b from-emerald-50 to-white", tstText: "text-white" },
+            black: { bg: "bg-gray-900", text: "text-gray-900", border: "border-gray-900", shadow: "shadow-gray-900/40", bglite: "bg-gray-100", grad: "bg-gradient-to-b from-gray-100 to-white", tstText: "text-white" },
+            white: { bg: "bg-gray-200", text: "text-gray-600", border: "border-gray-300", shadow: "shadow-gray-300", bglite: "bg-white", grad: "bg-gradient-to-b from-gray-50 to-white", tstText: "text-gray-800" },
+            gradient: { bg: "bg-gradient-to-r from-indigo-600 to-purple-600", text: "text-purple-600", border: "border-purple-600", shadow: "shadow-purple-600/40", bglite: "bg-purple-50", grad: "bg-gradient-to-b from-indigo-50 to-white", tstText: "text-white" }
         };
 
         function init() { renderTestimoniInputs(); renderFaqInputs(); updatePreview(); }
@@ -274,7 +283,6 @@
         // PERBAIKAN BUG YOUTUBE (Support /live/ dan Shorts)
         function getYouTubeEmbedUrl(url) {
             if(!url) return '';
-            // Regex super kuat untuk membaca semua format YT termasuk youtube.com/live/xxxx
             let m = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=|live\/)|youtu\.be\/)([^"&?\/\s]{11})/i);
             return (m && m[1].length == 11) ? 'https://www.youtube.com/embed/' + m[1] : '';
         }
@@ -283,13 +291,25 @@
             // Apply Font
             document.getElementById('export-target').style.fontFamily = document.getElementById('input-font').value;
             
-            // Apply Theme Colors
+            // Apply Theme Colors dynamically
             const t = themes[document.getElementById('input-theme').value];
-            document.querySelectorAll('.theme-bg').forEach(el => { el.className = el.className.replace(/bg-(blue|orange|emerald)-\d00/g, ''); el.classList.add(t.bg); });
-            document.querySelectorAll('.theme-text').forEach(el => { el.className = el.className.replace(/text-(blue|orange|emerald)-\d00/g, ''); el.classList.add(t.text); });
-            document.querySelectorAll('.theme-border').forEach(el => { el.className = el.className.replace(/border-(blue|orange|emerald)-\d00/g, ''); el.classList.add(t.border); });
-            document.querySelectorAll('.theme-shadow').forEach(el => { el.className = el.className.replace(/shadow-(blue|orange|emerald)-\d00\/\d0/g, ''); el.classList.add(t.shadow); });
-            document.querySelectorAll('.theme-bg-light').forEach(el => { el.className = el.className.replace(/bg-(blue|orange|emerald)-50/g, ''); el.classList.add(t.bglite); });
+            
+            const setClasses = (selector, removeArr, addClass) => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.classList.remove(...removeArr);
+                    if(addClass) el.classList.add(...addClass.split(' '));
+                });
+            };
+
+            setClasses('.theme-bg', allBg, t.bg);
+            setClasses('.theme-text', allText, t.text);
+            setClasses('.theme-border', allBorder, t.border);
+            setClasses('.theme-shadow', allShadow, t.shadow);
+            setClasses('.theme-bg-light', allBgLite, t.bglite);
+            setClasses('.theme-grad', allGrad, t.grad);
+            
+            // Terapkan warna teks khusus untuk blok testimoni
+            setClasses('.tst-text', ['text-white', 'text-gray-800'], t.tstText);
 
             // Apply Texts
             document.getElementById('prev-tagline').innerHTML = document.getElementById('input-tagline').value;
@@ -324,13 +344,12 @@
             if(tiktok) sosmed += `<a href="${tiktok}" target="_blank" class="hover:underline">TikTok</a>`;
             document.getElementById('prev-sosmed-box').innerHTML = sosmed;
             
-            // Apply Tags
-            document.getElementById('prev-tags').innerHTML = document.getElementById('input-tags').value.split(',').map(tg => tg.trim() ? `<span class="bg-black/20 text-white px-2.5 py-1 rounded-full text-[10px]">#${tg.trim()}</span>` : '').join('');
+            // Apply Tags (Opacity diatur dari HTML parent-nya)
+            document.getElementById('prev-tags').innerHTML = document.getElementById('input-tags').value.split(',').map(tg => tg.trim() ? `<span class="bg-gray-800 text-white px-2.5 py-1 rounded-full text-[9px] tracking-wider uppercase">#${tg.trim()}</span>` : '').join('');
 
             renderTestimoniPreview(); renderFaqPreview();
         }
 
-        // Image Handler Base64
         function handleImageUpload(e, id) {
             if(e.target.files[0]) {
                 const r = new FileReader();
@@ -346,8 +365,15 @@
         function renderTestimoniInputs() {
             document.getElementById('testimoni-list').innerHTML = testimonis.map(t => `<div class="bg-gray-50 p-2 rounded text-xs relative space-y-1 border"><button onclick="removeTestimoni(${t.id})" class="absolute top-1 right-2 text-red-500 font-bold">✕</button><input type="text" placeholder="Nama" oninput="updateTst(${t.id}, 'nama', this.value)" value="${t.nama}" class="w-full p-1 text-xs border rounded"><textarea placeholder="Teks" oninput="updateTst(${t.id}, 'teks', this.value)" class="w-full p-1 text-xs border rounded" rows="2">${t.teks}</textarea></div>`).join('');
         }
+        
+        // Render Testimoni menjadi BLOK BERWARNA TEMA
         function renderTestimoniPreview() {
-            document.getElementById('prev-testimoni-container').innerHTML = testimonis.map(t => `<div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex flex-col items-center text-center hover:shadow-md transition"><div class="w-12 h-12 rounded-full theme-bg-light theme-text flex items-center justify-center font-bold text-lg mb-4">${t.nama ? t.nama.charAt(0) : 'U'}</div><p class="text-sm text-gray-600 mb-4 italic flex-1">"${t.teks}"</p><h4 class="font-bold text-gray-900 text-sm">— ${t.nama}</h4></div>`).join('');
+            document.getElementById('prev-testimoni-container').innerHTML = testimonis.map(t => `<div class="theme-bg p-6 rounded-2xl shadow-lg border border-transparent flex flex-col items-center text-center transform transition hover:-translate-y-1"><div class="w-12 h-12 rounded-full bg-white/20 tst-text flex items-center justify-center font-bold text-lg mb-4 shadow-inner">${t.nama ? t.nama.charAt(0) : 'U'}</div><p class="text-sm tst-text opacity-90 mb-4 italic flex-1">"${t.teks}"</p><h4 class="font-bold tst-text text-sm">— ${t.nama}</h4></div>`).join('');
+            
+            // Re-apply theme classes to newly injected testimoni cards
+            const t = themes[document.getElementById('input-theme').value];
+            document.querySelectorAll('#prev-testimoni-container .theme-bg').forEach(el => el.classList.add(...t.bg.split(' ')));
+            document.querySelectorAll('#prev-testimoni-container .tst-text').forEach(el => el.classList.add(t.tstText));
         }
 
         // FAQ Logic
@@ -358,13 +384,13 @@
             document.getElementById('faq-list').innerHTML = faqs.map(f => `<div class="bg-gray-50 p-2 rounded text-xs relative space-y-1 border"><button onclick="removeFaq(${f.id})" class="absolute top-1 right-2 text-red-500 font-bold">✕</button><input type="text" placeholder="Tanya" oninput="updateFaq(${f.id}, 'tanya', this.value)" value="${f.tanya}" class="w-full p-1 text-xs border rounded"><input type="text" placeholder="Jawab" oninput="updateFaq(${f.id}, 'jawab', this.value)" value="${f.jawab}" class="w-full p-1 text-xs border rounded"></div>`).join('');
         }
         function renderFaqPreview() {
-            document.getElementById('prev-faq-container').innerHTML = faqs.map(f => `<div class="bg-slate-50 border border-slate-100 rounded-xl p-4"><h4 class="font-bold text-sm text-gray-900 mb-2">${f.tanya}</h4><p class="text-xs text-gray-600">${f.jawab}</p></div>`).join('');
+            document.getElementById('prev-faq-container').innerHTML = faqs.map(f => `<div class="bg-gray-50 border border-gray-100 rounded-xl p-5 hover:border-gray-200 transition"><h4 class="font-bold text-sm text-gray-900 mb-2">${f.tanya}</h4><p class="text-xs text-gray-600 leading-relaxed">${f.jawab}</p></div>`).join('');
         }
 
         // Export System
         function generateHTML() {
             const innerCode = document.getElementById('export-target').outerHTML;
-            return `<!DOCTYPE html>\n<html lang="id">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>${document.getElementById('input-judul').value.replace(/<[^>]*>/g, '')}</title>\n<script src="https://cdn.tailwindcss.com"><\/script>\n<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;600;700;800&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">\n<style>.prev-html-render s { color: #ff4d4d; text-decoration: line-through; font-weight: normal; margin-right: 4px; } .prev-html-render badge { display: inline-block; background-color: #3b82f6; color: white; font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; margin-top: 4px; } .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; } @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }</style>\n</head>\n<body style="background-color: #f8fafc; margin:0; padding:0;">\n${innerCode}\n</body>\n</html>`;
+            return `<!DOCTYPE html>\n<html lang="id">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<title>${document.getElementById('input-judul').value.replace(/<[^>]*>/g, '')}</title>\n<script src="https://cdn.tailwindcss.com"><\/script>\n<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">\n<style>.prev-html-render s { color: #ff4d4d; text-decoration: line-through; font-weight: normal; margin-right: 4px; } .prev-html-render badge { display: inline-block; background-color: #3b82f6; color: white; font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; margin-top: 4px; } .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; } @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }</style>\n</head>\n<body style="background-color: #f8fafc; margin:0; padding:0;">\n${innerCode}\n</body>\n</html>`;
         }
 
         function exportHTML() {
@@ -381,7 +407,7 @@
                 const b = document.createElement('textarea'); b.value = generateHTML();
                 Object.assign(b.style, {position:'fixed', top:'10%', left:'5%', width:'90%', height:'80%', zIndex:'9999', padding:'10px', fontSize:'10px'});
                 document.body.appendChild(b); b.focus(); b.select();
-                alert("Tekan lama isi kotak, lalu COPY manual.");
+                alert("Tekan lama isi kotak merah, lalu COPY manual.");
             }
         }
 
