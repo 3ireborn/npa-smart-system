@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NPA SMART SYSTEM - Follow Up 139</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #f8fafc; }
+        .tab-active { border-bottom-width: 4px; border-color: #059669; color: #059669; font-weight: bold; }
+        .tab-inactive { border-bottom-width: 4px; border-color: transparent; color: #64748b; font-weight: 600; }
+        .hide { display: none; }
+    </style>
+</head>
+<body class="text-gray-800 pb-20">
+
+    <!-- HEADER -->
+    <header class="bg-emerald-600 text-white p-4 shadow-md sticky top-0 z-50">
+        <div class="max-w-2xl mx-auto flex items-center gap-3">
+            <div class="bg-white text-emerald-600 px-2 py-1 rounded font-black text-xs">NPA V5</div>
+            <h1 class="font-bold text-sm sm:text-base tracking-tight">Generator Follow-Up 139</h1>
+        </div>
+    </header>
+
+    <main class="max-w-2xl mx-auto p-4 mt-2">
+        
+        <!-- TABS NAVIGATION -->
+        <div class="flex border-b border-gray-200 mb-6 bg-white rounded-t-xl shadow-sm overflow-hidden">
+            <button onclick="switchTab('calon')" id="tab-calon" class="flex-1 py-3 text-sm tab-active transition">👥 Calon Mitra (1-3-9)</button>
+            <button onclick="switchTab('mitra')" id="tab-mitra" class="flex-1 py-3 text-sm tab-inactive transition">🤝 Mitra Aktif (Tgl)</button>
+        </div>
+
+        <!-- ==========================================
+             SECTION 1: CALON MITRA (FORMULA 1-3-9) 
+        =========================================== -->
+        <div id="section-calon">
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 mb-6">
+                <h2 class="text-sm font-bold text-gray-800 mb-4 border-b pb-2">1. Masukkan Data Prospek</h2>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Nama Panggilan Calon Mitra</label>
+                        <input type="text" id="input-nama" oninput="updateTeks()" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Contoh: Pak Budi">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Nomor WA (Pilih untuk langsung kirim)</label>
+                        <input type="number" id="input-wa" oninput="updateTeks()" class="w-full border border-gray-300 rounded-lg p-2.5 text-sm focus:ring-2 focus:ring-emerald-500 outline-none" placeholder="Contoh: 08123456789">
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-sm font-bold text-gray-800 mb-3 px-1">2. Pilih Naskah Follow-Up</h2>
+            
+            <!-- HARI 1 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-l-4 border-l-blue-500 mb-4 relative">
+                <div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-xl">HARI KE-1</div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Tanya Kendala / Silaturahmi</h3>
+                <p class="text-xs text-gray-500 mb-3">Kirim sehari setelah prospek melihat presentasi.</p>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-h1"></div>
+                <div class="flex gap-2">
+                    <button onclick="salinTeks('teks-h1')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks</button>
+                    <a href="#" id="wa-h1" target="_blank" class="flex-1 bg-[#25D366] hover:bg-green-600 text-white text-xs font-bold py-2.5 rounded-lg transition text-center flex items-center justify-center gap-1">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Kirim ke WA
+                    </a>
+                </div>
+            </div>
+
+            <!-- HARI 3 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-l-4 border-l-orange-500 mb-4 relative">
+                <div class="absolute top-0 right-0 bg-orange-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-xl">HARI KE-3</div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Membangun FOMO (Rugi Kalo Nggak Join)</h3>
+                <p class="text-xs text-gray-500 mb-3">Beri kesan bahwa kuota bimbingan terbatas.</p>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-h3"></div>
+                <div class="flex gap-2">
+                    <button onclick="salinTeks('teks-h3')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks</button>
+                    <a href="#" id="wa-h3" target="_blank" class="flex-1 bg-[#25D366] hover:bg-green-600 text-white text-xs font-bold py-2.5 rounded-lg transition text-center flex items-center justify-center gap-1">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c... (sama seperti svg WA di atas)... 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Kirim ke WA
+                    </a>
+                </div>
+            </div>
+
+            <!-- HARI 9 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border border-l-4 border-l-red-500 mb-4 relative">
+                <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded-bl-lg rounded-tr-xl">HARI KE-9</div>
+                <h3 class="font-bold text-gray-800 text-sm mb-1">Perpisahan Elegan (Takeaway)</h3>
+                <p class="text-xs text-gray-500 mb-3">Tarik kembali penawaran agar prospek merasa penasaran.</p>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-h9"></div>
+                <div class="flex gap-2">
+                    <button onclick="salinTeks('teks-h9')" class="flex-1 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks</button>
+                    <a href="#" id="wa-h9" target="_blank" class="flex-1 bg-[#25D366] hover:bg-green-600 text-white text-xs font-bold py-2.5 rounded-lg transition text-center flex items-center justify-center gap-1">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c... (sama seperti svg WA di atas)... 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Kirim ke WA
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==========================================
+             SECTION 2: MITRA AKTIF (BROADCAST TANGGAL) 
+        =========================================== -->
+        <div id="section-mitra" class="hide">
+            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl mb-6 text-sm text-emerald-800">
+                💡 <b>Tips NPA:</b> Copy teks ini dan bagikan (Broadcast) ke Grup WA Mitra atau ke jalur pribadi (Japri) mitra jaringan Anda sesuai dengan tanggalnya.
+            </div>
+
+            <!-- TANGGAL 15 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border mb-4">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="bg-yellow-100 text-yellow-700 font-black px-3 py-1 rounded-lg text-lg">15</div>
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-sm">Hari Gajian / Bonus Cair</h3>
+                        <p class="text-[10px] text-gray-500 uppercase font-semibold tracking-wider">Perayaan & Syukur</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-t15"></div>
+                <button onclick="salinTeks('teks-t15')" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks untuk Di-Share</button>
+            </div>
+
+            <!-- TANGGAL 18 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border mb-4">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="bg-blue-100 text-blue-700 font-black px-3 py-1 rounded-lg text-lg">18</div>
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-sm">Kejar Target Elite</h3>
+                        <p class="text-[10px] text-gray-500 uppercase font-semibold tracking-wider">Motivasi & Target</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-t18"></div>
+                <button onclick="salinTeks('teks-t18')" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks untuk Di-Share</button>
+            </div>
+
+            <!-- TANGGAL 28 -->
+            <div class="bg-white p-5 rounded-xl shadow-sm border mb-4">
+                <div class="flex items-center gap-2 mb-3">
+                    <div class="bg-red-100 text-red-700 font-black px-3 py-1 rounded-lg text-lg">28</div>
+                    <div>
+                        <h3 class="font-bold text-gray-800 text-sm">Pengingat Bayar Premi</h3>
+                        <p class="text-[10px] text-gray-500 uppercase font-semibold tracking-wider">Kedisiplinan & Reminder</p>
+                    </div>
+                </div>
+                <div class="bg-slate-50 p-3 rounded-lg border border-slate-200 text-sm mb-4" id="teks-t28"></div>
+                <button onclick="salinTeks('teks-t28')" class="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold py-2.5 rounded-lg border transition">📄 Salin Teks untuk Di-Share</button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- CORE LOGIC JAVASCRIPT -->
+    <script>
+        // Database Naskah Mentah
+        const naskah = {
+            h1: "Halo {nama}, terima kasih sudah mempelajari info sistem 3IReborn kemarin.\n\nBagaimana, apakah ada bagian presentasi atau sistem yang masih membingungkan? Saya siap bantu jelaskan agar Anda bisa segera ambil posisi strategis.\n\nYuk, kita diskusi santai!",
+            h3: "Halo {nama}, semoga kabarnya luar biasa hari ini!\n\nSekadar mengingatkan, kuota bimbingan eksklusif dari tim kami bulan ini semakin menipis. Sayang banget kalau peluang untuk mulai membangun pasif income ini dilewatkan.\n\nKira-kira, apa nih yang masih menjadi pertimbangan untuk segera gabung bersama kami?",
+            h9: "Halo {nama}. Ini adalah pesan follow-up terakhir dari sistem kami.\n\nKami mengerti mungkin saat ini bukan waktu yang tepat bagi Anda untuk memulai bisnis cerdas bersama 3IReborn. Tidak masalah sama sekali!\n\nJika suatu saat nanti Anda sudah siap membangun aset dan mengubah kondisi finansial, pintu kami selalu terbuka. Sukses selalu untuk Anda dan keluarga!",
+            
+            t15: "Halo Mitra 3IReborn yang luar biasa! 🎉\n\nSelamat menikmati bonus yang sudah landing ke rekening masing-masing hari ini ya. Jadikan ini sebagai bukti nyata bahwa sistem kita bekerja.\n\nYuk, tingkatkan terus kerjanya agar bulan depan nominalnya makin bertambah! 🔥",
+            t18: "Halo Mitra hebat! 💪\n\nSekadar mengingatkan, pastikan bulan ini kita sudah closing minimal 3 orang ya. Jangan sampai terlewat agar kita bisa mengamankan Bonus Elite untuk bulan depan.\n\nMari kejar targetnya, penghasilan lebih besar menanti di depan mata! Gaspol! 🚀",
+            t28: "Halo Mitra-mitraku yang luar biasa, pengingat penting akhir bulan! 🚨\n\nPastikan kalian sudah membayar kontribusi Premi sesuai dengan yang disepakati ya. Sangat penting agar polis kita tetap aktif dan pastinya agar tanggal 15 bulan depan bonus kita bisa cair tanpa kendala.\n\nSukses selalu untuk kita semua! 🤝"
+        };
+
+        // Fungsi Tukar Tab Menu
+        function switchTab(tab) {
+            if(tab === 'calon') {
+                document.getElementById('section-calon').classList.remove('hide');
+                document.getElementById('section-mitra').classList.add('hide');
+                document.getElementById('tab-calon').className = 'flex-1 py-3 text-sm tab-active transition';
+                document.getElementById('tab-mitra').className = 'flex-1 py-3 text-sm tab-inactive transition';
+            } else {
+                document.getElementById('section-calon').classList.add('hide');
+                document.getElementById('section-mitra').classList.remove('hide');
+                document.getElementById('tab-calon').className = 'flex-1 py-3 text-sm tab-inactive transition';
+                document.getElementById('tab-mitra').className = 'flex-1 py-3 text-sm tab-active transition';
+            }
+        }
+
+        // Fungsi Generate Text & Link WhatsApp
+        function updateTeks() {
+            let nama = document.getElementById('input-nama').value.trim();
+            if(nama === '') nama = "[Nama Calon Mitra]"; // Default kalau kosong
+
+            let waRaw = document.getElementById('input-wa').value.trim();
+            let waClean = "";
+            
+            // Logika membersihkan nomor WA (Ubah 0 jadi 62)
+            if(waRaw !== "") {
+                waRaw = waRaw.replace(/\D/g, ''); // Hapus karakter non-angka
+                if(waRaw.startsWith('0')) {
+                    waClean = '62' + waRaw.substring(1);
+                } else if(waRaw.startsWith('62')) {
+                    waClean = waRaw;
+                } else {
+                    waClean = '62' + waRaw; // Jaga-jaga kalau langsung ngetik 812
+                }
+            }
+
+            // Update UI Calon Mitra
+            document.getElementById('teks-h1').innerText = naskah.h1.replace(/{nama}/g, nama);
+            document.getElementById('teks-h3').innerText = naskah.h3.replace(/{nama}/g, nama);
+            document.getElementById('teks-h9').innerText = naskah.h9.replace(/{nama}/g, nama);
+
+            // Update Link Tombol WA
+            updateLinkWA('wa-h1', waClean, document.getElementById('teks-h1').innerText);
+            updateLinkWA('wa-h3', waClean, document.getElementById('teks-h3').innerText);
+            updateLinkWA('wa-h9', waClean, document.getElementById('teks-h9').innerText);
+
+            // Update UI Mitra (Hanya inisialisasi awal karena tidak ada variabel {nama})
+            document.getElementById('teks-t15').innerText = naskah.t15;
+            document.getElementById('teks-t18').innerText = naskah.t18;
+            document.getElementById('teks-t28').innerText = naskah.t28;
+        }
+
+        // Engine URL WhatsApp
+        function updateLinkWA(elementId, phone, text) {
+            const btn = document.getElementById(elementId);
+            const encodedText = encodeURIComponent(text);
+            
+            if(phone === "") {
+                // Jika nomor HP kosong, siapkan link wa.me tapi belum ada tujuan
+                btn.href = `https://wa.me/?text=${encodedText}`;
+                btn.classList.add('opacity-50'); // Kasih efek agak pudar
+            } else {
+                // Jika nomor HP ada
+                btn.href = `https://wa.me/${phone}?text=${encodedText}`;
+                btn.classList.remove('opacity-50');
+            }
+        }
+
+        // Fungsi Salin Teks (Modern)
+        async function salinTeks(elementId) {
+            const textToCopy = document.getElementById(elementId).innerText;
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                alert("✅ Naskah berhasil disalin!");
+            } catch (err) {
+                // Fallback darurat Android lama
+                const textarea = document.createElement("textarea");
+                textarea.value = textToCopy;
+                document.body.appendChild(textarea);
+                textarea.select();
+                document.execCommand("copy");
+                document.body.removeChild(textarea);
+                alert("✅ Naskah berhasil disalin!");
+            }
+        }
+
+        // Jalankan saat pertama kali dibuka
+        updateTeks();
+    </script>
+</body>
+</html>
