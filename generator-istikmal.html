@@ -3,65 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM - Generator Istikmal Syariah</title>
+    <title>NPA SMART SYSTEM - Generator Istikmal Syariah V5</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Poppins', sans-serif; background-color: #061b18; color: white; }
         .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .scrollbar-hide::-webkit-scrollbar { width: 4px; }
-        .scrollbar-hide::-webkit-scrollbar-track { background: #0a1f1b; }
-        .scrollbar-hide::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 4px; }
-        
-        .bg-istikmal { background-color: #061b18; }
         .bg-istikmal-light { background-color: #102d28; }
         .bg-istikmal-dark { background-color: #0a1f1b; }
         .text-gold { color: #d4af37; }
         .bg-gold { background-color: #d4af37; }
         .border-gold { border-color: #d4af37; }
-        
-        .btn-hover:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(212, 175, 55, 0.3); }
-        .btn-active:active { transform: translateY(1px); }
+        .btn-pulse { animation: gold-pulse 2s infinite; }
+        @keyframes gold-pulse { 0% { box-shadow: 0 0 0 0px rgba(212, 175, 55, 0.5); } 100% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); } }
     </style>
 </head>
-<body class="bg-istikmal min-h-screen pb-20">
+<body class="bg-[#061b18] min-h-screen pb-20">
 
-    <header class="bg-istikmal-light border-b border-gold/20 p-4 shadow-md sticky top-0 z-50">
+    <header class="bg-istikmal-light border-b border-[#d4af37]/20 p-4 shadow-md sticky top-0 z-50">
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="bg-gold text-[#061b18] px-2.5 py-1 rounded font-black text-xs shadow-sm">NPA V5</div>
-                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white font-montserrat">Referral Generator</h1>
+                <div class="bg-[#d4af37] text-[#061b18] px-2.5 py-1 rounded font-black text-xs shadow-sm">NPA V5</div>
+                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white font-montserrat">HTML Funnel Factory</h1>
             </div>
-            <div class="text-[10px] border border-gold/50 text-gold px-2.5 py-1 rounded-full font-semibold">Istikmal Syariah</div>
+            <div class="text-[10px] border border-[#d4af37]/50 text-[#d4af37] px-2.5 py-1 rounded-full font-semibold">100% Bebas Server Pihak Ke-3</div>
         </div>
     </header>
 
     <main class="max-w-xl mx-auto p-5 mt-4">
         
         <div class="text-center mb-8">
-            <h1 class="font-montserrat text-3xl font-extrabold text-gold tracking-wide mb-2">ISTIKMAL SYARIAH</h1>
-            <p class="text-sm text-gray-300 font-semibold tracking-widest uppercase">Generator Premium - 3 Funnel</p>
+            <h1 class="font-montserrat text-3xl font-extrabold text-[#d4af37] tracking-wide mb-2">ISTIKMAL SYARIAH</h1>
+            <p class="text-sm text-gray-300 font-semibold tracking-widest uppercase">Generator Premium V5 - Cetak HTML</p>
         </div>
 
-        <div class="bg-istikmal-light p-6 rounded-2xl shadow-2xl border border-gold/20 space-y-5">
+        <div class="bg-[#102d28] p-6 rounded-2xl shadow-2xl border border-[#d4af37]/20 space-y-5">
             <div>
-                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nama Leader</label>
-                <input type="text" id="input-nama" class="w-full bg-istikmal-dark border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-gold outline-none" placeholder="Contoh: Sugiarto Kurniawan">
+                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nama Lengkap Leader</label>
+                <input type="text" id="input-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none" placeholder="Contoh: Sugiarto Kurniawan">
             </div>
 
             <div>
-                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nomor WhatsApp</label>
-                <input type="number" id="input-wa" class="w-full bg-istikmal-dark border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-gold outline-none" placeholder="Contoh: 6281234567890">
-            </div>
-
-            <div>
-                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Slug Branding (Akhiran Link)</label>
-                <input type="text" id="input-slug" class="w-full bg-istikmal-dark border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-gold outline-none" placeholder="Contoh: pakde-sugiarto">
+                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Nomor WhatsApp Jaringan</label>
+                <input type="number" id="input-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none" placeholder="Contoh: 628123456789">
             </div>
 
             <div>
                 <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Jenjang Karir (Posisi)</label>
-                <select id="input-jabatan" class="w-full bg-istikmal-dark border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-gold outline-none appearance-none">
+                <select id="input-jabatan" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-xl p-3.5 text-sm text-white focus:ring-2 focus:ring-[#d4af37] outline-none">
                     <option value="Mitra 3IReborn">Mitra 3IReborn</option>
                     <option value="Team Entrepreneur">Team Entrepreneur</option>
                     <option value="Leader Entrepreneur">Leader Entrepreneur</option>
@@ -76,132 +65,239 @@
             </div>
 
             <div>
-                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Foto Profil Leader</label>
-                <div class="relative">
-                    <input type="file" id="input-foto" accept="image/*" class="hidden" onchange="handleFotoUpload(event)">
-                    <button onclick="document.getElementById('input-foto').click()" class="w-full bg-teal-700 hover:bg-teal-600 text-white font-bold py-3.5 rounded-xl border border-teal-500 transition flex justify-center items-center gap-2 text-sm">
-                        📸 Pilih Foto dari HP
-                    </button>
-                </div>
-                <div id="preview-container" class="hidden mt-4 flex items-center gap-4 bg-istikmal-dark p-3 rounded-xl border border-gray-600">
-                    <img id="preview-img" src="" class="w-12 h-12 rounded-full object-cover border-2 border-gold">
-                    <span class="text-xs text-gray-300">Foto berhasil dimuat!</span>
+                <label class="block text-xs font-bold text-gray-400 uppercase tracking-wider mb-2">Upload Foto Profil Langsung</label>
+                <input type="file" id="input-foto" accept="image/*" class="hidden" onchange="prosesFoto(event)">
+                <button onclick="document.getElementById('input-foto').click()" class="w-full bg-teal-700 hover:bg-teal-600 text-white font-bold py-3.5 rounded-xl transition flex justify-center items-center gap-2 text-sm shadow-md">
+                    📸 Ambil Foto dari Galeri HP
+                </button>
+                <div id="preview-box" class="hidden mt-4 flex items-center gap-4 bg-[#0a1f1b] p-3 rounded-xl border border-gray-600">
+                    <img id="preview-img" src="" class="w-12 h-12 rounded-full object-cover border-2 border-[#d4af37]">
+                    <span class="text-xs text-green-400 font-bold">✓ Foto Berhasil Dilebur ke Sistem!</span>
                 </div>
             </div>
 
-            <button onclick="generateData()" class="w-full mt-8 bg-gold hover:bg-yellow-500 text-[#061b18] font-extrabold py-4 rounded-xl shadow-lg transition btn-hover btn-active text-sm uppercase tracking-widest flex justify-center items-center gap-2">
-                🚀 Generate 3 Link Funnel
+            <button onclick="racikSemuaFile()" class="w-full mt-8 bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-extrabold py-4 rounded-xl shadow-lg transition text-sm uppercase tracking-widest btn-pulse">
+                ⚙️ Cetak Paket Website Funnel
             </button>
         </div>
 
-        <div id="result-box" class="hidden mt-8 space-y-5">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="h-px bg-gold/30 flex-1"></div>
-                <span class="text-[11px] font-bold text-gold uppercase tracking-widest">Senjata Telah Siap</span>
-                <div class="h-px bg-gold/30 flex-1"></div>
+        <div id="download-box" class="hidden mt-8 space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="h-px bg-[#d4af37]/30 flex-1"></div>
+                <span class="text-[11px] font-bold text-[#d4af37] uppercase tracking-widest">Ambil File Web Anda</span>
+                <div class="h-px bg-[#d4af37]/30 flex-1"></div>
             </div>
 
-            <div class="bg-istikmal-light p-5 rounded-2xl shadow-xl border border-gold/30">
-                <h3 class="font-bold text-white text-sm mb-1 flex items-center gap-2">📘 1. Link LP MASTER</h3>
-                <p class="text-[10px] text-gray-400 mb-3">Gunakan untuk prospek baru (Penjelasan Lengkap)</p>
-                <div id="link-master" class="bg-istikmal-dark text-teal-400 p-3 rounded-lg text-xs font-mono break-all border border-teal-900 mb-3 select-all"></div>
-                <button onclick="salinLink('link-master', this)" class="w-full bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold py-2.5 rounded-lg transition">📋 Copy Master</button>
-            </div>
-
-            <div class="bg-istikmal-light p-5 rounded-2xl shadow-xl border border-orange-500/30">
-                <h3 class="font-bold text-white text-sm mb-1 flex items-center gap-2">🔥 2. Link LP HOT</h3>
-                <p class="text-[10px] text-gray-400 mb-3">Gunakan untuk prospek yang ragu (Testimoni & FOMO)</p>
-                <div id="link-hot" class="bg-istikmal-dark text-orange-400 p-3 rounded-lg text-xs font-mono break-all border border-orange-900 mb-3 select-all"></div>
-                <button onclick="salinLink('link-hot', this)" class="w-full bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold py-2.5 rounded-lg transition">📋 Copy Hot</button>
-            </div>
-
-            <div class="bg-istikmal-light p-5 rounded-2xl shadow-xl border border-rose-500/30">
-                <h3 class="font-bold text-white text-sm mb-1 flex items-center gap-2">📝 3. Link PENDAFTARAN</h3>
-                <p class="text-[10px] text-gray-400 mb-3">Gunakan untuk prospek yang siap join/transfer</p>
-                <div id="link-daftar" class="bg-istikmal-dark text-rose-400 p-3 rounded-lg text-xs font-mono break-all border border-rose-900 mb-3 select-all"></div>
-                <button onclick="salinLink('link-daftar', this)" class="w-full bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold py-2.5 rounded-lg transition">📋 Copy Pendaftaran</button>
-            </div>
-
-            <div class="bg-istikmal-light p-5 rounded-2xl border border-gray-700 text-center mt-6">
-                <p class="text-xs text-gray-400 font-bold uppercase tracking-wider mb-3">QR Code LP Master</p>
-                <div class="bg-white p-2 rounded-xl inline-block shadow-[0_0_15px_rgba(212,175,55,0.4)]">
-                    <img id="output-qr" src="" alt="QR Code" class="w-32 h-32 object-contain rounded-lg">
+            <div class="bg-[#102d28] p-5 rounded-2xl border border-[#d4af37]/40 space-y-4 shadow-xl">
+                <p class="text-xs text-gray-300 text-center leading-relaxed mb-2">👇 Klik tombol di bawah satu per satu untuk men-download file website pribadi Anda:</p>
+                
+                <div class="flex items-center justify-between bg-[#0a1f1b] p-3 rounded-xl border border-gray-700">
+                    <span class="text-xs font-bold text-white">📘 1. Halaman Utama (Master)</span>
+                    <button onclick="unduhFile('master')" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition">⬇️ Download index.html</button>
                 </div>
+
+                <div class="flex items-center justify-between bg-[#0a1f1b] p-3 rounded-xl border border-gray-700">
+                    <span class="text-xs font-bold text-orange-400">🔥 2. Halaman Edukasi (Hot)</span>
+                    <button onclick="unduhFile('hot')" class="bg-orange-600 hover:bg-orange-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition">⬇️ Download hot.html</button>
+                </div>
+
+                <div class="flex items-center justify-between bg-[#0a1f1b] p-3 rounded-xl border border-gray-700">
+                    <span class="text-xs font-bold text-rose-400">📝 3. Halaman Form Daftar</span>
+                    <button onclick="unduhFile('daftar')" class="bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition">⬇️ Download daftar.html</button>
+                </div>
+            </div>
+
+            <div class="bg-blue-950/40 border border-blue-900 text-blue-300 text-xs p-4 rounded-xl leading-relaxed shadow-md">
+                💡 <b>Langkah Terakhir:</b> Masukkan ketiga file yang sudah ter-download tadi ke dalam satu folder di HP Anda, lalu langsung unggah folder tersebut ke <b>Netlify Drop</b>. Website replikasi premium Anda langsung mengudara secara mandiri!
             </div>
         </div>
 
     </main>
 
     <script>
-        let fotoDataUrl = "";
+        // Default avatar pelapis kalau downline males upload foto
+        let fotoBase64 = `data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>`;
+        let filePack = { master: "", hot: "", daftar: "" };
 
-        function handleFotoUpload(event) {
+        function prosesFoto(event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    fotoDataUrl = e.target.result;
-                    document.getElementById('preview-img').src = fotoDataUrl;
-                    document.getElementById('preview-container').classList.remove('hidden');
+                    fotoBase64 = e.target.result;
+                    document.getElementById('preview-img').src = fotoBase64;
+                    document.getElementById('preview-box').classList.remove('hidden');
                 };
                 reader.readAsDataURL(file);
             }
         }
 
-        function generateData() {
-            const nama = document.getElementById('input-nama').value.trim();
-            const slug = document.getElementById('input-slug').value.trim();
+        function racikSemuaFile() {
+            const nama = document.getElementById('input-nama').value.trim() || "Leader Istikmal";
+            const wa = document.getElementById('input-wa').value.trim() || "628123456789";
+            const jabatan = document.getElementById('input-jabatan').value;
 
-            if(!nama || !slug) {
-                alert("Mohon isi Nama dan Slug terlebih dahulu!");
-                return;
-            }
+            // ==========================================
+            // TEMPLATE 1: INDEX.HTML (MASTER)
+            // ==========================================
+            filePack.master = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Istikmal Syariah - Bisnis Berkah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: %23061b18; color: white; font-family: sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center p-5 pt-12">
+    <div class="max-w-md w-full text-center space-y-6">
+        <h1 class="text-3xl font-bold text-[#d4af37] tracking-wider">ISTIKMAL SYARIAH</h1>
+        
+        <div class="inline-block relative">
+            <img src="${fotoBase64}" class="w-36 h-36 rounded-full object-cover border-4 border-[#d4af37] mx-auto shadow-lg">
+        </div>
 
-            const cleanSlug = slug.toLowerCase().replace(/\s+/g, '-');
-            
-            // Base URL mengarah ke repo 3ireborn-generator-v4
-            const baseUrl = "https://3ireborn.github.io/3ireborn-generator-v4/";
+        <h2 class="text-2xl font-extrabold px-2">Bisnis Berkah Mengantarkan Sampai Ke Mekah</h2>
 
-            // Generate 3 Links
-            const linkMaster = baseUrl + "index.html?ref=" + cleanSlug; 
-            const linkHot = baseUrl + "lp-hot-v4.html?ref=" + cleanSlug;
-            const linkDaftar = baseUrl + "form-pendaftaran-v4.html?ref=" + cleanSlug;
+        <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 text-sm leading-relaxed text-gray-200">
+            Mulai rencanakan Umroh dengan cara sederhana.<br><span class="font-bold text-[#d4af37]">Sisihkan bukan sisakan.</span>
+            <div class="mt-4 pt-3 border-t border-gray-700 text-xs">
+                Dibimbing oleh:<br>
+                <span class="text-base font-bold text-white block mt-1">${nama}</span>
+                <span class="text-xs text-[#d4af37] font-semibold">${jabatan}</span>
+            </div>
+        </div>
 
-            document.getElementById('link-master').innerText = linkMaster;
-            document.getElementById('link-hot').innerText = linkHot;
-            document.getElementById('link-daftar').innerText = linkDaftar;
+        <div class="space-y-3 pt-4">
+            <a href="https://wa.me/${wa}?text=Halo%20${encodeURIComponent(nama)},%20saya%20tertarik%20dengan%20program%20Istikmal%20Syariah" target="_blank" class="block w-full bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-black py-4 rounded-xl text-center shadow-lg transition">Konsultasi Sekarang</a>
+            <a href="hot.html" class="block w-full bg-transparent border-2 border-gray-600 text-gray-400 hover:text-white font-bold py-3 rounded-xl text-center text-xs transition">Pelajari Alasan Harus Mulai Sekarang →</a>
+        </div>
+    </div>
+</body>
+</html>`;
 
-            // Generate QR (Khusus Master)
-            const qrApiUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(linkMaster)}&color=061b18&bgcolor=ffffff`;
-            document.getElementById('output-qr').src = qrApiUrl;
+            // ==========================================
+            // TEMPLATE 2: HOT.HTML (EDUKASI)
+            // ==========================================
+            filePack.hot = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenapa Harus Mulai Sekarang?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> body { background-color: %23061b18; color: white; font-family: sans-serif; } </style>
+</head>
+<body class="min-h-screen p-5 pt-10 flex flex-col items-center">
+    <div class="max-w-md w-full space-y-6">
+        <h1 class="text-2xl font-black text-[#d4af37] text-center tracking-tight">KENAPA HARUS MULAI SEKARANG?</h1>
+        
+        <div class="bg-[#102d28] p-6 rounded-2xl space-y-4 border border-red-900/30">
+            <div class="flex items-start gap-3">
+                <span class="text-red-500 font-bold text-xl">❌</span>
+                <p class="text-sm text-gray-200"><span class="font-bold text-white">Biaya Umroh Terus Naik:</span> Menunda satu tahun bisa membuat impian Anda bergeser karena inflasi harga tiket dan hotel.</p>
+            </div>
+            <div class="flex items-start gap-3">
+                <span class="text-red-500 font-bold text-xl">❌</span>
+                <p class="text-sm text-gray-200"><span class="font-bold text-white">Menunggu Kaya Belum Tentu Berangkat:</span> Umroh itu panggilan jiwa, bukan panggilan harta. Banyak yang mampu tapi tidak berangkat karena tidak disiapkan sistemnya.</p>
+            </div>
+        </div>
 
-            document.getElementById('result-box').classList.remove('hidden');
-            document.getElementById('result-box').scrollIntoView({ behavior: 'smooth' });
+        <div class="bg-amber-950/40 border border-amber-800 p-4 rounded-xl text-xs text-amber-300 text-center leading-relaxed">
+            Tenang, bersama <span class="font-bold text-white">${nama}</span>, Anda akan diarahkan masuk ke ekosistem cerdas agar rencana ibadah Anda terjamin aman dan terstruktur dengan matang!
+        </div>
+
+        <div class="space-y-3 pt-2">
+            <a href="daftar.html" class="block w-full bg-orange-600 hover:bg-orange-500 text-white font-black py-4 rounded-xl text-center shadow-lg transition uppercase tracking-wider text-sm">Amankan Slot Pendaftaran</a>
+            <a href="index.html" class="block w-full text-center text-xs text-gray-500 hover:text-gray-300">← Kembali ke Halaman Utama</a>
+        </div>
+    </div>
+</body>
+</html>`;
+
+            // ==========================================
+            // TEMPLATE 3: DAFTAR.HTML (FORM)
+            // ==========================================
+            filePack.daftar = `<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran Istikmal Syariah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style> body { background-color: %23061b18; color: white; font-family: sans-serif; } </style>
+</head>
+<body class="min-h-screen p-5 pt-8 flex flex-col items-center">
+    <div class="max-w-md w-full space-y-6">
+        <div class="text-center">
+            <h1 class="text-2xl font-black text-[#d4af37] tracking-tight">FORM PENDAFTARAN</h1>
+            <p class="text-xs text-gray-400 mt-1 uppercase font-semibold tracking-widest">Istikmal Syariah Funnel</p>
+        </div>
+
+        <div class="bg-[#102d28] p-5 rounded-2xl border border-gray-800 space-y-4 shadow-xl">
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-1">Nama Lengkap Anda</label>
+                <input type="text" id="f-nama" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Masukkan nama lengkap">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-1">Nomor WhatsApp Aktif</label>
+                <input type="number" id="f-wa" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Contoh: 0812345678">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-1">Kota Domisili Saat Ini</label>
+                <input type="text" id="f-kota" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Contoh: Tangerang">
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-gray-400 mb-1">Nama Ibu Kandung</label>
+                <input type="text" id="f-ibu" class="w-full bg-[#0a1f1b] border border-gray-600 rounded-lg p-3 text-sm text-white outline-none focus:ring-1 focus:ring-[#d4af37]" placeholder="Diperlukan untuk validasi akun syariah">
+            </div>
+
+            <button onclick="kirimForm()" class="w-full bg-[#d4af37] hover:bg-yellow-500 text-[#061b18] font-black py-4 rounded-xl text-center shadow-lg transition uppercase tracking-wide text-sm mt-4">
+                🚀 Setor Data Pendaftaran
+            </button>
+        </div>
+
+        <p class="text-[10px] text-gray-500 text-center leading-relaxed">Data pendaftaran Anda aman dan di-enkripsi otomatis untuk langsung disetorkan kepada Leader Pembimbing Resmi Anda: <span class="text-gray-300 font-bold">${nama}</span>.</p>
+    </div>
+
+    <script>
+        function kirimForm() {
+            const nama = document.getElementById('f-nama').value.trim();
+            const wa = document.getElementById('f-wa').value.trim();
+            const kota = document.getElementById('f-kota').value.trim();
+            const ibu = document.getElementById('f-ibu').value.trim();
+
+            if(!nama || !wa) { alert('Mohon isi Nama dan WhatsApp Anda!'); return; }
+
+            const pesan = \`*PENDAFTARAN ISTIKMAL SYARIAH*\\n\\nHalo Leader, saya mau mendaftar slot program Umroh Syariah.\\n\\n• Nama: \${nama}\\n• No WA: \hd_wa || wa}\\n• Kota: \${kota}\\n• Ibu Kandung: \${ibu}\\n\\nMohon diproses bimbingannya!\`;
+            window.open('https://wa.me/${wa}?text=' + encodeURIComponent(pesan), '_blank');
+        }
+    <\/script>
+</body>
+</html>`;
+
+            // Tampilkan kotak unduhan
+            document.getElementById('download-box').classList.remove('hidden');
+            document.getElementById('download-box').scrollIntoView({ behavior: 'smooth' });
         }
 
-        async function salinLink(elementId, btn) {
-            const linkText = document.getElementById(elementId).innerText;
-            const originalText = btn.innerHTML;
-            const originalClass = btn.className;
+        // ENGINE PENGUNDUH BLOB FILE TANPA SERVER (MURNI SISI KLIEN)
+        function unduhFile(key) {
+            let content = filePack[key];
+            let filename = "index.html";
+            if (key === 'hot') filename = "hot.html";
+            if (key === 'daftar') filename = "daftar.html";
 
-            try {
-                await navigator.clipboard.writeText(linkText);
-                btn.innerHTML = "✅ Tersalin!";
-                btn.className = "w-full bg-green-500 text-white text-xs font-bold py-2.5 rounded-lg transition";
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.className = originalClass;
-                }, 2000);
-            } catch (err) {
-                const textarea = document.createElement("textarea");
-                textarea.value = linkText;
-                document.body.appendChild(textarea);
-                textarea.select();
-                document.execCommand("copy");
-                document.body.removeChild(textarea);
-                alert("Link berhasil disalin!");
-            }
+            if(!content) { alert('Silakan klik tombol racik terlebih dahulu!'); return; }
+
+            const blob = new Blob([content], { type: "text/html;charset=utf-8" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(blob);
+            link.download = filename;
+            link.click();
+            URL.revokeObjectURL(link.href);
         }
     </script>
 </body>
