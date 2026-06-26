@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM V12 - Multi-Object AI Builder</title>
+    <title>NPA SMART SYSTEM V12 - Super Auto AI Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600;700&family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -18,9 +18,9 @@
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
                 <div class="bg-amber-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V12</div>
-                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">SaaS Multi-Object Builder</h1>
+                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">SaaS Auto-Pilot Builder</h1>
             </div>
-            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">AI Engine Active</div>
+            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">100% Fully Automated</div>
         </div>
     </header>
 
@@ -33,18 +33,31 @@
 
         <div class="bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-2xl border border-slate-800 space-y-6">
             
-            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50">
-                <label class="block text-xs font-black text-amber-400 uppercase tracking-wider mb-2">🎯 1. Pilih Target / Objek Landing Page</label>
-                <select id="pilihan-objek" class="w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-amber-500 transition" onchange="suntikTemplateAI()">
-                    <option value="3ireborn">1. 3iReborn (Financial Freedom & Network)</option>
-                    <option value="istikmal">2. Istikmal Syariah (Tabungan Umroh Aman)</option>
-                    <option value="cruise">3. Reward Cruise (Luxury Travel Lifestyle)</option>
-                    <option value="bali">4. Melali Bali (Eksplorasi & Bisnis Wisata Bali)</option>
-                    <option value="shopee">5. Affiliate Shopee (Kerja dari Rumah Share Link)</option>
-                    <option value="kuliner">6. Kuliner (Otomatisasi Bisnis Kuliner/UMKM)</option>
-                    <option value="wisata">7. Wisata (Kemitraan Travel Agent & Trip)</option>
-                </select>
-                <p class="text-[10px] text-slate-400 mt-2">💡 <b>Kecerdasan AI:</b> Mengubah pilihan ini akan otomatis menyesuaikan draf isi teks di bawah.</p>
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-amber-400 uppercase tracking-wider mb-2">🎯 1. Pilih Target / Objek Landing Page</label>
+                    <select id="pilihan-objek" class="w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-amber-500 transition">
+                        <option value="3ireborn">1. 3iReborn (Financial Freedom & Network)</option>
+                        <option value="istikmal">2. Istikmal Syariah (Tabungan Umroh Aman)</option>
+                        <option value="cruise">3. Reward Cruise (Luxury Travel Lifestyle)</option>
+                        <option value="bali">4. Melali Bali (Eksplorasi & Bisnis Wisata Bali)</option>
+                        <option value="shopee">5. Affiliate Shopee (Kerja dari Rumah Share Link)</option>
+                        <option value="kuliner">6. Kuliner (Otomatisasi Bisnis Kuliner/UMKM)</option>
+                        <option value="wisata">7. Wisata (Kemitraan Travel Agent & Trip)</option>
+                    </select>
+                </div>
+                
+                <button onclick="suntikTemplateAI()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.3)] transition tracking-wider text-xs uppercase flex items-center justify-center gap-2 border border-emerald-400/50">
+                    ✨ Generate Teks AI & Kode
+                </button>
+            </div>
+
+            <div id="result-box" class="hidden bg-slate-950 p-4 rounded-xl border-2 border-emerald-500/30 text-center space-y-3 shadow-inner">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block">✓ Kode Selesai Dimasak Otomatis!</span>
+                <button onclick="unduhHasilKoding()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-black px-6 py-3 rounded-xl transition tracking-wider uppercase shadow-md w-full animate-bounce">
+                    ⬇️ Download file index.html Anda
+                </button>
+                <p class="text-[9px] text-slate-500 italic">Kodingan otomatis ter-update tiap kali Pakde melakukan perubahan di bawah.</p>
             </div>
 
             <div class="space-y-4">
@@ -52,25 +65,25 @@
                 <div class="grid grid-cols-2 gap-3">
                     <div>
                         <label class="block text-[11px] font-bold text-slate-400 mb-1">Nama Lengkap</label>
-                        <input type="text" id="l-nama" class="w-full rounded-lg p-2.5 text-xs" value="Sugiarto Kurniawan">
+                        <input type="text" id="l-nama" class="w-full rounded-lg p-2.5 text-xs" value="Sugiarto Kurniawan" oninput="autoCompile()">
                     </div>
                     <div>
                         <label class="block text-[11px] font-bold text-slate-400 mb-1">No WA (Awali 62)</label>
-                        <input type="number" id="l-wa" class="w-full rounded-lg p-2.5 text-xs" value="6285218453131">
+                        <input type="number" id="l-wa" class="w-full rounded-lg p-2.5 text-xs" value="6285218453131" oninput="autoCompile()">
                     </div>
                 </div>
             </div>
 
             <div class="space-y-5">
-                <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-800 pb-2">🎨 Kustomisasi Gaya per Seksi</h3>
+                <h3 class="text-xs font-black text-slate-400 uppercase tracking-widest border-b border-slate-800 pb-2">🎨 Kustomisasi Gaya & Sunting Manual</h3>
                 
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
                     <span class="text-xs font-bold text-amber-400 block uppercase tracking-wider">🪝 Seksi Hook Atas</span>
-                    <textarea id="t-hook" rows="2" class="w-full rounded-lg p-2 text-xs"></textarea>
+                    <textarea id="t-hook" rows="2" class="w-full rounded-lg p-2 text-xs" placeholder="Pilih target lalu klik Generate..." oninput="autoCompile()"></textarea>
                     <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Font Hook</label>
-                            <select id="f-hook" class="w-full rounded p-1.5 text-[11px]">
+                            <select id="f-hook" class="w-full rounded p-1.5 text-[11px]" onchange="autoCompile()">
                                 <option value="'Poppins', sans-serif">Poppins (Modern)</option>
                                 <option value="'Montserrat', sans-serif" selected>Montserrat (Tegas)</option>
                                 <option value="'Playfair Display', serif">Playfair (Elegan)</option>
@@ -79,18 +92,18 @@
                         </div>
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Warna Teks</label>
-                            <input type="color" id="c-hook" class="w-full h-8 rounded cursor-pointer" value="#fbbf24">
+                            <input type="color" id="c-hook" class="w-full h-8 rounded cursor-pointer" value="#fbbf24" onchange="autoCompile()">
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
                     <span class="text-xs font-bold text-sky-400 block uppercase tracking-wider">📢 Seksi Judul Utama</span>
-                    <textarea id="t-judul" rows="2" class="w-full rounded-lg p-2 text-xs"></textarea>
+                    <textarea id="t-judul" rows="2" class="w-full rounded-lg p-2 text-xs" placeholder="Judul utama..." oninput="autoCompile()"></textarea>
                     <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Font Judul</label>
-                            <select id="f-judul" class="w-full rounded p-1.5 text-[11px]">
+                            <select id="f-judul" class="w-full rounded p-1.5 text-[11px]" onchange="autoCompile()">
                                 <option value="'Poppins', sans-serif">Poppins</option>
                                 <option value="'Montserrat', sans-serif" selected>Montserrat</option>
                                 <option value="'Playfair Display', serif">Playfair</option>
@@ -99,18 +112,18 @@
                         </div>
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Warna Teks</label>
-                            <input type="color" id="c-judul" class="w-full h-8 rounded cursor-pointer" value="#ffffff">
+                            <input type="color" id="c-judul" class="w-full h-8 rounded cursor-pointer" value="#ffffff" onchange="autoCompile()">
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 space-y-3">
                     <span class="text-xs font-bold text-emerald-400 block uppercase tracking-wider">📄 Seksi Deskripsi & Bukti</span>
-                    <textarea id="t-deskripsi" rows="3" class="w-full rounded-lg p-2 text-xs"></textarea>
+                    <textarea id="t-deskripsi" rows="3" class="w-full rounded-lg p-2 text-xs" placeholder="Deskripsi peluang..." oninput="autoCompile()"></textarea>
                     <div class="grid grid-cols-2 gap-2">
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Font Deskripsi</label>
-                            <select id="f-deskripsi" class="w-full rounded p-1.5 text-[11px]">
+                            <select id="f-deskripsi" class="w-full rounded p-1.5 text-[11px]" onchange="autoCompile()">
                                 <option value="'Poppins', sans-serif" selected>Poppins</option>
                                 <option value="'Inter', sans-serif">Inter</option>
                                 <option value="'Roboto Condensed', sans-serif">Roboto</option>
@@ -118,36 +131,24 @@
                         </div>
                         <div>
                             <label class="block text-[10px] text-slate-400 mb-1">Warna Teks</label>
-                            <input type="color" id="c-deskripsi" class="w-full h-8 rounded cursor-pointer" value="#cbd5e1">
+                            <input type="color" id="c-deskripsi" class="w-full h-8 rounded cursor-pointer" value="#cbd5e1" onchange="autoCompile()">
                         </div>
                     </div>
                 </div>
 
                 <div class="bg-slate-950 p-4 rounded-xl border border-slate-800 grid grid-cols-2 gap-3">
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">🎨 Warna BG Web</label>
-                        <input type="color" id="c-bg" class="w-full h-8 rounded cursor-pointer" value="#0f172a">
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">🎨 BG Web</label>
+                        <input type="color" id="c-bg" class="w-full h-8 rounded cursor-pointer" value="#0f172a" onchange="autoCompile()">
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">🚀 Warna Tombol CTA</label>
-                        <input type="color" id="c-btn" class="w-full h-8 rounded cursor-pointer" value="#f59e0b">
+                        <label class="block text-xs font-bold text-slate-400 mb-1 uppercase tracking-wider">🚀 Tombol CTA</label>
+                        <input type="color" id="c-btn" class="w-full h-8 rounded cursor-pointer" value="#f59e0b" onchange="autoCompile()">
                     </div>
                 </div>
             </div>
 
-            <button onclick="prosesSaaSGen()" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-4 rounded-xl shadow-lg transition tracking-widest uppercase text-sm">
-                ⚙️ Kompilasi Struktur Kode V12
-            </button>
         </div>
-
-        <div id="result-box" class="hidden mt-6 bg-slate-900 p-5 rounded-2xl border border-amber-500/30 text-center space-y-4">
-            <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block">✓ Kode Berhasil Dikompilasi Sempurna!</span>
-            <p class="text-xs text-slate-400 leading-relaxed">File <b>index.html</b> khusus objek pilihan Anda siap diunduh dan diterbangkan ke markas GitHub Pages / Netlify Pakde.</p>
-            <button onclick="unduhHasilKoding()" class="bg-blue-600 hover:bg-blue-500 text-white text-xs font-black px-6 py-3.5 rounded-xl transition tracking-wider uppercase shadow-md w-full">
-                ⬇️ Download file index.html
-            </button>
-        </div>
-
     </main>
 
     <script>
@@ -191,20 +192,25 @@
 
         let outputCode = "";
 
+        // Fungsi Tombol Generate AI
         function suntikTemplateAI() {
-            const objek = document.getElementById('pfilename' || 'pilihan-objek').value;
+            const objek = document.getElementById('pilihan-objek').value;
             const data = databaseAI[objek];
             if(data) {
                 document.getElementById('t-hook').value = data.hook;
                 document.getElementById('t-judul').value = data.judul;
                 document.getElementById('t-deskripsi').value = data.deskripsi;
+                
+                // Langsung jalankan kompilasi otomatis tanpa nunggu
+                autoCompile();
+                
+                // Scroll ke tombol download biar langsung kelihatan canggihnya
+                document.getElementById('result-box').scrollIntoView({ behavior: 'smooth' });
             }
         }
 
-        // Jalankan trigger pertama kali saat halaman dibuka
-        window.onload = function() { suntikTemplateAI(); };
-
-        function prosesSaaSGen() {
+        // FUNGSI INTI: AUTO-COMPILE REALTIME (SERBA OTOMATIS)
+        function autoCompile() {
             const nama = document.getElementById('l-nama').value;
             const wa = document.getElementById('l-wa').value;
             const hook = document.getElementById('t-hook').value;
@@ -221,34 +227,40 @@
             const bgWeb = document.getElementById('c-bg').value;
             const btnColor = document.getElementById('c-btn').value;
 
-            // STRUKTUR GENERATED CODE YANG DI-FIX BUG FOOTERNYA
+            // Jika belum di-generate atau kosong, sembunyikan kotak unduh
+            if(!hook && !judul && !desk) {
+                document.getElementById('result-box').classList.add('hidden');
+                return;
+            }
+
+            // Racik struktur kode secara langsung di memori
             outputCode = `<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${judul}</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>\${judul}</title>
+    <script src="https://cdn.tailwindcss.com"></` + `script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600;700&family=Inter:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
 </head>
-<body style="background-color: ${bgWeb}; color: white;" class="min-h-screen flex flex-col items-center p-5 pt-12 pb-24">
+<body style="background-color: \${bgWeb}; color: white;" class="min-h-screen flex flex-col items-center p-5 pt-12 pb-24">
     <div class="max-w-md w-full text-center space-y-8">
         
-        <p style="font-family: ${fHook}; color: ${cHook};" class="text-xs font-black uppercase tracking-widest px-2 leading-relaxed">
-            ${hook}
+        <p style="font-family: \${fHook}; color: \${cHook};" class="text-xs font-black uppercase tracking-widest px-2 leading-relaxed">
+            \${hook}
         </p>
 
-        <h1 style="font-family: ${fJudul}; color: ${cJudul};" class="text-2xl sm:text-3xl font-black leading-tight tracking-tight">
-            ${judul}
+        <h1 style="font-family: \${fJudul}; color: \${cJudul};" class="text-2xl sm:text-3xl font-black leading-tight tracking-tight">
+            \${judul}
         </h1>
 
-        <p style="font-family: ${fDesk}; color: ${cDesk};" class="text-sm leading-relaxed text-justify sm:text-center px-2">
-            ${desk}
+        <p style="font-family: \${fDesk}; color: \${cDesk};" class="text-sm leading-relaxed text-justify sm:text-center px-2">
+            \${desk}
         </p>
 
         <div class="pt-4">
-            <a href="https://wa.me/${wa}?text=Halo%20${encodeURIComponent(nama)},%20saya%20tertarik%20ingin%20tahu%20lebih%20lanjut%20mengenai%20peluang%20ini." 
-               style="background-color: ${btnColor};" 
+            <a href="https://wa.me/\${wa}?text=Halo%20\${encodeURIComponent(nama)},%20saya%20tertarik%20ingin%20tahu%20lebih%20lanjut%20mengenai%20peluang%20ini." 
+               style="background-color: \${btnColor};" 
                class="block w-full text-slate-950 font-black py-4 rounded-xl shadow-lg transition tracking-wider uppercase text-sm">
                 Pelajari Solusinya Sekarang ➔
             </a>
@@ -256,7 +268,7 @@
 
         <div class="bg-white/5 border border-white/10 p-4 rounded-xl text-xs text-left">
             <span class="text-slate-400 block mb-1">Konsultan Resmi & Mentor Pembimbing:</span>
-            <span class="text-sm font-bold text-white block">${nama}</span>
+            <span class="text-sm font-bold text-white block">\${nama}</span>
             <span class="text-[10px] text-amber-400 font-semibold uppercase tracking-widest">Under Nganggur Preneur Akademi</span>
         </div>
 
@@ -273,8 +285,8 @@
 </body>
 </html>`;
 
+            // Tampilkan kotak download secara instant
             document.getElementById('result-box').classList.remove('hidden');
-            document.getElementById('result-box').scrollIntoView({ behavior: 'smooth' });
         }
 
         function unduhHasilKoding() {
