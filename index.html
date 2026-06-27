@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM V5.1 - Landing Page Builder PRO</title>
+    <title>NPA SMART SYSTEM V5.2 - Landing Page Builder PRO</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -13,8 +13,10 @@
         html, body { height: 100dvh; overflow: hidden; margin: 0; padding: 0; }
         .prev-html-render s { color: #ff4d4d; text-decoration: line-through; font-weight: normal; margin-right: 4px; }
         .prev-html-render badge { display: inline-block; background-color: #3b82f6; color: white; font-size: 11px; padding: 2px 8px; border-radius: 9999px; font-weight: bold; margin-top: 4px; }
-        .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; }
-        @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }
+        
+        /* Blob statis (Animasi dihapus sesuai request) */
+        .blob-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+        
         /* WA Floating Animation */
         @keyframes pulse-wa { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
         .wa-floating { animation: pulse-wa 2s infinite; }
@@ -25,7 +27,7 @@
     <!-- TOP NAVIGATION BAR -->
     <header class="bg-blue-900 text-white p-3 flex justify-between items-center shadow-md z-20 flex-shrink-0">
         <div class="flex items-center gap-2">
-            <div class="bg-white text-blue-900 px-2 py-0.5 rounded font-black text-xs sm:text-sm animate-pulse">NPA V5.1</div>
+            <div class="bg-amber-400 text-blue-900 px-2 py-0.5 rounded font-black text-xs sm:text-sm animate-pulse">NPA V5.2</div>
             <h1 class="font-bold text-xs sm:text-base tracking-tight truncate max-w-[140px] sm:max-w-none">LP Builder 3IReborn</h1>
         </div>
         <div class="flex gap-1.5">
@@ -41,6 +43,13 @@
         <aside class="w-full h-[45%] lg:h-full lg:w-1/3 xl:w-1/4 bg-white border-b lg:border-b-0 lg:border-r shadow-md flex flex-col overflow-y-auto scrollbar-hide">
             <div class="p-4 space-y-5">
                 
+                <!-- KOTAK CADANGAN MANUAL -->
+                <div id="box-manual" class="hidden bg-red-50 border border-red-200 p-3 rounded-lg text-center mb-2">
+                    <p class="text-[10px] text-red-600 font-bold mb-1">HP Menolak Salin Otomatis!</p>
+                    <p class="text-[9px] text-gray-600 mb-2">Saran: Gunakan tombol <b>Download HTML</b> lalu upload filenya ke Netlify. Atau tahan & salin teks di bawah:</p>
+                    <textarea id="kode-manual" class="w-full h-16 text-[8px] p-2 border rounded" readonly></textarea>
+                </div>
+
                 <div class="bg-blue-50 p-3 rounded-xl border border-blue-100 space-y-2.5">
                     <h2 class="text-xs font-bold text-blue-900 uppercase tracking-wider">🎨 Tampilan Utama</h2>
                     <div>
@@ -107,6 +116,105 @@
                 <div>
                     <h2 class="text-xs font-bold text-gray-800 border-b pb-1 mb-1.5 flex justify-between items-center uppercase text-gray-500"><span>❓ FAQ</span><button onclick="addFaq()" class="text-[10px] bg-blue-100 text-blue-700 px-1.5 py-0.5 rounded font-bold">+ Tambah</button></h2>
                     <div id="faq-list" class="space-y-2"></div>
+                </div>
+
+                <div>
+                    <h2 class="text-xs font-bold text-gray-800 border-b pb-1 mb-2 uppercase tracking-wider text-gray-500">⚙️ Footer & Legal</h2>
+                    <div class="space-y-2">
+                        <textarea id="input-disclaimer" oninput="updatePreview()" rows="2" class="w-full border rounded p-1.5 text-[10px]" placeholder="Disclaimer">DISCLAIMER: Hasil setiap individu dapat berbeda tergantung pada dedikasi dan pemahaman terhadap sistem yang diberikan.</textarea>
+                        <input type="text" id="input-fb" oninput="updatePreview()" placeholder="Link Facebook" class="w-full border rounded p-1.5 text-xs">
+                        <input type="text" id="input-ig" oninput="updatePreview()" placeholder="Link Instagram" class="w-full border rounded p-1.5 text-xs">
+                        <input type="text" id="input-tiktok" oninput="updatePreview()" placeholder="Link TikTok" class="w-full border rounded p-1.5 text-xs">
+                        <input type="text" id="input-tags" oninput="updatePreview()" class="w-full border rounded p-1.5 text-xs" value="NpaSmartSystem, 3iReborn, NganggurAjaBisa, DisabilitasPunyaKarya">
+                    </div>
+                </div>
+
+                <div class="pb-10"></div>
+            </div>
+        </aside>
+
+        <!-- PANEL KANAN: LIVE PREVIEW -->
+        <aside class="w-full h-[55%] lg:h-full lg:w-2/3 xl:w-3/4 bg-gray-300 p-2 flex flex-col min-h-0">
+            <div class="bg-white w-full h-full rounded-xl shadow-xl flex flex-col overflow-hidden border border-gray-400">
+                <div class="bg-gray-100 border-b px-3 py-1.5 flex items-center justify-between flex-shrink-0 z-10">
+                    <div class="flex items-center gap-1.5"><div class="w-2 h-2 rounded-full bg-red-400"></div><div class="w-2 h-2 rounded-full bg-yellow-400"></div><div class="w-2 h-2 rounded-full bg-green-400"></div></div>
+                    <div class="text-[10px] bg-white border px-2 py-0.5 rounded text-gray-500 truncate font-mono">live-preview.html</div>
+                </div>
+                
+                <div id="preview-frame" class="flex-1 overflow-y-auto w-full bg-slate-50 relative scroll-smooth">
+                    <div id="export-target" style="font-family: 'Poppins', sans-serif;" class="text-gray-800 antialiased bg-white min-h-screen relative prev-html-render">
+                        
+                        <!-- NAVBAR LOGO DENGAN BLOK WARNA -->
+                        <nav class="w-full px-6 py-4 flex justify-between items-center theme-bg shadow-md relative z-20">
+                            <img id="prev-logo" src="" alt="Logo" class="hidden h-12 md:h-16 object-contain drop-shadow-sm">
+                            <a href="#cta-section" class="prev-cta-link hidden md:inline-block px-5 py-2 rounded-full bg-white theme-text font-bold text-sm shadow transition transform hover:-translate-y-0.5">Gabung Sekarang</a>
+                        </nav>
+
+                        <!-- SPLIT HERO SECTION -->
+                        <section class="pt-12 pb-16 px-6 lg:px-12 w-full flex flex-col-reverse lg:flex-row items-center gap-10 theme-grad">
+                            <div class="max-w-7xl mx-auto w-full flex flex-col-reverse lg:flex-row items-center gap-10">
+                                <!-- Left: Text -->
+                                <div class="lg:w-1/2 flex flex-col items-start text-left z-10">
+                                    <span id="prev-tagline" class="inline-block py-1.5 px-4 rounded-full bg-white text-gray-700 shadow-sm text-[11px] sm:text-xs font-bold tracking-widest mb-4 border uppercase">TINGGALKAN CARA LAMA!</span>
+                                    <h1 id="prev-judul" class="text-4xl lg:text-5xl font-extrabold leading-tight text-gray-900 mb-5">Revolusi Bisnis Anda dengan 3IReborn</h1>
+                                    <p id="prev-hook" class="text-sm sm:text-base text-gray-700 mb-8 leading-relaxed font-medium">Dapatkan 10x Lipat Prospek Tanpa Pusing Follow-Up Manual. Sistem cerdas bekerja untuk Anda.</p>
+                                    <a href="#cta-section" class="prev-cta-link inline-block px-8 py-3.5 rounded-full text-white font-bold shadow-xl transition transform hover:-translate-y-1 theme-bg theme-shadow">
+                                        <span class="prev-cta-text">Ya, Hubungi Saya Sekarang!</span>
+                                    </a>
+                                </div>
+                                <!-- Right: Image with Blob -->
+                                <div class="lg:w-1/2 relative flex justify-center mt-4 lg:mt-0 w-full">
+                                    <div class="absolute inset-0 blob-shape theme-bg opacity-10 scale-105"></div>
+                                    <div class="absolute inset-0 blob-shape theme-bg opacity-20 scale-90 translate-x-4"></div>
+                                    <img id="prev-photo" src="" alt="Hero Image" class="hidden relative z-10 w-full max-w-[260px] lg:max-w-[320px] rounded-2xl shadow-2xl object-cover aspect-[3/4] border-4 border-white">
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- BENEFIT CARDS SECTION -->
+                        <section class="py-16 px-6 bg-white">
+                            <div class="max-w-6xl mx-auto">
+                                <div class="text-center mb-12">
+                                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Kenapa Harus Gabung di NPA System?</h2>
+                                    <p class="text-gray-500">Fasilitas eksklusif yang akan melipatgandakan kecepatan bisnis Anda.</p>
+                                </div>
+                                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">🔗</div>
+                                        <h3 class="font-bold text-gray-900 mb-2">Tools Referral</h3>
+                                        <p id="prev-b1" class="text-xs text-gray-600 leading-relaxed">Dapat Tools Generate Referral yang siap pakai dan terotomatisasi.</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">📱</div>
+                                        <h3 class="font-bold text-gray-900 mb-2">Tools Follow Up</h3>
+                                        <p id="prev-b2" class="text-xs text-gray-600 leading-relaxed">Tools Follow up 139 eksklusif, baik untuk mengelola mitra maupun calon mitra.</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">🤖</div>
+                                        <h3 class="font-bold text-gray-900 mb-2">AI FB Generator</h3>
+                                        <p id="prev-b3" class="text-xs text-gray-600 leading-relaxed">Tools AI Generator Facebook Pro untuk membuat Caption yang berpola HOOK-MASALAH-SOLUSI-CTA-TAG.</p>
+                                    </div>
+                                    <div class="bg-gray-50 p-6 rounded-2xl border border-gray-100 hover:-translate-y-1 transition duration-300">
+                                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-4 theme-bg-light theme-text text-2xl shadow-sm">💬</div>
+                                        <h3 class="font-bold text-gray-900 mb-2">Grup Support WA</h3>
+                                        <p id="prev-b4" class="text-xs text-gray-600 leading-relaxed">Group WA khusus yang berisi dukungan Tools Generate untuk membuat konten viral.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- ABOUT ME & YOUTUBE SECTION -->
+                        <section class="py-16 px-6 lg:px-12 max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+                            <div class="lg:w-1/2 flex items-center gap-6 bg-white p-6 rounded-3xl shadow-lg shadow-gray-100 border border-gray-100">
+                                <img id="prev-profile" src="" alt="Profile" class="hidden w-24 h-24 sm:w-32 sm:h-32 object-cover rounded-full border-4 theme-border shadow-md flex-shrink-0">
+                                <div>
+                                    <h3 class="text-xs font-bold tracking-widest uppercase mb-1 theme-text">About Me</h3>
+                                    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Mari Sukses Bersama</h2>
+                                    <p id="prev-about" class="text-xs sm:text-sm text-gray-600 leading-relaxed">Saya adalah Mentor dan Digital Creator yang siap mendampingi Anda membangun pasif income melalui sistem cerdas dan otomatis.</p>
+                                </div>
+                            </div>
+                            <div class="lg:w-1/2 w-full">
+                                <div id="youtube-wrapper" class="hidden w-full aspect-video rounded-2xl overflow-hidden s                    <div id="faq-list" class="space-y-2"></div>
                 </div>
 
                 <div>
