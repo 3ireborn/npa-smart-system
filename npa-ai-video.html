@@ -3,221 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA UNIVERSAL AI DIRECTOR - Video Prompt Generator</title>
+    <title>NPA HYPE DIRECTOR STUDIO</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
-        select, input, textarea { background-color: #1e293b !important; border: 1px solid #475569 !important; color: white !important; }
-        select:focus, input:focus, textarea:focus { border-color: #38bdf8 !important; outline: none; }
-        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        body { 
+            font-family: 'Space Grotesk', sans-serif; 
+            background-color: #f4f4f0;
+            /* Background Titik-titik (Neo-Brutalism) */
+            background-image: radial-gradient(#000 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        /* Style Border & Shadow Khas Brutalism */
+        .brutal-box { border: 3px solid #000; box-shadow: 5px 5px 0px 0px #000; border-radius: 0; }
+        .brutal-btn { border: 3px solid #000; box-shadow: 4px 4px 0px 0px #000; transition: all 0.1s; font-weight: bold; text-transform: uppercase; }
+        .brutal-btn:active { box-shadow: 0px 0px 0px 0px #000; transform: translate(4px, 4px); }
+        .brutal-input { border: 3px solid #000; border-radius: 0; background: #fff; padding: 10px; font-weight: 600; width: 100%; outline: none; }
+        .brutal-input:focus { background: #e0f2fe; }
     </style>
 </head>
-<body class="min-h-screen pb-10">
+<body class="p-2 sm:p-6 min-h-screen text-black">
 
-    <header class="bg-slate-900 border-b border-sky-500/20 p-4 shadow-xl sticky top-0 z-50">
-        <div class="max-w-2xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="bg-sky-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V2.0</div>
-                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Universal AI Video</h1>
-            </div>
-            <button onclick="autoMagic()" class="text-[10px] bg-gradient-to-r from-fuchsia-600 to-purple-600 text-white px-3 py-1.5 rounded-full font-bold shadow-lg hover:scale-105 transition transform flex items-center gap-1">
-                🪄 RACIK OTOMATIS
-            </button>
-        </div>
-    </header>
-
-    <main class="max-w-xl mx-auto p-4 sm:p-6 mt-4">
+    <div class="max-w-2xl mx-auto bg-white brutal-box p-4 sm:p-8 relative">
         
-        <div class="text-center mb-6">
-            <h1 class="text-2xl font-black text-sky-400 tracking-wide mb-1">PROMPT FACTORY PRO</h1>
-            <p class="text-[10px] text-slate-400 font-semibold tracking-widest uppercase">Generator Skenario Video TikTok & Reels</p>
+        <!-- HEADER -->
+        <div class="flex items-center gap-4 border-b-4 border-black pb-4 mb-6">
+            <div class="w-12 h-12 bg-[#22d3ee] brutal-box flex items-center justify-center">
+                <span class="text-2xl">🎥</span>
+            </div>
+            <div>
+                <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Hype Director Studio</h1>
+                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">Universal Workflow</span>
+            </div>
         </div>
 
-        <div class="bg-slate-900 p-5 rounded-2xl shadow-2xl border border-slate-800 space-y-6">
+        <!-- CONFIG SECTION -->
+        <div class="mb-4 flex items-center gap-2">
+            <span class="text-xl">⚙️</span>
+            <h2 class="text-lg font-black uppercase tracking-widest">CONFIG</h2>
+        </div>
+        <hr class="border-t-4 border-black mb-6">
+
+        <div class="space-y-5">
+            <!-- KATEGORI -->
+            <div>
+                <label class="block text-[10px] font-black text-[#e11d48] uppercase tracking-wider mb-1">📚 Kategori Konten</label>
+                <select id="kategori" class="brutal-input bg-[#fef08a]">
+                    <option value="Edukasi / Tutorial">📚 Edukasi / Tutorial</option>
+                    <option value="Promosi Bisnis">🚀 Promosi Bisnis</option>
+                    <option value="Motivasi / Storytelling">🔥 Motivasi / Storytelling</option>
+                </select>
+            </div>
+
+            <!-- CAMERA ANGLE -->
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-wider mb-1">Gaya Video / Camera Angle</label>
+                <select id="camera-angle" class="brutal-input">
+                    <option value="✨ AUTO (AI Best Match)">✨ AUTO (AI Best Match)</option>
+                    <option value="Cinematic Master Shot, Medium Close-up">Cinematic Medium Close-up</option>
+                    <option value="Dynamic Tracking Shot">Dynamic Tracking Shot</option>
+                </select>
+            </div>
+
+            <!-- IDE KASAR (KITA TARUH DI ATAS AGAR MUDAH DIBACA AI) -->
+            <div>
+                <div class="flex justify-between items-end mb-1">
+                    <label class="block text-[10px] font-black uppercase tracking-wider">Ide Kasar / Naskah Singkat</label>
+                    <button onclick="suntikKarakterPakde()" class="text-[9px] bg-black text-white px-2 py-1 uppercase font-bold hover:bg-gray-800 border border-black">✨ Auto: Karakter Pakde</button>
+                </div>
+                <textarea id="ide-kasar" rows="3" class="brutal-input text-sm" placeholder="Ketik ide mentah di sini..."></textarea>
+                <button onclick="autoGenerateDeskripsi()" class="brutal-btn bg-[#facc15] w-full py-2 text-xs mt-2">✨ Auto Setting Dari Ide Kasar</button>
+            </div>
+
+            <!-- DESKRIPSI UTAMA -->
+            <div>
+                <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-blue-700">Deskripsi Utama / Sinopsis (Skenario AI)</label>
+                <textarea id="deskripsi-utama" rows="5" class="brutal-input text-sm font-mono text-gray-700" placeholder="Hasil skenario detail akan muncul di sini..."></textarea>
+            </div>
+
+            <!-- GRID DURASI & PLATFORM -->
+            <div class="grid grid-cols-3 gap-3">
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1">Total Durasi (s)</label>
+                    <input type="number" id="durasi-total" class="brutal-input text-center" value="15">
+                </div>
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1">Max / Sheet (s)</label>
+                    <input type="number" id="durasi-max" class="brutal-input text-center" value="10">
+                </div>
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1">Platform</label>
+                    <select id="platform" class="brutal-input text-[10px] px-1">
+                        <option value="TikTok / Reels">TikTok / Reels</option>
+                        <option value="YouTube">YouTube</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- GRID ASPECT RATIO & LAINNYA -->
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">Struktur</label>
+                    <select class="brutal-input text-xs"><option>✨ AUTO (AI)</option></select>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">Aspect Ratio</label>
+                    <select id="aspect-ratio" class="brutal-input text-xs">
+                        <option value="--ar 9:16">9:16 (Vert)</option>
+                        <option value="--ar 16:9">16:9 (Horz)</option>
+                    </select>
+                </div>
+            </div>
             
-            <!-- INSTRUKSI FOTO -->
-            <div class="bg-sky-900/30 border border-sky-500/30 p-3 rounded-xl text-center">
-                <p class="text-[10px] text-sky-300 font-medium">💡 <b>TIPS:</b> Upload foto asli Anda/Produk Anda di website AI (Luma/Kling), lalu tempelkan hasil prompt dari bawah ini untuk membuatnya hidup!</p>
-            </div>
-
-            <!-- 1. OBJEK / KARAKTER UTAMA -->
-            <div class="space-y-4">
-                <h2 class="text-xs font-black text-slate-300 uppercase tracking-wider border-b border-slate-700 pb-2">👤 1. Objek / Karakter (Subjek)</h2>
-                <div>
-                    <label class="block text-[10px] font-semibold text-slate-400 mb-1">Siapa / Apa yang ada di video?</label>
-                    <textarea id="p-subjek" rows="2" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: A 30-year-old Indonesian woman wearing hijab... atau A futuristic smart watch..."></textarea>
-                </div>
-                <div>
-                    <label class="block text-[10px] font-semibold text-slate-400 mb-1">Pakaian / Penampilan (Outfit)</label>
-                    <input type="text" id="p-outfit" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: wearing a professional navy blue suit">
-                </div>
-                <div>
-                    <label class="block text-[10px] font-semibold text-slate-400 mb-1">Apa yang sedang dilakukan? (Aksi)</label>
-                    <input type="text" id="p-aksi" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: speaking enthusiastically to the camera while holding a cup of coffee">
-                </div>
-            </div>
-
-            <!-- 2. PENGATURAN SINEMATOGRAFI -->
-            <div class="space-y-4">
-                <h2 class="text-xs font-black text-slate-300 uppercase tracking-wider border-b border-slate-700 pb-2">🎥 2. Sinematografi & Latar</h2>
-                
-                <div class="grid grid-cols-2 gap-3">
-                    <div>
-                        <label class="block text-[10px] font-semibold text-slate-400 mb-1">Aspek Rasio (Format)</label>
-                        <select id="p-rasio" class="w-full rounded-lg p-2.5 text-[11px]">
-                            <option value="Vertical 9:16 aspect ratio (TikTok/Reels format)">9:16 (Tiktok / Reels)</option>
-                            <option value="Horizontal 16:9 aspect ratio (YouTube format)">16:9 (YouTube / TV)</option>
-                            <option value="Square 1:1 aspect ratio">1:1 (Instagram Post)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-semibold text-slate-400 mb-1">Sudut Kamera (Angle)</label>
-                        <select id="p-kamera" class="w-full rounded-lg p-2.5 text-[11px]">
-                            <option value="Medium close-up shot, static camera">Close-up (Dada ke atas)</option>
-                            <option value="Wide full-body shot, slow panning camera">Wide Shot (Seluruh Badan)</option>
-                            <option value="Dynamic tracking shot following the subject">Tracking Shot (Kamera Ngikutin)</option>
-                            <option value="Drone aerial shot looking down">Drone (Dari atas)</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-semibold text-slate-400 mb-1">Pencahayaan (Lighting)</label>
-                        <select id="p-cahaya" class="w-full rounded-lg p-2.5 text-[11px]">
-                            <option value="Professional cinematic studio lighting with soft shadows">Studio Profesional</option>
-                            <option value="Natural golden hour sunlight">Natural (Sore Hari)</option>
-                            <option value="Moody dramatic lighting with high contrast">Dramatis (Gelap & Keren)</option>
-                            <option value="Vibrant neon cyberpunk lighting">Neon / Cyberpunk</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-semibold text-slate-400 mb-1">Resolusi & Durasi</label>
-                        <select id="p-resolusi" class="w-full rounded-lg p-2.5 text-[11px]">
-                            <option value="Hyper-realistic, 8k resolution, highly detailed, 10-second duration">8K Super Jernih (10 Detik)</option>
-                            <option value="Cinematic film grain, 4k resolution, 5-second duration">4K Cinematic (5 Detik)</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div>
-                    <label class="block text-[10px] font-semibold text-slate-400 mb-1">Latar Belakang (Background)</label>
-                    <input type="text" id="p-bg" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: in a modern office with glass walls / blurred aesthetic cafe">
-                </div>
-            </div>
-
-            <!-- TOMBOL GENERATE -->
-            <button onclick="generatePrompt()" class="w-full bg-sky-600 hover:bg-sky-500 text-white font-black py-3 rounded-xl transition tracking-wider uppercase text-xs shadow-[0_0_15px_rgba(14,165,233,0.3)]">
-                ⚙️ Susun Skenario Sekarang
+            <!-- TOMBOL GENERATE WORKFLOW -->
+            <button onclick="generateWorkflow()" class="brutal-btn bg-[#22d3ee] w-full py-4 text-sm mt-6 mb-8 text-black">
+                🚀 GENERATE UNIVERSAL WORKFLOW
             </button>
-
-            <!-- 3. HASIL PROMPT (COPY AREA) -->
-            <div class="bg-slate-950 p-4 rounded-xl border-2 border-sky-500/30 space-y-3 shadow-inner relative mt-4">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">📝 Hasil Prompt AI (Copy-Paste ke Luma/Kling):</span>
-                
-                <textarea id="output-prompt" rows="7" class="w-full bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-sky-300 leading-relaxed font-mono" readonly placeholder="Hasil prompt akan muncul di sini..."></textarea>
-                
-                <button onclick="salinPrompt()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-xl transition tracking-wider uppercase text-xs mt-2 shadow-[0_0_15px_rgba(16,185,129,0.3)] flex items-center justify-center gap-2">
-                    📋 SALIN PROMPT
-                </button>
-            </div>
-
         </div>
-    </main>
+
+        <!-- OUTPUT SECTION (HASIL PROMPT) -->
+        <div id="output-container" class="space-y-6 hidden border-t-4 border-black pt-8">
+            <h2 class="text-xl font-black uppercase tracking-widest text-center mb-6 bg-black text-white py-2">OUTPUT STUDIO</h2>
+            
+            <div id="render-hasil" class="space-y-8">
+                <!-- Hasil Generate akan disuntik ke sini -->
+            </div>
+        </div>
+
+    </div>
 
     <script>
-        // Data preset untuk "Tombol Ajaib"
-        const magicPresets = [
-            {
-                subjek: "A confident 30-year-old Indonesian male entrepreneur",
-                outfit: "wearing a smart casual blazer over a white t-shirt",
-                aksi: "explaining a business concept enthusiastically while making natural hand gestures",
-                bg: "in a bright modern coworking space with blurred background",
-                cahaya: "Professional cinematic studio lighting with soft shadows",
-                kamera: "Medium close-up shot, static camera",
-                rasio: "Vertical 9:16 aspect ratio (TikTok/Reels format)",
-                resolusi: "Hyper-realistic, 8k resolution, highly detailed, 10-second duration"
-            },
-            {
-                subjek: "A young Indonesian woman wearing a stylish modern hijab",
-                outfit: "wearing a pastel minimalist dress",
-                aksi: "looking at the camera, smiling gently and pointing at floating digital graphics",
-                bg: "in an aesthetic minimalist cafe with warm wooden textures",
-                cahaya: "Natural golden hour sunlight",
-                kamera: "Medium close-up shot, static camera",
-                rasio: "Vertical 9:16 aspect ratio (TikTok/Reels format)",
-                resolusi: "Hyper-realistic, 8k resolution, highly detailed, 10-second duration"
-            }
-        ];
-
-        function autoMagic() {
-            // Pilih acak dari preset
-            const random = magicPresets[Math.floor(Math.random() * magicPresets.length)];
-            
-            document.getElementById('p-subjek').value = random.subjek;
-            document.getElementById('p-outfit').value = random.outfit;
-            document.getElementById('p-aksi').value = random.aksi;
-            document.getElementById('p-bg').value = random.bg;
-            document.getElementById('p-cahaya').value = random.cahaya;
-            document.getElementById('p-kamera').value = random.kamera;
-            document.getElementById('p-rasio').value = random.rasio;
-            document.getElementById('p-resolusi').value = random.resolusi;
-            
-            generatePrompt();
-            
-            // Animasi efek magic
-            const btn = document.querySelector('button[onclick="autoMagic()"]');
-            btn.innerHTML = "✨ DIRACIK!";
-            setTimeout(() => btn.innerHTML = "🪄 RACIK OTOMATIS", 1500);
+        function suntikKarakterPakde() {
+            const ideKasar = document.getElementById('ide-kasar');
+            ideKasar.value = "Pakde Sugiarto (56 tahun, pakai kacamata, baju koko, peci). Tangan kiri amputasi di bisep, lengan baju kosong. Tangan kanan pegang mic wireless Saramonic. Dia lagi ngomong serius ngasih motivasi bisnis.";
+            // Beri efek highlight
+            ideKasar.style.backgroundColor = "#bbf7d0";
+            setTimeout(() => ideKasar.style.backgroundColor = "#fff", 500);
         }
 
-        function generatePrompt() {
-            const subjek = document.getElementById('p-subjek').value.trim();
-            const outfit = document.getElementById('p-outfit').value.trim();
-            const aksi = document.getElementById('p-aksi').value.trim();
-            const bg = document.getElementById('p-bg').value.trim();
-            const rasio = document.getElementById('p-rasio').value;
-            const kamera = document.getElementById('p-kamera').value;
-            const cahaya = document.getElementById('p-cahaya').value;
-            const resolusi = document.getElementById('p-resolusi').value;
+        function autoGenerateDeskripsi() {
+            const ide = document.getElementById('ide-kasar').value;
+            if(!ide) { alert("Isi Ide Kasar dulu Pakde!"); return; }
 
-            if(!subjek) {
-                document.getElementById('output-prompt').value = "Harap isi kolom Subjek/Karakter Utama terlebih dahulu atau tekan tombol RACIK OTOMATIS.";
-                return;
-            }
-
-            // Merangkai Skenario Video AI
-            let prompt = `Video clip of ${subjek}`;
-            if(outfit) prompt += `, ${outfit}`;
-            if(aksi) prompt += `, ${aksi}`;
-            if(bg) prompt += `, ${bg}.`;
-            else prompt += `.`;
-
-            prompt += `\n\nCinematography: ${kamera}. ${cahaya}. ${resolusi}. Format: ${rasio}. Make movements smooth and highly realistic.`;
-            
-            document.getElementById('output-prompt').value = prompt;
-        }
-
-        function salinPrompt() {
-            const promptText = document.getElementById('output-prompt').value;
-            if(!promptText || promptText.includes("Harap isi kolom")) {
-                alert("Generate prompt terlebih dahulu!");
-                return;
-            }
-
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(promptText).then(() => {
-                    alert("✅ Prompt Skenario Berhasil Disalin!");
-                }).catch(err => {
-                    salinManual();
-                });
+            // Simulasi AI memproses ide kasar menjadi bahasa Inggris terstruktur
+            let deskripsi = "";
+            if(ide.toLowerCase().includes("pakde") || ide.toLowerCase().includes("amputasi")) {
+                deskripsi = "A photorealistic cinematic portrayal of a 56-year-old Indonesian digital mentor wearing glasses, a traditional koko shirt, and a peci cap. CRITICAL DETAIL: His left arm is physically amputated at the bicep, and the left sleeve of the shirt is completely empty and flat, lying naturally against his body. No left hand or forearm is visible. He holds a small black Saramonic wireless microphone near his lips with his right hand. He speaks with a serious, motivating expression. The camera is tightly cropped at chest level to ensure visual consistency.";
             } else {
-                salinManual();
+                deskripsi = "A highly detailed, cinematic scene based on: " + ide + ". Professional studio lighting, hyper-realistic details, and smooth natural movements.";
             }
+            
+            const txtDeskripsi = document.getElementById('deskripsi-utama');
+            txtDeskripsi.value = deskripsi;
+            txtDeskripsi.style.backgroundColor = "#e0f2fe";
+            setTimeout(() => txtDeskripsi.style.backgroundColor = "#fff", 500);
         }
 
-        function salinManual() {
-            document.getElementById('output-prompt').select();
-            document.execCommand('copy');
-            alert("✅ Prompt Berhasil Disalin!");
+        function copyTeks(id) {
+            const text = document.getElementById(id).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert("📋 Teks berhasil disalin!");
+            }).catch(err => {
+                alert("Gagal menyalin. Silakan block dan copy manual.");
+            });
+        }
+
+        function generateWorkflow() {
+            const deskripsi = document.getElementById('deskripsi-utama').value;
+            if(!deskripsi) { alert("Klik 'Auto Setting' dulu atau isi Deskripsi Utama!"); return; }
+
+            const total = parseInt(document.getElementById('durasi-total').value);
+            const max = parseInt(document.getElementById('durasi-max').value);
+            const ar = document.getElementById('aspect-ratio').value;
+            
+            // Hitung pecahan video (contoh: 15s total, 10s max -> part 1: 10s, part 2: 5s)
+            let parts = [];
+            let sisa = total;
+            while(sisa > 0) {
+                if(sisa >= max) { parts.push(max); sisa -= max; }
+                else { parts.push(sisa); sisa = 0; }
+            }
+
+            let htmlRender = "";
+            let startTime = 0;
+
+            parts.forEach((durasi, index) => {
+                let partNum = index + 1;
+                let endTime = startTime + durasi;
+                
+                let idStory = `st-${partNum}`;
+                let idVideo = `vd-${partNum}`;
+
+                // PROMPT STORYBOARD (BIRU)
+                htmlRender += `
+                <div class="relative">
+                    <div class="brutal-box bg-[#38bdf8] p-3 flex justify-between items-center mb-[-4px] relative z-10">
+                        <h3 class="font-black text-xs uppercase text-black">⊞ STORYBOARD FRAME (PART ${partNum} (${durasi}S))</h3>
+                        <button onclick="copyTeks('${idStory}')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY</button>
+                    </div>
+                    <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed" id="${idStory}">Create a single high-resolution storyboard reference sheet titled 'SHOT BOARD' for Sheet ${partNum} (${startTime}s - ${endTime}s). GRID: Sequential 4-panel grid. SCENE DESCRIPTION: ${deskripsi}. CAMERA: Medium Close-up. Style: Cinematic photorealistic master shot, 35mm film grain, 8k ${ar}</div>
+                </div>`;
+
+                // PROMPT VIDEO KLING/LUMA (KUNING)
+                htmlRender += `
+                <div class="relative mt-4">
+                    <div class="brutal-box bg-[#facc15] p-3 flex justify-between items-center mb-[-4px] relative z-10 border-dashed">
+                        <h3 class="font-black text-xs uppercase text-black">🎞️ LUMA / KLING VIDEO PROMPT (PART ${partNum} (${durasi}S))</h3>
+                        <button onclick="copyTeks('${idVideo}')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY</button>
+                    </div>
+                    <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed border-dashed border-4" id="${idVideo}">Animate the provided storyboard reference image exactly, maintaining strict visual continuity. The scene features: ${deskripsi}. The character's movements should be smooth, natural, and highly realistic. Keep the camera angle consistent throughout the ${durasi}-second clip.</div>
+                </div>
+                <div class="h-8"></div>`;
+
+                startTime = endTime;
+            });
+
+            document.getElementById('render-hasil').innerHTML = htmlRender;
+            document.getElementById('output-container').classList.remove('hidden');
         }
     </script>
 </body>
