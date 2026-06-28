@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA HYPE DIRECTOR STUDIO V8.1</title>
+    <title>NPA HYPE DIRECTOR STUDIO V9.0</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
         body { 
             font-family: 'Space Grotesk', sans-serif; 
@@ -28,54 +28,74 @@
         <!-- HEADER -->
         <div class="flex items-center gap-4 border-b-4 border-black pb-4 mb-6">
             <div class="w-12 h-12 bg-[#22d3ee] brutal-box flex items-center justify-center">
-                <span class="text-2xl">👑</span>
+                <span class="text-2xl">🧠</span>
             </div>
             <div>
-                <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Studio V8.1</h1>
-                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">Master Image Workflow</span>
+                <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Studio V9</h1>
+                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">Smart Context & Pro Settings</span>
             </div>
         </div>
 
         <div class="space-y-5">
             
-            <!-- 1. KATEGORI KONTEN -->
+            <!-- 1. KATEGORI KONTEN (PENENTU DIALOG) -->
             <div>
-                <label class="block text-[10px] font-black text-[#e11d48] uppercase tracking-wider mb-1">📚 Kategori Konten</label>
+                <label class="block text-[10px] font-black text-[#e11d48] uppercase tracking-wider mb-1">📚 Kategori Konten (Penentu Dialog AI)</label>
                 <select id="kategori" class="brutal-input bg-[#fef08a]">
-                    <option value="3iReborn (Financial Freedom)">1. 3iReborn</option>
-                    <option value="Istikmal Syariah (Umroh & Haji)">2. Istikmal Syariah</option>
-                    <option value="Reward Cruise (Luxury Travel)">3. Cruise</option>
-                    <option value="Melali Bali (Wisata & Liburan)">4. Melali Bali</option>
-                    <option value="UMKM (Bisnis Lokal)">5. UMKM</option>
-                    <option value="Shopee Affiliate (Review Produk)">6. Shopee Affiliate</option>
+                    <option value="istikmal">1. Istikmal Syariah (Umroh & Haji)</option>
+                    <option value="3ireborn">2. 3iReborn (Bisnis & Finansial)</option>
+                    <option value="cruise">3. Reward Cruise (Luxury Travel)</option>
+                    <option value="bali">4. Melali Bali (Wisata & Liburan)</option>
+                    <option value="umkm">5. UMKM (Bisnis Lokal)</option>
+                    <option value="shopee">6. Shopee Affiliate (Review Produk)</option>
                 </select>
             </div>
 
-            <!-- 2. LINK REFERENSI -->
-            <div>
-                <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-blue-700">🔗 Link Referensi (Opsional)</label>
-                <input type="text" id="link-ref" class="brutal-input text-xs" placeholder="https://shopee..., tiktok..., atau youtube...">
-            </div>
-
-            <!-- 3. UPLOAD FOTO REFERENSI -->
-            <div>
-                <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-green-700">🖼️ Foto Subjek / Produk Utama</label>
-                <div class="brutal-input bg-gray-50 flex items-center justify-between p-2">
-                    <input type="file" id="foto-referensi" accept="image/*" class="text-xs" onchange="previewImage(event)">
+            <!-- 2. PRO SETTINGS: KAMERA & CAHAYA -->
+            <div class="grid grid-cols-2 gap-3 border-4 border-dashed border-gray-300 p-3 bg-gray-50">
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-blue-700">🎥 Camera Angle</label>
+                    <select id="set-kamera" class="brutal-input text-[10px] px-1 py-2">
+                        <option value="Medium Close-up, eye-level angle, static shot">Medium Close-up (Dada ke atas)</option>
+                        <option value="Dynamic tracking shot, slight slow motion">Dynamic Tracking (Bergerak)</option>
+                        <option value="Macro close-up, highly detailed">Macro Close-up (Sangat Dekat)</option>
+                    </select>
                 </div>
-                <img id="img-preview" src="" class="image-preview w-full" alt="Preview Foto">
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-yellow-600">💡 Pencahayaan (Lighting)</label>
+                    <select id="set-cahaya" class="brutal-input text-[10px] px-1 py-2">
+                        <option value="Professional cinematic studio lighting, soft shadows">Cinematic Studio (Mewah)</option>
+                        <option value="Natural golden hour sunlight, warm vibe">Golden Hour (Sore Natural)</option>
+                        <option value="Bright commercial lighting, high contrast">Bright Commercial (Terang Jelas)</option>
+                    </select>
+                </div>
             </div>
 
-            <!-- 4. IDE KASAR & TEMPLATE -->
-            <div class="border-t-4 border-black pt-5 mt-2">
+            <!-- 3. LINK REFERENSI & FOTO -->
+            <div class="grid grid-cols-1 gap-3">
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">🔗 Link Referensi Video (Opsional)</label>
+                    <input type="text" id="link-ref" class="brutal-input text-xs" placeholder="Tempel link TikTok / Shopee...">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">🖼️ Foto Subjek / Produk Utama</label>
+                    <div class="brutal-input bg-gray-50 flex items-center justify-between p-1">
+                        <input type="file" id="foto-referensi" accept="image/*" class="text-xs" onchange="previewImage(event)">
+                    </div>
+                    <img id="img-preview" src="" class="image-preview w-full" alt="Preview Foto">
+                </div>
+            </div>
+
+            <!-- 4. IDE KASAR & TEMPLATE PAKDE -->
+            <div class="border-t-4 border-black pt-4 mt-2">
                 <div class="flex justify-between items-end mb-1">
-                    <label class="block text-[10px] font-black uppercase tracking-wider">Topik Bahasan / Naskah Singkat</label>
-                    <button onclick="suntikIdePakde()" class="text-[9px] bg-black text-white px-2 py-1 uppercase font-bold hover:bg-gray-800 border border-black">✨ Template HY300PRO</button>
+                    <label class="block text-[10px] font-black uppercase tracking-wider">Topik / Karakter Utama</label>
+                    <button onclick="suntikKarakterPakde()" class="text-[9px] bg-black text-white px-2 py-1 uppercase font-bold hover:bg-gray-800 border border-black transition-transform active:scale-95">✨ AUTO: KARAKTER PAKDE</button>
                 </div>
-                <textarea id="ide-kasar" rows="3" class="brutal-input text-sm" placeholder="Ketik ide mentah atau produk yang mau dibahas di sini..."></textarea>
+                <textarea id="ide-kasar" rows="3" class="brutal-input text-sm" placeholder="Jelaskan objek atau karakternya di sini..."></textarea>
             </div>
 
-            <!-- 5. GRID DURASI & ASPECT RATIO -->
+            <!-- 5. DURASI & RASIO -->
             <div class="grid grid-cols-2 gap-3 pt-2">
                 <div>
                     <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-red-600">Durasi Per Scene (s)</label>
@@ -89,14 +109,10 @@
                     </select>
                 </div>
             </div>
-            
-            <div class="bg-gray-100 p-3 border-2 border-dashed border-gray-400 text-[10px] text-gray-600 font-bold mt-2">
-                🧠 SISTEM AI: Akan men-generate 1 Prompt Gambar Master + 3 Prompt Video (Pola: HOOK/MASALAH -> SOLUSI -> CTA).
-            </div>
 
             <!-- TOMBOL GENERATE -->
-            <button onclick="generateFramework()" class="brutal-btn bg-[#22d3ee] w-full py-4 text-sm mt-6 text-black">
-                🚀 GENERATE SCRIPT 3 SCENE
+            <button onclick="generateFramework()" class="brutal-btn bg-[#22d3ee] w-full py-4 text-sm mt-6 text-black hover:bg-cyan-300">
+                🚀 GENERATE SMART SCRIPT (3 SCENE)
             </button>
         </div>
 
@@ -125,10 +141,14 @@
             }
         }
 
-        function suntikIdePakde() {
-            // Menu dropdown Kategori sudah TIDAK diotak-atik lagi oleh script ini.
-            document.getElementById('ide-kasar').value = "Pakde Sugiarto (56 tahun) promosi Projector HY300PRO karena TV lama rusak buat nonton Timnas. Tangan kiri amputasi, baju koko, peci.";
-            document.getElementById('durasi-scene').value = 8;
+        function suntikKarakterPakde() {
+            // Tombol ini HANYA mengisi textarea, TIDAK MERUBAH menu dropdown kategori.
+            const txt = document.getElementById('ide-kasar');
+            txt.value = "Pakde Sugiarto (56 tahun) memberikan presentasi. Pakaian baju koko, pakai peci dan kacamata. Tangan kiri amputasi total di bawah bahu.";
+            
+            // Efek visual sukses
+            txt.style.backgroundColor = "#bbf7d0";
+            setTimeout(() => txt.style.backgroundColor = "#fff", 500);
         }
 
         function copyTeks(id) {
@@ -140,33 +160,69 @@
             });
         }
 
+        // DATABASE DIALOG PINTAR BERDASARKAN KATEGORI
+        const dialogDatabase = {
+            "istikmal": [
+                { dialog: '"Rindu ke Baitullah tapi merasa tabungan belum juga cukup?"', teks: "RINDU BAITULLAH?" },
+                { dialog: '"Bersama Istikmal Syariah, wujudkan impian umroh Anda dengan program yang amanah dan terjangkau."', teks: "ISTIKMAL SYARIAH SOLUSINYA" },
+                { dialog: '"Jangan tunda niat baik Anda. Daftar sekarang dan amankan porsi keberangkatan Anda!"', teks: "DAFTAR SEKARANG JUGA!" }
+            ],
+            "3ireborn": [
+                { dialog: '"Gaji numpang lewat tiap bulan? Khawatir masa depan keluarga belum aman?"', teks: "GAJI NUMPANG LEWAT?" },
+                { dialog: '"3iReborn hadir memberikan solusi cerdas. Gabungan asuransi, investasi, dan income dalam satu genggaman."', teks: "SOLUSI CERDAS 3IREBORN" },
+                { dialog: '"Mulai langkah finansial Anda hari ini. Klik link di bawah untuk bergabung bersama kami!"', teks: "GABUNG SEKARANG!" }
+            ],
+            "cruise": [
+                { dialog: '"Kerja keras tiap hari tapi belum pernah merasakan liburan mewah yang sesungguhnya?"', teks: "BUTUH LIBURAN MEWAH?" },
+                { dialog: '"Bayangkan Anda berada di atas kapal pesiar mewah. Semua ini bisa jadi kenyataan lewat Reward Cruise kami!"', teks: "REWARD CRUISE GRATIS!" },
+                { dialog: '"Kejar target Anda dan mari berlayar bersama! Cek detail kualifikasinya sekarang."', teks: "CEK KUALIFIKASI DI SINI" }
+            ],
+            "bali": [
+                { dialog: '"Penat dengan rutinitas? Butuh healing menikmati indahnya pasir putih dan senja?"', teks: "PENAT RUTINITAS?" },
+                { dialog: '"Program Melali Bali siap memanjakan Anda dengan pengalaman liburan yang tak terlupakan."', teks: "PROGRAM MELALI BALI" },
+                { dialog: '"Siapkan koper Anda! Pesan tiketnya sekarang dan mari nikmati pesona Pulau Dewata."', teks: "BOOKING TIKET SEKARANG" }
+            ],
+            "umkm": [
+                { dialog: '"Banyak saingan bisnis dan bingung cara ningkatin omset penjualan harian?"', teks: "BINGUNG NAIKIN OMSET?" },
+                { dialog: '"Saatnya UMKM naik kelas! Kami punya strategi jitu yang sudah terbukti mendatangkan pembeli."', teks: "SAATNYA UMKM NAIK KELAS" },
+                { dialog: '"Jangan mau kalah sama kompetitor. Terapkan strateginya dengan klik link di bawah ini!"', teks: "KLIK UNTUK STRATEGI JITU" }
+            ],
+            "shopee": [
+                { dialog: '"Sering salah beli produk online karena termakan iklan yang nggak sesuai ekspektasi?"', teks: "SERING SALAH BELI?" },
+                { dialog: '"Nih, aku rekomendasiin produk andalan yang kualitasnya beneran juara dan harganya ramah di kantong."', teks: "REKOMENDASI PRODUK TERBAIK" },
+                { dialog: '"Mumpung lagi ada diskon dan gratis ongkir, langsung aja klik keranjang kuning sekarang!"', teks: "CEK KERANJANG KUNING" }
+            ]
+        };
+
         function generateFramework() {
             const kategori = document.getElementById('kategori').value;
             const ide = document.getElementById('ide-kasar').value;
-            if(!ide) { alert("Isi Topik Bahasan dulu Pakde!"); return; }
+            if(!ide) { alert("Isi Topik / Karakter Utama dulu Pakde!"); return; }
 
             const durasi = document.getElementById('durasi-scene').value;
             const ar = document.getElementById('aspect-ratio').value;
             const linkRef = document.getElementById('link-ref').value;
+            const setKamera = document.getElementById('set-kamera').value;
+            const setCahaya = document.getElementById('set-cahaya').value;
+            
             const isPakde = ide.toLowerCase().includes("pakde") || ide.toLowerCase().includes("amputasi");
 
             let htmlRender = "";
 
-            // TAMPILAN LINK REFERENSI (JIKA ADA)
+            // 1. TAMPILAN LINK REFERENSI
             if(linkRef) {
                 htmlRender += `
                 <div class="brutal-box bg-gray-200 p-3 mb-6 text-[10px] font-bold">
-                    🔗 CONTEKAN REFERENSI: <a href="${linkRef}" target="_blank" class="text-blue-600 underline break-all">${linkRef}</a>
-                </div>
-                `;
+                    🔗 CONTEKAN REFERENSI (Tonton untuk inspirasi gaya): <a href="${linkRef}" target="_blank" class="text-blue-600 underline break-all">${linkRef}</a>
+                </div>`;
             }
 
-            // 1. PROMPT GAMBAR MASTER (KOTAK BIRU)
+            // 2. PROMPT GAMBAR MASTER (KOTAK BIRU)
             let masterImagePrompt = "";
             if(isPakde) {
-                masterImagePrompt = `A photorealistic cinematic portrait of a 56-year-old Indonesian man wearing glasses, black koko shirt, and knitted peci. THEME: ${kategori}. CRITICAL DETAIL: His left arm is physically amputated at the bicep. The left sleeve is completely empty, flat, and hangs naturally against his side. No left hand or forearm is visible. Professional studio lighting, hyper-realistic, 8k resolution, ${ar}`;
+                masterImagePrompt = `A photorealistic cinematic portrait. SUBJECT: ${ide}. CRITICAL REQUIREMENT: His left arm is physically amputated at the bicep. The left sleeve is completely empty, flat, and hanging down. No left hand exists. He is holding a small black wireless microphone near his lips with his right hand. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. 8k resolution, ${ar}`;
             } else {
-                masterImagePrompt = `A highly detailed, cinematic scene for ${kategori}. VISUAL: ${ide}. Professional studio lighting, hyper-realistic details, ${ar}`;
+                masterImagePrompt = `A highly detailed, cinematic scene. SUBJECT: ${ide}. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. Hyper-realistic details, 8k resolution, ${ar}`;
             }
 
             htmlRender += `
@@ -179,62 +235,43 @@
                     Generate ONE single high-resolution image. <br>
                     VISUAL: ${masterImagePrompt}
                 </div>
+                <p class="text-[9px] text-red-600 font-bold mt-1 ml-1">*TIPS: Generate gambar ini dulu. Pilih 1 yang paling sesuai, simpan, lalu masukkan foto itu ke Luma/Kling.</p>
             </div>
             <hr class="border-t-4 border-gray-300 mb-8">
-            <h3 class="font-black text-center mb-4 text-lg">🎬 PROMPT AI VIDEO (LUMA / KLING)</h3>
+            <h3 class="font-black text-center mb-4 text-lg">🎬 SCRIPT & AI VIDEO PROMPT</h3>
             `;
 
-            // DATABASE POLA COPYWRITING 3 SCENE
-            const scriptData = [
-                {
-                    fase: "HOOK & MASALAH",
-                    animasi: "Camera slowly zooms in. The subject has a slightly concerned or thoughtful expression, subtly nodding.",
-                    dialog: '"Sering merasa pusing dengan masalah ini? Anda tidak sendirian..."',
-                    teksLayar: "MASALAH TERBESAR SAAT INI"
-                },
-                {
-                    fase: "SOLUSI",
-                    animasi: "The subject transitions into a warm, confident smile, showing enthusiasm and subtly gesturing with the right hand.",
-                    dialog: '"Tapi tenang, sekarang ada solusinya! Terbukti ampuh, simpel, dan hasil maksimal."',
-                    teksLayar: "SOLUSI TERBAIK & CERDAS"
-                },
-                {
-                    fase: "CTA & TAG",
-                    animasi: "The subject looks directly at the camera, giving a strong thumbs-up with the right hand, looking proud and satisfied.",
-                    dialog: '"Jangan tunda lagi. Buktikan sendiri dan cek selengkapnya sekarang juga!"',
-                    teksLayar: "KLIK LINK DI BAWAH SEKARANG"
-                }
-            ];
+            let imgHtml = uploadedImageBase64 ? `<div class="mt-4 border-t-2 border-dashed border-black pt-4"><p class="text-[10px] font-bold mb-2">FOTO REFERENSI/PRODUK:</p><img src="${uploadedImageBase64}" class="max-h-32 border-2 border-black object-contain"></div>` : ``;
 
-            let imgHtml = uploadedImageBase64 ? `<div class="mt-4 border-t-2 border-dashed border-black pt-4"><p class="text-[10px] font-bold mb-2">FOTO REFERENSI (PASTIKAN UPLOAD INI KE AI VIDEO BERSAMA PROMPT):</p><img src="${uploadedImageBase64}" class="max-h-32 border-2 border-black object-contain"></div>` : `<div class="mt-4 text-[10px] text-red-600 font-bold border-t-2 border-dashed border-black pt-4">⚠️ Peringatan: Tidak ada foto produk/referensi yang diupload.</div>`;
+            // 3. GENERATE 3 SCENE VIDEO PROMPTS (KOTAK KUNING)
+            const naskahPilihan = dialogDatabase[kategori]; // Mengambil dialog sesuai menu yang dipilih
+            const faseTitle = ["HOOK & MASALAH", "SOLUSI & EDUKASI", "CALL TO ACTION (CTA)"];
 
-            // 2. GENERATE 3 SCENE VIDEO PROMPTS (KOTAK KUNING)
-            scriptData.forEach((scene, index) => {
+            naskahPilihan.forEach((scene, index) => {
                 let partNum = index + 1;
                 let idVideo = `vd-${partNum}`;
                 
-                // Menyesuaikan dialog template jika tombol HY300 dipencet
-                let dialogText = scene.dialog;
-                let layarText = scene.teksLayar;
-                if(isPakde && ide.includes("HY300PRO")) {
-                    if(partNum === 1) { dialogText = '"Dulu saya sering pusing kalau TV di rumah tiba-tiba rusak, apalagi pas mau nonton Timnas..."'; layarText = "MASALAH: TV RUSAK LAYAR KECIL"; }
-                    if(partNum === 2) { dialogText = '"Tapi sekarang ada Projector HY300PRO! Mudah dipasang, simpel, harganya terjangkau."'; layarText = "SOLUSI: PROJECTOR HY300PRO"; }
-                    if(partNum === 3) { dialogText = '"Sekarang nonton layar besar dari rumah jadi makin seru. Cek keranjang kuning sekarang!"'; layarText = "CEK KERANJANG KUNING SEKARANG"; }
+                // LOGIKA CERDAS: Membedakan instruksi animasi Pakde vs Orang/Produk Biasa
+                let constraintAI = "";
+                if(isPakde) {
+                    constraintAI = `[STRICT AI CONSTRAINTS]: The subject is holding a microphone. ACTION: ONLY his lips and eyes move subtly as he speaks. His entire body, shoulders, and the microphone must remain STRICTLY STATIC. DO NOT hallucinate extra limbs. The left sleeve MUST remain completely empty and flat. Maintain ${setKamera} and ${setCahaya}.`;
+                } else {
+                    constraintAI = `[AI CONSTRAINTS]: Animate the subject naturally and smoothly. Maintain visual consistency. Apply ${setKamera} and ${setCahaya}.`;
                 }
 
                 htmlRender += `
                 <div class="relative mb-6">
                     <div class="brutal-box bg-[#facc15] p-3 flex justify-between items-center mb-[-4px] relative z-10 border-dashed">
-                        <h3 class="font-black text-xs uppercase text-black">🎞️ SCENE ${partNum}: ${scene.fase} (${durasi}S)</h3>
+                        <h3 class="font-black text-xs uppercase text-black">🎞️ SCENE ${partNum}: ${faseTitle[index]} (${durasi}S)</h3>
                         <button onclick="copyTeks('${idVideo}')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY</button>
                     </div>
                     <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed border-dashed border-4" id="${idVideo}">
-                        Animate the provided reference image. ACTION: ${scene.animasi} 
-                        <br><br>[STRICT AI CONSTRAINTS]: DO NOT hallucinate extra limbs. The left shoulder and sleeve MUST remain completely static, flat, and empty. Very subtle and natural movements only.
+                        Animate the provided reference image. <br><br>
+                        ${constraintAI}
                         <br><br>
-                        <strong>--- PANDUAN DUBBING & EDITING ---</strong><br>
-                        🎙️ DIALOG: ${dialogText}<br>
-                        🔠 TEKS LAYAR: ${layarText}
+                        <strong>--- PANDUAN DUBBING / CAPCUT ---</strong><br>
+                        🎙️ DIALOG: ${scene.dialog}<br>
+                        🔠 TEKS LAYAR: ${scene.teks}
                     </div>
                     ${partNum === 1 ? imgHtml : ''}
                 </div>`;
