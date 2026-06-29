@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA HYPE DIRECTOR STUDIO V9.0</title>
+    <title>NPA HYPE DIRECTOR STUDIO V10</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
@@ -28,11 +28,11 @@
         <!-- HEADER -->
         <div class="flex items-center gap-4 border-b-4 border-black pb-4 mb-6">
             <div class="w-12 h-12 bg-[#22d3ee] brutal-box flex items-center justify-center">
-                <span class="text-2xl">🧠</span>
+                <span class="text-2xl">🌪️</span>
             </div>
             <div>
-                <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Studio V9</h1>
-                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">Smart Context & Pro Settings</span>
+                <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Studio V10</h1>
+                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">Ultimate Funnel Edition</span>
             </div>
         </div>
 
@@ -48,6 +48,8 @@
                     <option value="bali">4. Melali Bali (Wisata & Liburan)</option>
                     <option value="umkm">5. UMKM (Bisnis Lokal)</option>
                     <option value="shopee">6. Shopee Affiliate (Review Produk)</option>
+                    <option value="emak" class="font-bold text-red-600">7. Emak-Emak (Ibu Rumah Tangga)</option>
+                    <option value="tkw" class="font-bold text-red-600">8. Pejuang Devisa (TKW / PMI)</option>
                 </select>
             </div>
 
@@ -56,9 +58,9 @@
                 <div>
                     <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-blue-700">🎥 Camera Angle</label>
                     <select id="set-kamera" class="brutal-input text-[10px] px-1 py-2">
+                        <option value="Extreme close-up portrait, tightly cropped at the neck and upper shoulders, ARMS COMPLETELY OUT OF FRAME">Extreme Close-up (Hanya Leher & Wajah)</option>
                         <option value="Medium Close-up, eye-level angle, static shot">Medium Close-up (Dada ke atas)</option>
                         <option value="Dynamic tracking shot, slight slow motion">Dynamic Tracking (Bergerak)</option>
-                        <option value="Macro close-up, highly detailed">Macro Close-up (Sangat Dekat)</option>
                     </select>
                 </div>
                 <div>
@@ -142,11 +144,10 @@
         }
 
         function suntikKarakterPakde() {
-            // Tombol ini HANYA mengisi textarea, TIDAK MERUBAH menu dropdown kategori.
+            document.getElementById('set-kamera').selectedIndex = 0; // Otomatis pilih Extreme Close-up
             const txt = document.getElementById('ide-kasar');
-            txt.value = "Pakde Sugiarto (56 tahun) memberikan presentasi. Pakaian baju koko, pakai peci dan kacamata. Tangan kiri amputasi total di bawah bahu.";
+            txt.value = "Pakde Sugiarto (56 tahun). Pakaian baju koko navy, pakai peci rajut dan kacamata. Tangan kiri amputasi total di bawah bahu. Duduk di meja podcast dengan laptop modern, headphone, dan cangkir kopi panas berasap.";
             
-            // Efek visual sukses
             txt.style.backgroundColor = "#bbf7d0";
             setTimeout(() => txt.style.backgroundColor = "#fff", 500);
         }
@@ -160,7 +161,7 @@
             });
         }
 
-        // DATABASE DIALOG PINTAR BERDASARKAN KATEGORI
+        // DATABASE DIALOG (DENGAN TAMBAHAN KOLAM EMAK & TKW)
         const dialogDatabase = {
             "istikmal": [
                 { dialog: '"Rindu ke Baitullah tapi merasa tabungan belum juga cukup?"', teks: "RINDU BAITULLAH?" },
@@ -191,6 +192,16 @@
                 { dialog: '"Sering salah beli produk online karena termakan iklan yang nggak sesuai ekspektasi?"', teks: "SERING SALAH BELI?" },
                 { dialog: '"Nih, aku rekomendasiin produk andalan yang kualitasnya beneran juara dan harganya ramah di kantong."', teks: "REKOMENDASI PRODUK TERBAIK" },
                 { dialog: '"Mumpung lagi ada diskon dan gratis ongkir, langsung aja klik keranjang kuning sekarang!"', teks: "CEK KERANJANG KUNING" }
+            ],
+            "emak": [
+                { dialog: '"Sering pusing ngatur uang belanja yang selalu pas-pasan? Pengen bantu ekonomi suami tapi nggak bisa ninggalin anak di rumah?"', teks: "PUSING UANG BELANJA PAS-PASAN?" },
+                { dialog: '"Sekarang emak-emak juga bisa mandiri! Cuma pakai HP dari ruang tamu, kita bisa bangun aset masa depan lewat program 3iReborn."', teks: "SOLUSI CERDAS EMAK-EMAK" },
+                { dialog: '"Ubah waktu luang main sosmed jadi sumber cuan. Yuk belajar bareng di komunitas NPA, klik link di bawah sekarang, Mak!"', teks: "KLIK LINK SEKARANG!" }
+            ],
+            "tkw": [
+                { dialog: '"Bertahun-tahun kerja keras di negeri orang, tapi tabungan masih segitu-gitu aja? Udah capek nahan rindu keluarga di kampung?"', teks: "CAPEK KERJA DI NEGERI ORANG?" },
+                { dialog: '"Jangan selamanya jadi pekerja, Mbak! Mari persiapkan masa depan dengan cerdas. Bangun pasif income bersama 3iReborn cukup dari sela-sela jam istirahat."', teks: "BANGUN ASET DARI SEKARANG" },
+                { dialog: '"Wujudkan impian pensiun tenang kumpul bareng keluarga di kampung halaman. Ambil langkah pertamamu hari ini, klik link sekarang juga!"', teks: "SIAPKAN MASA DEPAN, KLIK DI SINI!" }
             ]
         };
 
@@ -209,7 +220,6 @@
 
             let htmlRender = "";
 
-            // 1. TAMPILAN LINK REFERENSI
             if(linkRef) {
                 htmlRender += `
                 <div class="brutal-box bg-gray-200 p-3 mb-6 text-[10px] font-bold">
@@ -217,44 +227,41 @@
                 </div>`;
             }
 
-            // 2. PROMPT GAMBAR MASTER (KOTAK BIRU)
+            // 1. PROMPT GAMBAR MASTER
             let masterImagePrompt = "";
             if(isPakde) {
-                masterImagePrompt = `A photorealistic cinematic portrait. SUBJECT: ${ide}. CRITICAL REQUIREMENT: His left arm is physically amputated at the bicep. The left sleeve is completely empty, flat, and hanging down. No left hand exists. He is holding a small black wireless microphone near his lips with his right hand. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. 8k resolution, ${ar}`;
+                masterImagePrompt = `A photorealistic portrait. SUBJECT: ${ide}. CRITICAL REQUIREMENT: CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. NEGATIVE PROMPT: DO NOT GENERATE ARMS. NO TEXT OVERLAYS on the image. 8k resolution, ${ar}`;
             } else {
-                masterImagePrompt = `A highly detailed, cinematic scene. SUBJECT: ${ide}. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. Hyper-realistic details, 8k resolution, ${ar}`;
+                masterImagePrompt = `A highly detailed cinematic scene. SUBJECT: ${ide}. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. NEGATIVE PROMPT: NO TEXT OVERLAYS on the image. Hyper-realistic details, 8k resolution, ${ar}`;
             }
 
             htmlRender += `
             <div class="relative mb-8">
                 <div class="brutal-box bg-[#38bdf8] p-3 flex justify-between items-center mb-[-4px] relative z-10">
-                    <h3 class="font-black text-xs uppercase text-black">🖼️ PROMPT GAMBAR MASTER (1 GAMBAR SAJA)</h3>
+                    <h3 class="font-black text-xs uppercase text-black">🖼️ PROMPT GAMBAR MASTER</h3>
                     <button onclick="copyTeks('prompt-gambar')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY</button>
                 </div>
                 <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed" id="prompt-gambar">
                     Generate ONE single high-resolution image. <br>
                     VISUAL: ${masterImagePrompt}
                 </div>
-                <p class="text-[9px] text-red-600 font-bold mt-1 ml-1">*TIPS: Generate gambar ini dulu. Pilih 1 yang paling sesuai, simpan, lalu masukkan foto itu ke Luma/Kling.</p>
             </div>
             <hr class="border-t-4 border-gray-300 mb-8">
-            <h3 class="font-black text-center mb-4 text-lg">🎬 SCRIPT & AI VIDEO PROMPT</h3>
             `;
 
             let imgHtml = uploadedImageBase64 ? `<div class="mt-4 border-t-2 border-dashed border-black pt-4"><p class="text-[10px] font-bold mb-2">FOTO REFERENSI/PRODUK:</p><img src="${uploadedImageBase64}" class="max-h-32 border-2 border-black object-contain"></div>` : ``;
 
-            // 3. GENERATE 3 SCENE VIDEO PROMPTS (KOTAK KUNING)
-            const naskahPilihan = dialogDatabase[kategori]; // Mengambil dialog sesuai menu yang dipilih
+            // 2. GENERATE 3 SCENE VIDEO PROMPTS
+            const naskahPilihan = dialogDatabase[kategori];
             const faseTitle = ["HOOK & MASALAH", "SOLUSI & EDUKASI", "CALL TO ACTION (CTA)"];
 
             naskahPilihan.forEach((scene, index) => {
                 let partNum = index + 1;
                 let idVideo = `vd-${partNum}`;
                 
-                // LOGIKA CERDAS: Membedakan instruksi animasi Pakde vs Orang/Produk Biasa
                 let constraintAI = "";
                 if(isPakde) {
-                    constraintAI = `[STRICT AI CONSTRAINTS]: The subject is holding a microphone. ACTION: ONLY his lips and eyes move subtly as he speaks. His entire body, shoulders, and the microphone must remain STRICTLY STATIC. DO NOT hallucinate extra limbs. The left sleeve MUST remain completely empty and flat. Maintain ${setKamera} and ${setCahaya}.`;
+                    constraintAI = `[STRICT AI CONSTRAINTS]: ACTION: ONLY lips and eyes move subtly as speaking. Shoulders remain STRICTLY STATIC. Maintain ${setKamera} and ${setCahaya}.`;
                 } else {
                     constraintAI = `[AI CONSTRAINTS]: Animate the subject naturally and smoothly. Maintain visual consistency. Apply ${setKamera} and ${setCahaya}.`;
                 }
