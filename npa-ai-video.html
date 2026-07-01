@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM V12</title>
+    <title>NPA SMART SYSTEM V13</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
@@ -18,6 +18,7 @@
         .brutal-btn:active { box-shadow: 0px 0px 0px 0px #000; transform: translate(4px, 4px); }
         .brutal-input { border: 3px solid #000; border-radius: 0; background: #fff; padding: 10px; font-weight: 600; width: 100%; outline: none; }
         .brutal-input:focus { background: #e0f2fe; }
+        .image-preview { max-height: 150px; object-fit: contain; border: 2px solid #000; display: none; margin-top: 10px; }
     </style>
 </head>
 <body class="p-2 sm:p-6 min-h-screen text-black">
@@ -27,42 +28,49 @@
         <!-- HEADER -->
         <div class="flex items-center gap-4 border-b-4 border-black pb-4 mb-6">
             <div class="w-12 h-12 bg-[#22d3ee] brutal-box flex items-center justify-center">
-                <span class="text-2xl">👑</span>
+                <span class="text-2xl">🔥</span>
             </div>
             <div>
                 <h1 class="text-xl sm:text-2xl font-black uppercase tracking-tight">NPA Smart System</h1>
-                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">V12: ULTIMATE CONTENT CREATOR</span>
+                <span class="bg-[#e11d48] text-white text-[10px] px-2 py-0.5 font-bold uppercase tracking-widest border-2 border-black">V13: THE MASTER ENGINE (FULL FEATURES)</span>
             </div>
         </div>
 
         <!-- MODE SELECTOR -->
         <div class="mb-6 p-4 bg-gray-200 brutal-box border-dashed border-4 border-black">
-            <label class="block text-xs font-black uppercase tracking-wider mb-2 text-center">🎯 PILIH MODE MASTER ENGINE</label>
+            <label class="block text-xs font-black uppercase tracking-wider mb-2 text-center">🎯 PILIH MODE PRODUKSI</label>
             <select id="app-mode" class="brutal-input bg-black text-white text-center" onchange="toggleMode()">
-                <option value="video">🎬 MODE 1: GENERATOR AI VIDEO SCRIPT</option>
-                <option value="teks">📝 MODE 2: GENERATOR FB PRO (TEKS & GAMBAR)</option>
+                <option value="video">🎬 MODE 1: VIDEO SCRIPT (3 SCENE & FOTO)</option>
+                <option value="teks">📝 MODE 2: FB PRO (TEKS T-E-K-S & GAMBAR)</option>
             </select>
         </div>
 
         <!-- ============================================== -->
-        <!-- WRAPPER 1: MODE AI VIDEO -->
+        <!-- WRAPPER 1: MODE AI VIDEO (FITUR V10 KEMBALI) -->
         <!-- ============================================== -->
         <div id="mode-video-wrapper" class="space-y-5">
             <div>
-                <label class="block text-[10px] font-black text-[#e11d48] uppercase tracking-wider mb-1">📚 Kategori Konten</label>
-                <select id="kategori-video" class="brutal-input bg-[#fef08a]">
+                <label class="block text-[10px] font-black text-[#e11d48] uppercase tracking-wider mb-1">📚 Kategori Konten (Dialog AI)</label>
+                <select id="kategori" class="brutal-input bg-[#fef08a]">
                     <option value="istikmal">1. Istikmal Syariah (Umroh & Haji)</option>
                     <option value="3ireborn">2. 3iReborn (Bisnis & Finansial)</option>
-                    <option value="shopee">3. Shopee Affiliate (Review Produk)</option>
+                    <option value="cruise">3. Reward Cruise (Luxury Travel)</option>
+                    <option value="bali">4. Melali Bali (Wisata & Liburan)</option>
+                    <option value="umkm">5. UMKM (Bisnis Lokal)</option>
+                    <option value="shopee">6. Shopee Affiliate (Review Produk)</option>
+                    <option value="emak" class="font-bold text-red-600">7. Emak-Emak (Ibu Rumah Tangga)</option>
+                    <option value="tkw" class="font-bold text-red-600">8. Pejuang Devisa (TKW / PMI)</option>
                 </select>
             </div>
 
+            <!-- PRO SETTINGS: KAMERA & CAHAYA -->
             <div class="grid grid-cols-2 gap-3 border-4 border-dashed border-gray-300 p-3 bg-gray-50">
                 <div>
                     <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-blue-700">🎥 Camera Angle</label>
                     <select id="set-kamera" class="brutal-input text-[10px] px-1 py-2">
-                        <option value="Extreme close-up portrait, tightly cropped at the neck and upper shoulders, ARMS COMPLETELY OUT OF FRAME">Extreme Close-up (Aman dari Tangan)</option>
+                        <option value="Extreme close-up portrait, tightly cropped at the neck and upper shoulders, ARMS COMPLETELY OUT OF FRAME">Extreme Close-up (Hanya Leher)</option>
                         <option value="Medium Close-up, eye-level angle, static shot">Medium Close-up (Dada ke atas)</option>
+                        <option value="Dynamic tracking shot, slight slow motion">Dynamic Tracking (Bergerak)</option>
                     </select>
                 </div>
                 <div>
@@ -70,16 +78,48 @@
                     <select id="set-cahaya" class="brutal-input text-[10px] px-1 py-2">
                         <option value="Professional cinematic studio lighting, soft shadows">Cinematic Studio (Mewah)</option>
                         <option value="Natural golden hour sunlight, warm vibe">Golden Hour (Sore Natural)</option>
+                        <option value="Bright commercial lighting, high contrast">Bright Commercial (Terang Jelas)</option>
                     </select>
                 </div>
             </div>
 
+            <!-- LINK REFERENSI & FOTO (DIKEMBALIKAN) -->
+            <div class="grid grid-cols-1 gap-3">
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">🔗 Link Referensi Video (Opsional)</label>
+                    <input type="text" id="link-ref" class="brutal-input text-xs" placeholder="Tempel link referensi agar AI meniru gerakan...">
+                </div>
+                <div>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1">🖼️ Foto Referensi / Produk</label>
+                    <div class="brutal-input bg-gray-50 flex items-center justify-between p-1">
+                        <input type="file" id="foto-referensi" accept="image/*" class="text-xs" onchange="previewImage(event)">
+                    </div>
+                    <img id="img-preview" src="" class="image-preview w-full" alt="Preview Foto">
+                </div>
+            </div>
+
+            <!-- TOPIK & AUTO PAKDE -->
             <div class="border-t-4 border-black pt-4 mt-2">
                 <div class="flex justify-between items-end mb-1">
                     <label class="block text-[10px] font-black uppercase tracking-wider">Topik / Karakter Utama</label>
-                    <button onclick="suntikKarakterPakde()" class="text-[9px] bg-black text-white px-2 py-1 uppercase font-bold hover:bg-gray-800 border border-black">✨ AUTO: PAKDE</button>
+                    <button onclick="suntikKarakterPakde()" class="text-[9px] bg-black text-white px-2 py-1 uppercase font-bold hover:bg-gray-800 border border-black transition-transform active:scale-95">✨ AUTO: PAKDE</button>
                 </div>
-                <textarea id="ide-kasar" rows="3" class="brutal-input text-sm" placeholder="Jelaskan karakternya di sini..."></textarea>
+                <textarea id="ide-kasar" rows="3" class="brutal-input text-sm" placeholder="Jelaskan objek atau karakternya di sini..."></textarea>
+            </div>
+
+            <!-- DURASI & RASIO -->
+            <div class="grid grid-cols-2 gap-3 pt-2">
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1 text-red-600">Durasi Per Scene (s)</label>
+                    <input type="number" id="durasi-scene" class="brutal-input text-center bg-red-50" value="8">
+                </div>
+                <div>
+                    <label class="block text-[9px] font-black uppercase tracking-wider mb-1">Aspect Ratio</label>
+                    <select id="aspect-ratio" class="brutal-input text-[10px] px-1">
+                        <option value="--ar 9:16">9:16 (Vertikal - TikTok/Reels)</option>
+                        <option value="--ar 16:9">16:9 (Horizontal - YT)</option>
+                    </select>
+                </div>
             </div>
         </div>
 
@@ -87,8 +127,6 @@
         <!-- WRAPPER 2: MODE FB PRO (MULTI-KOLAM + VISUAL) -->
         <!-- ============================================== -->
         <div id="mode-teks-wrapper" class="space-y-5 hidden">
-            
-            <!-- TARGET MARKET DROP-DOWN -->
             <div>
                 <label class="block text-[10px] font-black text-blue-700 uppercase tracking-wider mb-1">🎯 KELAS TARGET MARKET</label>
                 <select id="fb-target" class="brutal-input bg-blue-100 border-blue-800">
@@ -98,20 +136,17 @@
                     <option value="umkm">🏪 Pelaku UMKM / Pedagang</option>
                 </select>
             </div>
-
             <div>
                 <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-red-600">💥 1. Apa Masalahnya? (TUSUK)</label>
                 <input type="text" id="fb-masalah" class="brutal-input text-sm bg-red-50" placeholder="Contoh: Anak GTM / Gajian cepet abis">
             </div>
-
             <div>
                 <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-orange-600">🔥 2. Solusi Basi / Mahal (KONTROVERSI)</label>
-                <input type="text" id="fb-mahal" class="brutal-input text-sm bg-orange-50" placeholder="Contoh: Beli vitamin mahal / Ikut seminar abal-abal">
+                <input type="text" id="fb-mahal" class="brutal-input text-sm bg-orange-50" placeholder="Contoh: Beli vitamin mahal / Ikut seminar bodong">
             </div>
-
             <div class="grid grid-cols-2 gap-3 border-t-4 border-black pt-4 mt-2">
                 <div>
-                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-green-700">📦 3. Solusi Produk/Program</label>
+                    <label class="block text-[10px] font-black uppercase tracking-wider mb-1 text-green-700">📦 3. Nama Solusi/Produk</label>
                     <input type="text" id="fb-produk" class="brutal-input text-sm bg-green-50" placeholder="Contoh: Cetakan Nasi / 3iReborn">
                 </div>
                 <div>
@@ -122,12 +157,12 @@
         </div>
 
         <!-- BUTTONS GENERATOR -->
-        <button id="btn-generate-video" onclick="generateVideoScript()" class="brutal-btn bg-[#22d3ee] w-full py-4 text-sm mt-6 text-black hover:bg-cyan-300">
-            🚀 GENERATE VIDEO PROMPT
+        <button id="btn-generate-video" onclick="generateFramework()" class="brutal-btn bg-[#22d3ee] w-full py-4 text-sm mt-6 text-black hover:bg-cyan-300">
+            🚀 GENERATE VIDEO AI (3 SCENE)
         </button>
 
         <button id="btn-generate-teks" onclick="generateFBStatus()" class="brutal-btn bg-[#facc15] w-full py-4 text-sm mt-6 text-black hover:bg-yellow-400 hidden">
-            ✍️ GENERATE CAPTION & GAMBAR FB
+            ✍️ GENERATE FB PRO (CAPTION & GAMBAR)
         </button>
 
         <!-- OUTPUT SECTION -->
@@ -139,6 +174,22 @@
     </div>
 
     <script>
+        let uploadedImageBase64 = "";
+
+        function previewImage(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('img-preview');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    uploadedImageBase64 = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+
         function toggleMode() {
             const mode = document.getElementById('app-mode').value;
             const wrapVideo = document.getElementById('mode-video-wrapper');
@@ -170,31 +221,145 @@
         }
 
         function suntikKarakterPakde() {
-            document.getElementById('set-kamera').selectedIndex = 0;
-            document.getElementById('ide-kasar').value = "Pakde Sugiarto (56 tahun). Pakaian baju koko navy, pakai peci rajut dan kacamata. Tangan kiri amputasi total di bawah bahu. Duduk santai di podcast.";
+            document.getElementById('set-kamera').selectedIndex = 0; 
+            const txt = document.getElementById('ide-kasar');
+            // Ditambahkan instruksi high-resolution, natural skin texture tanpa over-editing agar hasil foto lebih natural
+            txt.value = "Pakde Sugiarto (56 tahun). Pakaian baju koko navy, pakai peci rajut dan kacamata. Tangan kiri amputasi total di bawah bahu. Duduk di meja podcast dengan laptop modern, headphone, dan cangkir kopi panas berasap. High-resolution professional photography, accurate natural skin texture, realistic colors, no over-editing.";
+            txt.style.backgroundColor = "#bbf7d0";
+            setTimeout(() => txt.style.backgroundColor = "#fff", 500);
         }
 
-        function generateVideoScript() {
-            const ide = document.getElementById('ide-kasar').value || "[ISI TOPIK]";
+        // DATABASE DIALOG VIDEO (DARI V10)
+        const dialogDatabase = {
+            "istikmal": [
+                { dialog: '"Rindu ke Baitullah tapi merasa tabungan belum juga cukup?"', teks: "RINDU BAITULLAH?" },
+                { dialog: '"Bersama Istikmal Syariah, wujudkan impian umroh Anda dengan program yang amanah dan terjangkau."', teks: "ISTIKMAL SYARIAH SOLUSINYA" },
+                { dialog: '"Jangan tunda niat baik Anda. Daftar sekarang dan amankan porsi keberangkatan Anda!"', teks: "DAFTAR SEKARANG JUGA!" }
+            ],
+            "3ireborn": [
+                { dialog: '"Gaji numpang lewat tiap bulan? Khawatir masa depan keluarga belum aman?"', teks: "GAJI NUMPANG LEWAT?" },
+                { dialog: '"3iReborn hadir memberikan solusi cerdas. Gabungan asuransi, investasi, dan income dalam satu genggaman."', teks: "SOLUSI CERDAS 3IREBORN" },
+                { dialog: '"Mulai langkah finansial Anda hari ini. Klik link di bawah untuk bergabung bersama kami!"', teks: "GABUNG SEKARANG!" }
+            ],
+            "cruise": [
+                { dialog: '"Kerja keras tiap hari tapi belum pernah merasakan liburan mewah yang sesungguhnya?"', teks: "BUTUH LIBURAN MEWAH?" },
+                { dialog: '"Bayangkan Anda berada di atas kapal pesiar mewah. Semua ini bisa jadi kenyataan lewat Reward Cruise kami!"', teks: "REWARD CRUISE GRATIS!" },
+                { dialog: '"Kejar target Anda dan mari berlayar bersama! Cek detail kualifikasinya sekarang."', teks: "CEK KUALIFIKASI DI SINI" }
+            ],
+            "bali": [
+                { dialog: '"Penat dengan rutinitas? Butuh healing menikmati indahnya pasir putih dan senja?"', teks: "PENAT RUTINITAS?" },
+                { dialog: '"Program Melali Bali siap memanjakan Anda dengan pengalaman liburan yang tak terlupakan."', teks: "PROGRAM MELALI BALI" },
+                { dialog: '"Siapkan koper Anda! Pesan tiketnya sekarang dan mari nikmati pesona Pulau Dewata."', teks: "BOOKING TIKET SEKARANG" }
+            ],
+            "umkm": [
+                { dialog: '"Banyak saingan bisnis dan bingung cara ningkatin omset penjualan harian?"', teks: "BINGUNG NAIKIN OMSET?" },
+                { dialog: '"Saatnya UMKM naik kelas! Kami punya strategi jitu yang sudah terbukti mendatangkan pembeli."', teks: "SAATNYA UMKM NAIK KELAS" },
+                { dialog: '"Jangan mau kalah sama kompetitor. Terapkan strateginya dengan klik link di bawah ini!"', teks: "KLIK UNTUK STRATEGI JITU" }
+            ],
+            "shopee": [
+                { dialog: '"Sering salah beli produk online karena termakan iklan yang nggak sesuai ekspektasi?"', teks: "SERING SALAH BELI?" },
+                { dialog: '"Nih, aku rekomendasiin produk andalan yang kualitasnya beneran juara dan harganya ramah di kantong."', teks: "REKOMENDASI PRODUK TERBAIK" },
+                { dialog: '"Mumpung lagi ada diskon dan gratis ongkir, langsung aja klik keranjang kuning sekarang!"', teks: "CEK KERANJANG KUNING" }
+            ],
+            "emak": [
+                { dialog: '"Sering pusing ngatur uang belanja yang selalu pas-pasan? Pengen bantu ekonomi suami tapi nggak bisa ninggalin anak di rumah?"', teks: "PUSING UANG BELANJA PAS-PASAN?" },
+                { dialog: '"Sekarang emak-emak juga bisa mandiri! Cuma pakai HP dari ruang tamu, kita bisa bangun aset masa depan lewat program 3iReborn."', teks: "SOLUSI CERDAS EMAK-EMAK" },
+                { dialog: '"Ubah waktu luang main sosmed jadi sumber cuan. Yuk belajar bareng di komunitas NPA, klik link di bawah sekarang, Mak!"', teks: "KLIK LINK SEKARANG!" }
+            ],
+            "tkw": [
+                { dialog: '"Bertahun-tahun kerja keras di negeri orang, tapi tabungan masih segitu-gitu aja? Udah capek nahan rindu keluarga di kampung?"', teks: "CAPEK KERJA DI NEGERI ORANG?" },
+                { dialog: '"Jangan selamanya jadi pekerja, Mbak! Mari persiapkan masa depan dengan cerdas. Bangun pasif income bersama 3iReborn cukup dari sela-sela jam istirahat."', teks: "BANGUN ASET DARI SEKARANG" },
+                { dialog: '"Wujudkan impian pensiun tenang kumpul bareng keluarga di kampung halaman. Ambil langkah pertamamu hari ini, klik link sekarang juga!"', teks: "SIAPKAN MASA DEPAN, KLIK DI SINI!" }
+            ]
+        };
+
+        // --- FUNGSI MODE 1: GENERATE VIDEO (FITUR LENGKAP V10) ---
+        function generateFramework() {
+            const kategori = document.getElementById('kategori').value;
+            const ide = document.getElementById('ide-kasar').value;
+            if(!ide) { alert("Isi Topik / Karakter Utama dulu Pakde!"); return; }
+
+            const durasi = document.getElementById('durasi-scene').value;
+            const ar = document.getElementById('aspect-ratio').value;
+            const linkRef = document.getElementById('link-ref').value;
             const setKamera = document.getElementById('set-kamera').value;
             const setCahaya = document.getElementById('set-cahaya').value;
             
-            let htmlRender = `
+            const isPakde = ide.toLowerCase().includes("pakde") || ide.toLowerCase().includes("amputasi");
+
+            let htmlRender = "";
+
+            if(linkRef) {
+                htmlRender += `
+                <div class="brutal-box bg-gray-200 p-3 mb-6 text-[10px] font-bold">
+                    🔗 CONTEKAN REFERENSI GERAKAN (Tonton untuk inspirasi AI): <a href="${linkRef}" target="_blank" class="text-blue-600 underline break-all">${linkRef}</a>
+                </div>`;
+            }
+
+            let masterImagePrompt = "";
+            if(isPakde) {
+                masterImagePrompt = `A photorealistic portrait. SUBJECT: ${ide}. CRITICAL REQUIREMENT: CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. NEGATIVE PROMPT: DO NOT GENERATE ARMS. NO TEXT OVERLAYS. 8k resolution, ${ar}`;
+            } else {
+                masterImagePrompt = `A highly detailed cinematic scene. SUBJECT: ${ide}. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. NEGATIVE PROMPT: NO TEXT OVERLAYS on the image. Hyper-realistic details, 8k resolution, ${ar}`;
+            }
+
+            htmlRender += `
             <div class="relative mb-8">
                 <div class="brutal-box bg-[#38bdf8] p-3 flex justify-between items-center mb-[-4px] relative z-10">
-                    <h3 class="font-black text-xs uppercase text-black">🖼️ PROMPT GAMBAR MASTER AI</h3>
-                    <button onclick="copyTeks('prompt-gambar')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black">📋 COPY</button>
+                    <h3 class="font-black text-xs uppercase text-black">🖼️ PROMPT GAMBAR MASTER (STEP 1)</h3>
+                    <button onclick="copyTeks('prompt-gambar')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY</button>
                 </div>
-                <div class="brutal-box bg-white p-4 pt-6 text-xs font-mono" id="prompt-gambar">
-                    Generate ONE single high-resolution image. VISUAL: ${ide}. CAMERA: ${setKamera}. LIGHTING: ${setCahaya}. NEGATIVE PROMPT: DO NOT GENERATE ARMS. NO TEXT OVERLAYS. 8k resolution, photorealistic, --ar 9:16
+                <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed" id="prompt-gambar">
+                    Generate ONE single high-resolution image. <br>
+                    VISUAL: ${masterImagePrompt}
                 </div>
-            </div>`;
+            </div>
+            <hr class="border-t-4 border-gray-300 mb-8">
+            `;
 
-            document.getElementById('output-title').innerText = "STORYBOARD AI VIDEO";
+            let imgHtml = uploadedImageBase64 ? `<div class="mt-4 border-t-2 border-dashed border-black pt-4"><p class="text-[10px] font-bold mb-2">FOTO REFERENSI / PRODUK:</p><img src="${uploadedImageBase64}" class="max-h-32 border-2 border-black object-contain"></div>` : ``;
+
+            const naskahPilihan = dialogDatabase[kategori];
+            const faseTitle = ["HOOK & MASALAH", "SOLUSI & EDUKASI", "CALL TO ACTION (CTA)"];
+
+            naskahPilihan.forEach((scene, index) => {
+                let partNum = index + 1;
+                let idVideo = `vd-${partNum}`;
+                
+                let constraintAI = "";
+                if(isPakde) {
+                    constraintAI = `[STRICT AI CONSTRAINTS]: ACTION: ONLY lips and eyes move subtly as speaking. Shoulders remain STRICTLY STATIC. Maintain ${setKamera} and ${setCahaya}.`;
+                } else {
+                    constraintAI = `[AI CONSTRAINTS]: Animate the subject naturally and smoothly. Maintain visual consistency. Apply ${setKamera} and ${setCahaya}.`;
+                }
+                
+                let linkRefText = linkRef ? `REFERENCE MOTION: Mimic the pacing and movement from the attached video link.` : ``;
+
+                htmlRender += `
+                <div class="relative mb-6">
+                    <div class="brutal-box bg-[#facc15] p-3 flex justify-between items-center mb-[-4px] relative z-10 border-dashed">
+                        <h3 class="font-black text-xs uppercase text-black">🎞️ SCENE ${partNum}: ${faseTitle[index]} (${durasi}S)</h3>
+                        <button onclick="copyTeks('${idVideo}')" class="bg-white text-black font-bold text-[10px] px-3 py-1 border-2 border-black hover:bg-gray-200">📋 COPY SCRIPT</button>
+                    </div>
+                    <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-800 font-mono leading-relaxed border-dashed border-4" id="${idVideo}">
+                        Animate the provided reference image. <br><br>
+                        ${constraintAI} <br>
+                        ${linkRefText}
+                        <br><br>
+                        <strong>--- PANDUAN DUBBING / CAPCUT ---</strong><br>
+                        🎙️ DIALOG: ${scene.dialog}<br>
+                        🔠 TEKS LAYAR: ${scene.teks}
+                    </div>
+                    ${partNum === 1 ? imgHtml : ''}
+                </div>`;
+            });
+
+            document.getElementById('output-title').innerText = "STORYBOARD AI VIDEO LENGKAP";
             document.getElementById('render-hasil').innerHTML = htmlRender;
             document.getElementById('output-container').classList.remove('hidden');
         }
 
+        // --- FUNGSI MODE 2: GENERATE FB PRO (DARI V12) ---
         function generateFBStatus() {
             const target = document.getElementById('fb-target').value;
             const masalah = document.getElementById('fb-masalah').value || "[MASALAH]";
@@ -232,7 +397,6 @@ Link info lengkapnya gue taruh di komen pertama ${penutup} 👇 Biar nggak salah
             let visualPrompt = `${visualSubjek} ${masalah}. Cinematic lighting, emotional storytelling, highly detailed facial expressions, photorealistic, 8k resolution, shot on 35mm lens, natural lighting. --ar 4:5`;
 
             let htmlRender = `
-            <!-- OUTPUT PROMPT GAMBAR FB -->
             <div class="relative mb-8">
                 <div class="brutal-box bg-[#38bdf8] p-3 flex justify-between items-center mb-[-4px] relative z-10">
                     <h3 class="font-black text-xs uppercase text-black">🖼️ 1. PROMPT GAMBAR FB (BING/MJ)</h3>
@@ -241,7 +405,6 @@ Link info lengkapnya gue taruh di komen pertama ${penutup} 👇 Biar nggak salah
                 <div class="brutal-box bg-white p-4 pt-6 text-xs text-gray-900 font-mono leading-relaxed" id="hasil-visual">${visualPrompt}</div>
             </div>
 
-            <!-- OUTPUT TEKS CAPTION FB -->
             <div class="relative mb-6">
                 <div class="brutal-box bg-[#facc15] p-3 flex justify-between items-center mb-[-4px] relative z-10 border-dashed">
                     <h3 class="font-black text-xs uppercase text-black">🔥 2. CAPTION FB PRO (T-E-K-S)</h3>
