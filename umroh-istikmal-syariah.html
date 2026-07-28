@@ -153,6 +153,27 @@
             window.location.href = "https://wa.me/6285218453131?text=" + encodeURIComponent(teksPesan);
         }
     </script>
+    <script>
+        function kirimPendaftaran() {
+            const nama = document.getElementById('n-nama').value;
+            const wa = document.getElementById('n-wa').value;
+            const status = document.getElementById('n-status').value;
+            
+            if(!nama || !wa || !status) {
+                alert("Mohon lengkapi Nama, Nomor WA, dan Status Anda ya!");
+                return;
+            }
+            
+            // Mengambil nomor WA dari link referral, jika tidak ada, otomatis ke WA Komandan
+            const urlParams = new URLSearchParams(window.location.search);
+            const nomorSponsor = urlParams.get('wa') || '6285218453131'; 
+            
+            const teksPesan = `Halo!\nSaya ingin mengamankan kursi GRATIS untuk belajar "Smart System Umroh & Aset Digital".\n\nNama: ${nama}\nNo WA: ${wa}\nStatus: ${status}\n\nMohon bimbingannya agar saya bisa segera praktek! 🙏`;
+            
+            // Mengarahkan ke WA sponsor sesuai link
+            window.location.href = "https://wa.me/" + nomorSponsor + "?text=" + encodeURIComponent(teksPesan);
+        }
+    </script>
 
 </body>
 </html>
