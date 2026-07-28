@@ -13,12 +13,12 @@
         /* PENGATURAN GAMBAR LATAR BELAKANG */
         .bg-hero {
             background-color: #020b18;
-            /* Gradient tetap dipertahankan agar teks kiri terbaca */
+            /* Gradient untuk membuat sisi kiri gelap */
             background-image: linear-gradient(to right, #020b18 10%, rgba(2,11,24,0.3) 100%), 
-                              url('tua-umroh.png'); /* Pastikan nama file gambarnya benar */
+                              url('umroh-npa.png'); /* <-- Ganti ke hero-npa.png jika ingin foto awal */
             background-size: cover;
-            /* REVISI UTAMA: Kunci posisi gambar ke Kanan Bawah agar logo tidak terpotong */
-            background-position: right bottom; 
+            /* Mengunci posisi gambar di Kanan Tengah agar wajah dan logo aman */
+            background-position: right center; 
             background-repeat: no-repeat;
         }
         
@@ -28,24 +28,24 @@
             left: 0;
             width: 100%;
             height: 120px;
-            /* Sedikit ditipiskan opacity-nya agar logo di bawah tidak terlalu tertutup efek cahaya */
-            background: radial-gradient(ellipse at bottom left, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
+            background: radial-gradient(ellipse at bottom left, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
             pointer-events: none;
         }
     </style>
 </head>
 <body class="bg-[#020b18] text-white min-h-screen flex items-center justify-center">
 
+    <!-- Container Utama -->
     <div class="relative w-full max-w-md bg-hero min-h-screen overflow-hidden shadow-2xl sm:border-x border-slate-800">
         
         <div class="gold-glow"></div>
 
-        <!-- REVISI KEDUA: pb-20 diganti menjadi pb-36 agar tombol terdorong ke atas dan logo di bawah terlihat -->
-        <div class="relative z-10 px-6 pt-12 pb-36 flex flex-col h-full justify-center">
+        <!-- PERBAIKAN: justify-center dihilangkan, pb-36 dikurangi jadi pb-10 agar tidak over-stretch -->
+        <div class="relative z-10 px-6 pt-10 pb-10 flex flex-col min-h-screen">
             
-            <!-- Area Teks -->
-            <div class="w-[75%]">
-                <div class="flex items-center gap-2 mb-6">
+            <!-- Area Teks (Lebar dibatasi 85% agar wajah Ndan tidak tertutup) -->
+            <div class="w-[85%] sm:w-[75%]">
+                <div class="flex items-center gap-2 mb-5">
                     <span class="text-red-500 text-2xl animate-pulse">🚨</span>
                     <div class="leading-tight">
                         <span class="block text-[11px] font-bold tracking-[0.2em] text-slate-300 uppercase">WAKTU TERUS</span>
@@ -60,17 +60,17 @@
                     Bikin Aset!
                 </h1>
 
-                <h2 class="font-montserrat text-xl leading-[1.2] font-black tracking-tight text-amber-400 mb-5 drop-shadow-md">
+                <h2 class="font-montserrat text-xl leading-[1.2] font-black tracking-tight text-amber-400 mb-4 drop-shadow-md">
                     Amankan Pensiun &<br>
                     Tiket Umroh Anda<br>
                     Hari Ini Juga!
                 </h2>
 
-                <p class="text-[11px] text-slate-300 mb-6 leading-relaxed font-medium">
+                <p class="text-[11px] text-slate-300 mb-5 leading-relaxed font-medium">
                     Jangan biarkan masa tua bergantung pada anak. Bangun <b>Passive Income (3iReborn)</b> sekaligus <b>Tabungan Umroh (Istikmal Syariah)</b>. Tenang, biarkan <b>Asisten Robot AI</b> kami yang bekerja mencari prospek. Anda tinggal nikmati hasilnya!
                 </p>
 
-                <div class="space-y-3 mb-8">
+                <div class="space-y-3 mb-4">
                     <div class="flex items-center gap-2.5">
                         <div class="bg-amber-500 rounded-full p-1 border-2 border-[#020b18] shadow-[0_0_10px_rgba(245,158,11,0.5)]">
                             <svg class="w-3 h-3 text-[#020b18]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M5 13l4 4L19 7"></path></svg>
@@ -92,8 +92,8 @@
                 </div>
             </div>
 
-            <!-- Tombol CTA -->
-            <div class="space-y-3 mt-2 w-[90%]">
+            <!-- PERBAIKAN: Tombol CTA didorong ke bawah otomatis pakai mt-auto -->
+            <div class="space-y-3 mt-auto w-full pt-6">
                 <a href="#" class="flex items-center gap-2 w-fit px-5 py-2.5 rounded-full border border-amber-400 text-amber-400 font-semibold text-xs hover:bg-amber-400/10 transition-all">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
                     Lihat Simulasi Hasilnya
