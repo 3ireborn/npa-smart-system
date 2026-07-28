@@ -13,11 +13,12 @@
         /* PENGATURAN GAMBAR LATAR BELAKANG */
         .bg-hero {
             background-color: #020b18;
-            /* Gradient disesuaikan agar teks terbaca jelas dan wajah tidak tertutup */
+            /* Gradient tetap dipertahankan agar teks kiri terbaca */
             background-image: linear-gradient(to right, #020b18 10%, rgba(2,11,24,0.3) 100%), 
-                              url('umroh-npa.png'); /* Ganti dengan link gambar Ndan */
+                              url('umroh-npa.png'); /* Pastikan nama file gambarnya benar */
             background-size: cover;
-            background-position: 65% center; 
+            /* REVISI UTAMA: Kunci posisi gambar ke Kanan Bawah agar logo tidak terpotong */
+            background-position: right bottom; 
             background-repeat: no-repeat;
         }
         
@@ -27,7 +28,8 @@
             left: 0;
             width: 100%;
             height: 120px;
-            background: radial-gradient(ellipse at bottom left, rgba(251, 191, 36, 0.25) 0%, transparent 70%);
+            /* Sedikit ditipiskan opacity-nya agar logo di bawah tidak terlalu tertutup efek cahaya */
+            background: radial-gradient(ellipse at bottom left, rgba(251, 191, 36, 0.15) 0%, transparent 70%);
             pointer-events: none;
         }
     </style>
@@ -38,11 +40,11 @@
         
         <div class="gold-glow"></div>
 
-        <div class="relative z-10 px-6 pt-12 pb-20 flex flex-col h-full justify-center">
+        <!-- REVISI KEDUA: pb-20 diganti menjadi pb-36 agar tombol terdorong ke atas dan logo di bawah terlihat -->
+        <div class="relative z-10 px-6 pt-12 pb-36 flex flex-col h-full justify-center">
             
-            <!-- Area Teks dibatasi lebarnya -->
+            <!-- Area Teks -->
             <div class="w-[75%]">
-                <!-- Logo NPA -->
                 <div class="flex items-center gap-2 mb-6">
                     <span class="text-red-500 text-2xl animate-pulse">🚨</span>
                     <div class="leading-tight">
@@ -51,7 +53,6 @@
                     </div>
                 </div>
 
-                <!-- Headline Teks Putih (FOMO Maut) -->
                 <h1 class="font-montserrat text-3xl leading-[1.1] font-black tracking-tight mb-3 text-white drop-shadow-lg">
                     Jangan Tunggu<br>
                     Tua & Sakit<br>
@@ -59,19 +60,16 @@
                     Bikin Aset!
                 </h1>
 
-                <!-- Headline Teks Emas (Solusi Dunia Akhirat) -->
                 <h2 class="font-montserrat text-xl leading-[1.2] font-black tracking-tight text-amber-400 mb-5 drop-shadow-md">
                     Amankan Pensiun &<br>
                     Tiket Umroh Anda<br>
                     Hari Ini Juga!
                 </h2>
 
-                <!-- Paragraf Deskripsi -->
                 <p class="text-[11px] text-slate-300 mb-6 leading-relaxed font-medium">
                     Jangan biarkan masa tua bergantung pada anak. Bangun <b>Passive Income (3iReborn)</b> sekaligus <b>Tabungan Umroh (Istikmal Syariah)</b>. Tenang, biarkan <b>Asisten Robot AI</b> kami yang bekerja mencari prospek. Anda tinggal nikmati hasilnya!
                 </p>
 
-                <!-- Bullet Points Keunggulan -->
                 <div class="space-y-3 mb-8">
                     <div class="flex items-center gap-2.5">
                         <div class="bg-amber-500 rounded-full p-1 border-2 border-[#020b18] shadow-[0_0_10px_rgba(245,158,11,0.5)]">
