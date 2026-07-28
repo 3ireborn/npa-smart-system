@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muda Kaya Raya, Tua Sejahtera - NPA Smart System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .form-container {
+            background-color: #1a2235;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            width: 100%;
+            max-width: 450px;
+            overflow: hidden; 
+        }
+        .banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-bottom: 4px solid #ff9800; /* Garis aksen emas/oranye */
+        }
+        .form-content {
+            padding: 25px 30px 30px 30px;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .form-header h2 {
+            margin: 0;
+            color: #ff9800;
+            font-size: 22px;
+            line-height: 1.3;
+            text-transform: uppercase;
+        }
+        .form-header p {
+            font-size: 13px;
+            color: #a0aec0;
+            margin-top: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #2d3748;
+            border-radius: 8px;
+            background-color: #0b0f19;
+            color: #ffffff;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #ff9800;
+        }
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, #ff5722, #ff9800);
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <!-- GAMBAR HEADER -->
+        <!-- Pastikan file gambar nomor 2 sudah diubah namanya menjadi "header-umroh.png" dan diupload ke GitHub -->
+        <img src="header-umroh.png" alt="Muda Kaya Raya Tua Sejahtera" class="banner-img">
+        
+        <div class="form-content">
+            <div class="form-header">
+                <h2>🔥 MUDA KAYA RAYA,<br>TUA SEJAHTERA 🔥</h2>
+                <p>NPA Smart System x 3iReborn</p>
+            </div>
+
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text" id="nama" placeholder="Masukkan Nama Anda" required>
+            </div>
+
+            <div class="form-group">
+                <label for="nowa">No. WhatsApp</label>
+                <input type="number" id="nowa" placeholder="Contoh: 08123456789" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status Keanggotaan</label>
+                <select id="status" required>
+                    <option value="" disabled selected>-- Pilih Status Anda --</option>
+                    <option value="Mitra 3iReborn">Mitra 3iReborn</option>
+                    <option value="Non Mitra (Umum)">Non Mitra (Umum)</option>
+                </select>
+            </div>
+
+            <button class="btn-submit" onclick="prosesDaftar()">DAFTAR GRATIS & MASUK GRUP</button>
+        </div>
+    </div>
+
+    <script>
+        function prosesDaftar() {
+            const nama = document.getElementById('nama').value;
+            const nowa = document.getElementById('nowa').value;
+            const status = document.getElementById('status').value;
+
+            if(!nama || !nowa || !status) {
+                alert("Mohon lengkapi semua data sebelum mendaftar!");
+                return;
+            }
+
+            // Pesan otomatis yang disesuaikan dengan tema Masa Tua & Umroh
+            const formatPesan = `Halo Admin NPA!\nSaya ingin bergabung dan belajar rahasia "Muda Kaya Raya, Tua Sejahtera" bersama NPA SMART SYSTEM.\n\nBerikut data diri saya:\nNama: ${nama}\nNo WA: ${nowa}\nStatus: ${status}\n\nMohon bimbingannya agar bisa segera praktik! 🙏`;
+
+            const textArea = document.createElement("textarea");
+            textArea.value = formatPesan;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                alert("✅ DATA BERHASIL DISIMPAN!\n\nSistem akan mengarahkan Anda ke Grup WhatsApp. Silakan langsung TEMPEL (PASTE) pesan yang sudah disalin otomatis ini ke dalam Grup agar Admin bisa memproses akses Anda.");
+                
+                // Link menuju Grup WA
+                window.location.href = "https://chat.whatsapp.com/DUryqZiuZuT4oNMUCXbomf?s=cl&p=a&ilr=1";
+            } catch (err) {
+                alert("Gagal menyalin teks, silakan coba lagi.");
+            }
+            document.body.removeChild(textArea);
+        }
+    </script>
+
+</body>
+</html>
