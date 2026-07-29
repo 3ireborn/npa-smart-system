@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM V12.14 - Public Builder Edition</title>
+    <title>NPA SMART SYSTEM V12.15 - Ultra Light Public Builder</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -17,10 +17,10 @@
     <header class="bg-slate-900 border-b border-emerald-500/20 p-4 shadow-xl sticky top-0 z-50">
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="bg-emerald-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V12.14</div>
+                <div class="bg-emerald-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V12.15</div>
                 <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Masterpiece Builder</h1>
             </div>
-            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Public Ready!</div>
+            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Ultra Light!</div>
         </div>
     </header>
 
@@ -62,15 +62,19 @@
                 </div>
             </div>
 
+            <!-- REVISI: Kolom Upload Diganti Jadi Kolom Link Postimages -->
             <div class="bg-slate-950 p-4 rounded-xl border border-pink-500/30 space-y-4">
-                <div class="text-[10px] text-pink-300 italic mb-2">Penting: Wajib upload gambar agar desain tidak kosong!</div>
-                <div>
-                    <label class="block text-xs font-bold text-pink-400 mb-2 uppercase tracking-wider">🌟 Upload Logo Web</label>
-                    <input type="file" id="file-logo" accept="image/*" class="w-full text-xs file:mr-4 file:py-2 file:px-4 file:rounded-xl file:bg-pink-500 file:text-slate-950 font-black cursor-pointer" onchange="prosesGambarBase64(event, 'logo')">
+                <div class="text-[10px] text-pink-300 italic mb-2 leading-relaxed">
+                    Penting: Agar loading web ringan, <b>jangan</b> upload file langsung. <br>
+                    Upload gambar Anda ke <a href="https://postimages.org/" target="_blank" class="text-sky-400 font-bold underline hover:text-sky-300">Postimages.org</a> terlebih dahulu, lalu *copy* <b>Direct Link</b> (Link Langsung) dan *paste* ke kolom di bawah ini!
                 </div>
-                <div class="border-t border-slate-800 pt-4">
-                    <label class="block text-xs font-bold text-pink-400 mb-2 uppercase tracking-wider">🖼️ Upload Foto Hero Utama</label>
-                    <input type="file" id="file-foto" accept="image/*" class="w-full text-xs file:mr-4 file:py-2 file:px-4 file:rounded-xl file:bg-pink-500 file:text-slate-950 font-black cursor-pointer" onchange="prosesGambarBase64(event, 'foto')">
+                <div>
+                    <label class="block text-[11px] font-bold text-pink-400 mb-1 uppercase tracking-wider">🌟 Link Logo Web (Opsional)</label>
+                    <input type="url" id="link-logo" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: https://i.postimg.cc/.../logo.png" oninput="autoCompile()">
+                </div>
+                <div class="border-t border-slate-800 pt-3">
+                    <label class="block text-[11px] font-bold text-pink-400 mb-1 uppercase tracking-wider">🖼️ Link Foto Hero Utama (Opsional)</label>
+                    <input type="url" id="link-foto" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: https://i.postimg.cc/.../foto.jpg" oninput="autoCompile()">
                 </div>
             </div>
 
@@ -85,10 +89,9 @@
                         <label class="block text-[11px] font-bold text-slate-400 mb-1">No WA (Awali 62)</label>
                         <input type="number" id="l-wa" class="w-full rounded-lg p-2.5 text-xs" placeholder="628..." oninput="autoCompile()">
                     </div>
-                    <!-- FITUR BARU: Link Eksternal Dinamis -->
                     <div class="col-span-2 border-t border-slate-800 pt-2 mt-1">
                         <label class="block text-[11px] font-bold text-sky-400 mb-1">Link Pendaftaran / Eksternal (Opsional)</label>
-                        <input type="text" id="l-link-form" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: https://whatsform.com/..." oninput="autoCompile()">
+                        <input type="url" id="l-link-form" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: https://whatsform.com/..." oninput="autoCompile()">
                         <p class="text-[9px] text-slate-500 mt-1">*Kosongkan jika hanya ingin tombol Chat WA.</p>
                     </div>
                     <div class="col-span-2">
@@ -206,7 +209,6 @@
     </main>
 
     <script>
-        // DATABASE AI SUDAH DIBUAT UMUM & NETRAL
         const databaseAI = {
             "3ireborn": {
                 hook: "DIBILANG NGANGGUR, KOK INCOME JALAN TERUS? 😎",
@@ -301,8 +303,6 @@
         };
 
         let outputCode = "";
-        let logoBase64 = "";
-        let gambarBase64 = "";
 
         function setTema(bgHead, bgBody, bgFoot, cHook, cJudul, cDesk, cBtn) {
             document.getElementById('c-bg-header').value = bgHead;
@@ -314,31 +314,6 @@
             document.getElementById('c-btn').value = cBtn;
             autoCompile();
             alert("Tema berhasil diterapkan!");
-        }
-
-        function prosesGambarBase64(event, tipe) {
-            const file = event.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = new Image();
-                    img.onload = function() {
-                        const canvas = document.createElement('canvas');
-                        let width = img.width; let height = img.height;
-                        const MAX_WIDTH = (tipe === 'logo') ? 400 : 800;
-                        if (width > MAX_WIDTH) { height = Math.round((height * MAX_WIDTH) / width); width = MAX_WIDTH; }
-                        canvas.width = width; canvas.height = height;
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0, width, height);
-                        if(tipe === 'logo') logoBase64 = canvas.toDataURL('image/jpeg', 0.8);
-                        else gambarBase64 = canvas.toDataURL('image/jpeg', 0.6);
-                        autoCompile();
-                        alert("Foto berhasil diproses!");
-                    };
-                    img.src = e.target.result;
-                };
-                reader.readAsDataURL(file);
-            }
         }
 
         function suntikTemplateAI() {
@@ -367,9 +342,13 @@
             const nama = document.getElementById('l-nama').value || "Konsultan Resmi";
             const wa = document.getElementById('l-wa').value || "6280000000000";
             
-            // Variabel Eksternal Link Baru
+            // Variabel Eksternal Link
             const linkEksternal = document.getElementById('l-link-form').value;
             const teksTombolEksternal = document.getElementById('l-teks-form').value || "LANJUTKAN PENDAFTARAN";
+
+            // AMBIL LINK GAMBAR DARI INPUT URL
+            const linkLogo = document.getElementById('link-logo').value.trim();
+            const linkFoto = document.getElementById('link-foto').value.trim();
 
             const hook = document.getElementById('t-hook').value;
             const judul = document.getElementById('t-judul').value;
@@ -404,10 +383,9 @@
 
             if(!hook && !judul && !desk) return;
 
-            let logoHTML = logoBase64 ? `<img src="${logoBase64}" alt="Logo" class="h-10 sm:h-12 w-auto self-start mb-6 object-contain drop-shadow-md">` : ``;
-            
-            // JIKA TIDAK ADA FOTO HERO, MUNCULKAN KOTAK PERINGATAN ABU-ABU
-            let heroHTML = gambarBase64 ? `<img src="${gambarBase64}" alt="Hero Banner" class="rounded-3xl shadow-xl w-full h-auto object-cover max-h-72 border-4 border-white">` : `<div class="w-full h-48 bg-slate-300 rounded-3xl flex items-center justify-center text-slate-500 font-bold border-4 border-white shadow-xl text-[10px] sm:text-xs tracking-widest text-center px-4">[ FOTO HERO BELUM DIUPLOAD ]</div>`;
+            // RENDER HTML UNTUK LOGO & FOTO
+            let logoHTML = linkLogo ? `<img src="${linkLogo}" alt="Logo" class="h-10 sm:h-12 w-auto self-start mb-6 object-contain drop-shadow-md">` : ``;
+            let heroHTML = linkFoto ? `<img src="${linkFoto}" alt="Hero Banner" class="rounded-3xl shadow-xl w-full h-auto object-cover max-h-72 border-4 border-white">` : `<div class="w-full h-48 bg-slate-300 rounded-3xl flex items-center justify-center text-slate-500 font-bold border-4 border-white shadow-xl text-[10px] sm:text-xs tracking-widest text-center px-4">[ FOTO HERO BELUM DIUPLOAD ]</div>`;
 
             let taglineHTML = tagline ? `<div class="inline-block bg-white/10 border border-white/20 text-white text-[10px] font-bold px-5 py-1.5 rounded-full uppercase tracking-widest mb-2 shadow-sm">${tagline}</div>` : ``;
             let testiHTML = testi ? `<div class="mt-8 bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-xl text-left"><p class="text-[11px] text-amber-600 font-bold uppercase tracking-wider mb-1">⭐ Testimoni Pelanggan</p><p class="text-xs text-slate-700 italic">"${testi}"</p></div>` : ``;
@@ -426,7 +404,6 @@
                 benefitHTML += `</ul></div>`;
             }
 
-            // BLOK TOMBOL PENDAFTARAN EKSTERNAL (Muncul Jika Diisi)
             let tombolEksternalHTML = "";
             if(linkEksternal) {
                 tombolEksternalHTML = `
@@ -436,7 +413,6 @@
             </div>`;
             }
 
-            // TEKS WA MELAYANG YANG DINAMIS
             let waPesan = `Halo ${encodeURIComponent(nama)}, saya sudah pelajari infonya dan ingin dibantu proses pendaftarannya!`;
 
             outputCode = `<!DOCTYPE html>
