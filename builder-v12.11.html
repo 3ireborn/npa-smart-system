@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA SMART SYSTEM V12.15 - Ultra Light Public Builder</title>
+    <title>NPA SMART SYSTEM V12.16 - 10 Kolam Prospek</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@400;600;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -17,10 +17,10 @@
     <header class="bg-slate-900 border-b border-emerald-500/20 p-4 shadow-xl sticky top-0 z-50">
         <div class="max-w-2xl mx-auto flex items-center justify-between">
             <div class="flex items-center gap-3">
-                <div class="bg-emerald-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V12.15</div>
+                <div class="bg-emerald-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs shadow-md animate-pulse">NPA V12.16</div>
                 <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Masterpiece Builder</h1>
             </div>
-            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">Ultra Light!</div>
+            <div class="text-[10px] bg-slate-800 border border-emerald-500/50 text-emerald-400 px-2.5 py-1 rounded-full font-bold">10 Kolam Ready!</div>
         </div>
     </header>
 
@@ -33,16 +33,22 @@
 
         <div class="bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-2xl border border-slate-800 space-y-6">
             
+            <!-- MENU 10 KOLAM PROSPEK -->
             <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 space-y-4">
                 <div>
-                    <label class="block text-xs font-black text-emerald-400 uppercase tracking-wider mb-2">🎯 1. Pilih Target Landing Page</label>
+                    <label class="block text-xs font-black text-emerald-400 uppercase tracking-wider mb-2">🎯 1. Pilih Target Kolam Prospek</label>
                     <select id="pilihan-objek" class="w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 transition">
-                        <option value="3ireborn">1. 3iReborn (Financial Freedom)</option>
-                        <option value="istikmal">2. Istikmal Syariah (Umroh)</option>
-                        <option value="shopee">3. Affiliate Shopee (Cuan Online)</option>
-                        <option value="herbal">4. Herbal & Kesehatan</option>
-                        <option value="properti">5. Bisnis Properti</option>
-                        <option value="custom">6. Custom (Bebas Berkreasi)</option>
+                        <option value="emak">1. Emak-Emak (Bisnis dari Rumah)</option>
+                        <option value="pedagang">2. Pedagang Pasar (Passive Income)</option>
+                        <option value="karyawan">3. Karyawan (Persiapan Resign/Pensiun)</option>
+                        <option value="driver">4. Driver Online (Stop Narik Pas Tua)</option>
+                        <option value="guru">5. Guru (Income Tambahan Terhormat)</option>
+                        <option value="pensiun">6. Pensiunan (Masa Tua Tenang & Umroh)</option>
+                        <option value="disabilitas">7. Disabilitas (Mandiri Finansial)</option>
+                        <option value="umkm">8. UMKM (Diversifikasi Aset)</option>
+                        <option value="genz">9. Gen Z (Melek Investasi Sejak Muda)</option>
+                        <option value="freelancer">10. Freelancer (Income Stabil)</option>
+                        <option value="custom">11. Custom (Bebas Berkreasi)</option>
                     </select>
                 </div>
                 <button onclick="suntikTemplateAI()" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-black py-3 rounded-lg shadow-[0_0_15px_rgba(16,185,129,0.3)] transition tracking-wider text-xs uppercase flex items-center justify-center gap-2 border border-emerald-400/50">
@@ -62,7 +68,7 @@
                 </div>
             </div>
 
-            <!-- REVISI: Kolom Upload Diganti Jadi Kolom Link Postimages -->
+            <!-- LINK GAMBAR POSTIMAGES -->
             <div class="bg-slate-950 p-4 rounded-xl border border-pink-500/30 space-y-4">
                 <div class="text-[10px] text-pink-300 italic mb-2 leading-relaxed">
                     Penting: Agar loading web ringan, <b>jangan</b> upload file langsung. <br>
@@ -89,6 +95,7 @@
                         <label class="block text-[11px] font-bold text-slate-400 mb-1">No WA (Awali 62)</label>
                         <input type="number" id="l-wa" class="w-full rounded-lg p-2.5 text-xs" placeholder="628..." oninput="autoCompile()">
                     </div>
+                    <!-- LINK DAFTAR ONLINE (BISA DIKOSONGKAN) -->
                     <div class="col-span-2 border-t border-slate-800 pt-2 mt-1">
                         <label class="block text-[11px] font-bold text-sky-400 mb-1">Link Pendaftaran / Eksternal (Opsional)</label>
                         <input type="url" id="l-link-form" class="w-full rounded-lg p-2.5 text-xs" placeholder="Contoh: https://whatsform.com/..." oninput="autoCompile()">
@@ -209,81 +216,157 @@
     </main>
 
     <script>
+        // DATABASE AI 10 KOLAM PROSPEK
         const databaseAI = {
-            "3ireborn": {
-                hook: "DIBILANG NGANGGUR, KOK INCOME JALAN TERUS? 😎",
-                judul: "Membangun Kerajaan Aset Tanpa Tergerus Inflasi",
-                tagline: "Sistem Teruji Sejak 2014 • Diawasi OJK",
-                deskripsi: "Jangan habiskan sisa umur hanya memeras tenaga fisik. Saatnya beralih ke sistem cerdas yang bekerja mengamankan finansial keluarga Anda secara otomatis.",
-                b1: "Tools Generate Referral Siap Pakai & Otomatis",
-                b2: "Tools Follow Up Eksklusif Pengelola Mitra",
-                b3: "Akses AI Generator Content Creator",
-                b4: "Grup Dukungan WA Khusus Mitra Aktif",
-                b5: "Bimbingan Mentor Berpengalaman",
-                testimoni: "Alhamdulillah, berkat sistem yang bekerja cari prospek, income jalan terus! - Bpk. Investor",
-                faqq: "Apakah butuh keahlian IT untuk mulai?",
-                faqa: "Sama sekali tidak! Semua materi dan alat tempur digital sudah disiapkan.",
-                tagar: "#3ireborn #nganggurpreneur #pasifincome"
+            "emak": {
+                hook: "DASTERAN DI RUMAH TAPI REKENING GEMUK? BISA! 👩‍🍳",
+                judul: "Pabrik Uang Dari Dapur Anda Sendiri",
+                tagline: "Tanpa Tinggalkan Anak • Cukup Pakai HP",
+                deskripsi: "Bunda, jangan biarkan waktu luang di rumah terbuang percuma. Bangun aset digital yang bekerja 24 jam untuk membantu ekonomi keluarga, sementara Bunda tetap bisa fokus mengurus suami dan anak tercinta.",
+                b1: "Sistem 100% Online, Bisa Dikerjakan Sambil Masak",
+                b2: "Tidak Perlu Stok Barang atau Kirim Paket",
+                b3: "Dibimbing Langsung dari Nol Sampai Menghasilkan",
+                b4: "Meringankan Beban Finansial Suami",
+                b5: "Dana Pendidikan Anak & Tabungan Umroh Terjamin",
+                testimoni: "Dulu cuma scroll sosmed, sekarang alhamdulillah tiap bulan dapat transferan tanpa harus keluar rumah. - Bunda Rina",
+                faqq: "Gaptek apa bisa jalanin bisnis ini?",
+                faqa: "Sangat bisa, Bun! Kami siapkan Landing Page & Asisten AI yang bekerja otomatis menyebarkan promosi Bunda.",
+                tagar: "#emakemakberbisnis #irtproduktif #bisnisdarirumah"
             },
-            "istikmal": {
-                hook: "UMROH ITU BUKAN MAHAL, YANG MAHAL ADALAH MENUNDANYA 🕋",
-                judul: "SISIHKAN BUKAN SISAKAN",
-                tagline: "Amanah • Transparan • Berizin Resmi",
-                deskripsi: "Sistem cerdas penjamin keuangan keluarga: Kami sulap uang harian Anda menjadi tiket resmi menuju Makkah melalui ekosistem yang amanah.",
-                b1: "Sistem Pengaman Dana Jamaah Terproteksi",
-                b2: "Pilihan Paket Umroh Sesuai Kemampuan",
-                b3: "Edukasi Rutin Manasik Syariah",
-                b4: "Mitra Biro Perjalanan Resmi Kemenag RI",
-                b5: "Sistem Kemitraan Syariah Bagi Hasil Adil",
-                testimoni: "Berkat disiplin menabung lewat sistem ini, tahun depan saya dan istri insyaallah berangkat! - Bpk. Ahmad",
-                faqq: "Bagaimana jika terjadi risiko sebelum berangkat?",
-                faqa: "Dana aman dan ada perlindungan asuransi syariah yang akan diteruskan ke ahli waris.",
-                tagar: "#istikmalsyariah #umrohmudah #tabunganumroh"
+            "pedagang": {
+                hook: "JUALAN SEPI ATAU RAMAI, DAPUR TETAP NGEBUL! 🏪",
+                judul: "Bangun Keran Income Kedua Tanpa Pusing Jaga Warung",
+                tagline: "Aset Anti Sepi • Penghasilan Tetap Jalan",
+                deskripsi: "Omzet dagangan naik turun itu biasa, tapi pengeluaran jalan terus. Saatnya pedagang cerdas punya aset digital (Passive Income) sebagai jaring pengaman finansial saat fisik sudah lelah berjaga di pasar.",
+                b1: "Tidak Mengganggu Waktu Operasional Usaha Utama",
+                b2: "Proteksi Jiwa Jika Terjadi Risiko Saat Berdagang",
+                b3: "Tabungan Pensiun untuk Pedagang Mandiri",
+                b4: "Sistem Otomatis Mencari Prospek Baru",
+                b5: "Modal Terjangkau dengan Hasil Lipat Ganda",
+                testimoni: "Pasar lagi sepi pun hati tetap tenang karena punya backup income bulanan dari sistem ini. - Kang Dadang",
+                faqq: "Berapa lama saya harus aktif mengurus ini?",
+                faqa: "Cukup luangkan waktu 30 menit sehari untuk mengecek sistem di HP Anda.",
+                tagar: "#pedagangcerdas #passiveincome #asetdigital"
             },
-            "shopee": {
-                hook: "KERJA DARI RUMAH, GAJI DOLLAR! 🛒💸",
-                judul: "Rahasia Cuan Otomatis dari Affiliate Shopee",
-                tagline: "Tanpa Stok Barang • Tanpa Packing",
-                deskripsi: "Pelajari cara menghasilkan jutaan rupiah per bulan hanya dengan membagikan link produk. Sangat cocok untuk ibu rumah tangga, mahasiswa, atau siapa saja yang ingin passive income dari HP.",
-                b1: "Panduan Lengkap Cara Daftar Akun Affiliate",
-                b2: "Trik Memilih Produk Konversi Tinggi",
-                b3: "Rahasia Bikin Konten Viral di TikTok & IG",
-                b4: "Strategi Tebar Link Tanpa Dianggap Spam",
-                b5: "Dukungan Komunitas & Update Promo Bulanan",
-                testimoni: "Awalnya iseng sebar link, sekarang komisi bulanan ngalahin gaji UMR! - Kak Nisa",
-                faqq: "Apakah harus punya banyak followers untuk mulai?",
-                faqa: "Tidak harus! Kami ajarkan teknik organik yang bisa tembus FYP walau akun baru.",
-                tagar: "#shopeeaffiliate #cuanonline #kerjadarirumah"
+            "karyawan": {
+                hook: "KERJA PERGI GELAP PULANG GELAP, TABUNGAN SEGINI AJA? 👔",
+                judul: "Rencanakan Pensiun Dini & Kebebasan Waktu Anda",
+                tagline: "Kerja Cerdas • Bangun Aset • Resign Tenang",
+                deskripsi: "Jangan selamanya menukar waktu dan tenaga dengan gaji bulanan yang pas-pasan. Bangun mesin aset Anda sendiri mulai sekarang, sehingga Anda punya pilihan untuk merdeka waktu di masa depan.",
+                b1: "Cocok Dikerjakan Part-Time Sepulang Kerja",
+                b2: "Persiapan Dana Darurat & Pensiun Dini",
+                b3: "Keluar dari Jebakan Rutinitas 9 to 5",
+                b4: "Dibantu Sistem Digital Secara Penuh",
+                b5: "Potensi Income Mengalahkan Gaji Kantoran",
+                testimoni: "Berkat aset yang saya bangun sepulang kerja, sekarang saya bisa resign dan fokus keluarga. - Mas Andi",
+                faqq: "Apakah aman dari PHK?",
+                faqa: "Ini adalah bisnis mandiri Anda. Justru ini adalah asuransi terbaik jika suatu saat terjadi perampingan di kantor.",
+                tagar: "#karyawansukses #pensiundini #financialfreedom"
             },
-            "herbal": {
-                hook: "ASET TERBESAR KITA ADALAH KESEHATAN! 🌿",
-                judul: "Badan Sehat Alami, Stamina Tetap Terjaga",
-                tagline: "100% Ekstrak Alami • BPOM & Halal",
-                deskripsi: "Jangan biarkan aktivitas Anda terhambat karena badan mudah lelah. Rangkaian produk herbal premium kami diformulasi khusus untuk menjaga vitalitas dan imunitas tubuh Anda sepanjang hari.",
-                b1: "Terbuat dari Bahan Herbal Pilihan Kualitas Ekspor",
-                b2: "Aman Dikonsumsi Jangka Panjang Tanpa Efek Samping",
-                b3: "Membantu Mempercepat Proses Pemulihan Sel Tubuh",
-                b4: "Praktis Dibawa dan Dikonsumsi Kapan Saja",
-                b5: "Ribuan Pelanggan Telah Membuktikan Khasiatnya",
-                testimoni: "Semenjak rutin konsumsi, badan terasa lebih enteng dan jarang masuk angin. Sangat direkomendasikan! - Ibu Rina",
-                faqq: "Berapa lama efeknya mulai terasa?",
-                faqa: "Umumnya dalam 3-7 hari konsumsi rutin, tubuh akan terasa lebih segar dan bugar.",
-                tagar: "#herbalalami #hidupsehat #suplemenkeluarga"
+            "driver": {
+                hook: "MATAHARI MAKIN PANAS, MAU SAMPAI KAPAN NARIK DI JALAN? 🚗",
+                judul: "Ubah Setir Menjadi Aset Finansial Masa Tua",
+                tagline: "Berhenti Narik, Uang Tetap Mengalir",
+                deskripsi: "Fisik kita ada batasnya. Jangan tunggu sakit atau usia tua untuk berhenti di jalanan. Bangun aset digital yang akan menggantikan peran Anda mencari nafkah saat Anda sudah ingin beristirahat di rumah.",
+                b1: "Amankan Masa Depan Keluarga dengan Proteksi Syariah",
+                b2: "Sisihkan Penghasilan Harian Jadi Aset Ratusan Juta",
+                b3: "Promosi Jalan Otomatis Lewat Robot WhatsApp",
+                b4: "Bisa Dikerjakan Sambil Menunggu Penumpang",
+                b5: "Perlindungan Risiko Pekerjaan di Jalanan",
+                testimoni: "Dulu khawatir kalau sakit gak ada pemasukan. Sekarang sistem ini jadi tulang punggung kedua keluarga. - Bang Ojol",
+                faqq: "Saya sibuk di jalan, apa sempat?",
+                faqa: "Sangat sempat. Sistem AI kami yang akan melayani prospek Anda 24 jam nonstop.",
+                tagar: "#driveronline #pejuangrupiah #asetmasatua"
             },
-            "properti": {
-                hook: "PUNYA ASET PROPERTI BUKAN LAGI MIMPI! 🏡",
-                judul: "Investasi Cerdas Untuk Ketenangan Masa Depan",
-                tagline: "Aset Anti Inflasi • Harga Terus Naik",
-                deskripsi: "Wujudkan impian memiliki hunian ideal atau aset investasi bernilai tinggi. Kami menyediakan properti strategis dengan legalitas aman untuk mengamankan nilai uang Anda.",
-                b1: "Lokasi Strategis Dekat Fasilitas Umum & Akses Tol",
-                b2: "Legalitas Transparan, Aman, dan Terjamin (SHM)",
-                b3: "Potensi Kenaikan Harga (Capital Gain) Tinggi Tiap Tahun",
-                b4: "Desain Modern Minimalis Sesuai Gaya Hidup Masa Kini",
-                b5: "Kemudahan Skema Pembayaran (Cash/KPR/Bertahap)",
-                testimoni: "Proses KPR dibantu sampai tuntas, sekarang saya bisa menempati rumah impian keluarga. - Bpk. Budi",
-                faqq: "Apakah DP bisa dicicil?",
-                faqa: "Tentu, kami menyediakan program DP ringan yang bisa dicicil hingga 12 kali.",
-                tagar: "#investasiproperti #rumahimpian #asetmasadepan"
+            "guru": {
+                hook: "PAHLAWAN TANPA TANDA JASA JUGA BUTUH KESEJAHTERAAN! 📚",
+                judul: "Peluang Income Tambahan Yang Terhormat & Berkah",
+                tagline: "Fokus Mengajar • Income Tetap Mengalir",
+                deskripsi: "Dedikasi Anda mencerdaskan bangsa sangat mulia. Izinkan kami membantu Anda mengamankan finansial keluarga tanpa harus mengganggu waktu mengajar dan kehormatan profesi Anda.",
+                b1: "Peluang Edukasi Bisnis Sesuai Karakter Guru",
+                b2: "Sistem Terpusat, Elegan, dan Sangat Profesional",
+                b3: "Proteksi Finansial untuk Keluarga di Rumah",
+                b4: "Komunitas Positif dan Saling Membangun",
+                b5: "Wujudkan Niat Umroh & Haji Lebih Cepat",
+                testimoni: "Bisa dapat income tambahan tanpa mengganggu jam mengajar di sekolah. Sangat membantu. - Ibu Guru Aini",
+                faqq: "Apakah ini bisnis MLM yang mengganggu?",
+                faqa: "Tidak. Ini adalah ekosistem perencanaan keuangan resmi yang dijalankan secara profesional lewat digital.",
+                tagar: "#pahlawantanpatandajasa #guruhonorer #bisnispengajar"
+            },
+            "pensiun": {
+                hook: "PENSIUN BAHAGIA, UMRAH PUN TERWUJUD! 🕋",
+                judul: "Nikmati Masa Tua Tanpa Bergantung Pada Anak",
+                tagline: "Ibadah Tenang • Finansial Aman",
+                deskripsi: "Masa pensiun adalah waktu untuk fokus beribadah dan bermain bersama cucu. Bergabunglah dengan sistem kami untuk memastikan arus kas tetap lancar dan niat suci ke Baitullah segera terlaksana.",
+                b1: "Aman, Diawasi OJK, dan Sesuai Syariah",
+                b2: "Fokus Perbanyak Ibadah, Mesin Bekerja Otomatis",
+                b3: "Tidak Perlu Pusing Belajar Teknologi Rumit",
+                b4: "Mewujudkan Tabungan Umroh Tanpa Potong Uang Dapur",
+                b5: "Silaturahmi di Komunitas Positif",
+                testimoni: "Alhamdulillah, di usia senja masih bisa produktif dan akhirnya bisa memberangkatkan istri umroh. - Pak Pensiunan",
+                faqq: "Saya sudah tua, apakah masih bisa ikut?",
+                faqa: "Tentu! Sistem dirancang khusus agar mudah digunakan oleh semua usia, semudah membalas chat.",
+                tagar: "#pensiunbahagia #umrohmudah #nabungcerdas"
+            },
+            "disabilitas": {
+                hook: "KETERBATASAN FISIK BUKAN PENGHALANG MENUJU SUKSES! ♿",
+                judul: "Buktikan Anda Bisa Mandiri Finansial Dari Rumah",
+                tagline: "Kerja Cerdas • Hapus Stigma • Sukses Bersama",
+                deskripsi: "Dunia digital tidak mengenal batasan fisik. Gunakan sistem digital cerdas sebagai tangan kanan Anda untuk membangun jaringan bisnis, mencetak penghasilan, dan menjadi inspirasi bagi banyak orang.",
+                b1: "100% Dikerjakan Lewat Smartphone Tanpa Keluar Rumah",
+                b2: "Alat Promosi Digital Otomatis Membantu Keterbatasan",
+                b3: "Dukungan Penuh dari Komunitas Tanpa Diskriminasi",
+                b4: "Peluang Income Tidak Terbatas Layaknya Profesional",
+                b5: "Sistem Terbukti Menghasilkan Secara Adil & Transparan",
+                testimoni: "Sistem ini memberi saya kebebasan. Saya bisa mandiri dan membuktikan disabilitas juga punya karya. - Kak Ilham",
+                faqq: "Bagaimana cara promosinya kalau saya sulit bepergian?",
+                faqa: "Asisten AI kami yang akan menyebarkan presentasi untuk Anda. Anda hanya mengontrol dari layar HP.",
+                tagar: "#disabilitaspunyakarya #nganggurajabisa #inklusi"
+            },
+            "umkm": {
+                hook: "OMZET UMKM STAGNAN? JANGAN TARUH TELUR DI SATU KERANJANG! 📦",
+                judul: "Diversifikasi Aset Untuk Memperkuat Bisnis Anda",
+                tagline: "Amankan Modal • Lipat Gandakan Profit",
+                deskripsi: "Pemilik usaha harus cerdas mengelola arus kas. Sebagian profit usaha harus dialihkan menjadi aset yang mandiri. Ini adalah 'Sekoci Keselamatan' untuk memastikan keluarga Anda aman apapun yang terjadi pada bisnis utama.",
+                b1: "Bisa Menjadi Dana Darurat Untuk Suntikan Modal",
+                b2: "Sistem Edukasi Finansial Pengusaha",
+                b3: "Networking Luas Dengan Sesama Pelaku Bisnis",
+                b4: "Penghasilan Sampingan Tanpa Modal Besar",
+                b5: "Proteksi Risiko Jika Terjadi Hal Tak Terduga Pada Usaha",
+                testimoni: "Aset investasi ini menyelamatkan operasional warung saya saat masa krisis kemarin. Sangat bermanfaat! - Pak Hendra",
+                faqq: "Saya tidak ada waktu untuk rekrut orang?",
+                faqa: "Gunakan fitur otomatis kami. Anda fokus kelola UMKM, biarkan Landing Page yang bekerja merekrut mitra.",
+                tagar: "#umkmindonesia #pengusahamuda #asetbisnis"
+            },
+            "genz": {
+                hook: "FOMO? MENDING BANGUN ASET BIAR BEBAS FINANSIAL SEBELUM 30! 📱",
+                judul: "Kerja Santai, Cuan Mengalir Deras Ala Gen Z",
+                tagline: "Rebahan Produktif • Financial Freedom",
+                deskripsi: "Jangan habiskan masa muda cuma buat nongkrong. Manfaatkan skill sosmed kamu untuk membangun kerajaan aset digital. Biar nanti pas umur 30, kamu udah nggak perlu pusing mikirin cicilan!",
+                b1: "Sistem Sangat Kekinian & Full Digital",
+                b2: "Cocok Untuk Konten Kreator & Pemain Sosmed",
+                b3: "Modal Setara Harga Ngopi, Potensi Puluhan Juta",
+                b4: "Networking Eksekutif se-Indonesia",
+                b5: "Jalan-Jalan Gratis Lewat Reward Go Cruise",
+                testimoni: "Iseng-iseng pakai strategi ini, sekarang bonus per bulan udah ngalahin gaji manajer. - Kevin (22 thn)",
+                faqq: "Gue masih kuliah, modalnya gede gak?",
+                faqa: "Kecil banget, Bro/Sis! Tinggal sisihkan uang ngopi, kamu udah bisa mulai investasi masa depan.",
+                tagar: "#genzberbisnis #financialfreedom #passiveincome"
+            },
+            "freelancer": {
+                hook: "INCOME FREELANCE GAK NENTU? BIKIN YANG PASTI-PASTI AJA! 💻",
+                judul: "Amankan Arus Kas Bulanan Dengan Sistem Pintar",
+                tagline: "Kerja Kapan Saja • Income Stabil",
+                deskripsi: "Sering cemas nunggu invoice cair dari klien? Sekarang saatnya kamu bangun sumber penghasilan pasif yang stabil tiap bulan. Kerja freelance jalan, bonus bulanan dari sistem juga jalan terus.",
+                b1: "Fleksibilitas Waktu 100% Mengikuti Ritme Anda",
+                b2: "Sebagai Dana Pensiun Pekerja Lepas",
+                b3: "Sistem Full Otomatis Menyesuaikan Pola Freelance",
+                b4: "Membangun Personal Branding Profesional",
+                b5: "Proteksi Syariah Perlindungan Jiwa",
+                testimoni: "Sekarang lebih tenang ngerjain project klien karena udah punya back-up income yang stabil tiap bulan. - Dimas, Desainer",
+                faqq: "Gimana cara kerjanya?",
+                faqa: "Cukup bagikan link Landing Page Anda. Saat klien/prospek tertarik, mereka langsung terhubung ke WA Anda.",
+                tagar: "#freelanceindonesia #workfromanywhere #asetdigital"
             },
             "custom": {
                 hook: "TULIS KALIMAT PANCINGAN ANDA DI SINI! 🔥",
@@ -476,31 +559,5 @@
             <path d="M12.01 2.002c-5.522 0-9.998 4.477-9.998 9.998 0 1.764.458 3.482 1.328 5L1.875 22l5.127-1.465c1.47.828 3.143 1.264 4.908 1.264 5.522 0 10.002-4.477 10.002-9.998 0-5.52-4.48-9.999-10.002-9.999zm0 18.232c-1.492 0-2.936-.386-4.218-1.118l-.302-.178-3.134.896.84-3.056-.196-.312A8.204 8.204 0 013.774 12c0-4.545 3.695-8.24 8.236-8.24 4.542 0 8.24 3.695 8.24 8.24 0 4.544-3.698 8.234-8.24 8.234zm4.526-6.182c-.248-.124-1.468-.724-1.696-.808-.228-.082-.394-.124-.56.124-.166.248-.642.808-.788.972-.144.166-.29.186-.538.062-.248-.124-1.048-.384-1.996-1.184-.738-.622-1.236-1.39-1.38-1.638-.144-.248-.016-.382.108-.506.112-.11.248-.29.372-.434.124-.144.166-.248.248-.414.082-.166.042-.31-.02-.434-.062-.124-.56-1.35-.768-1.848-.2-.486-.404-.42-.56-.426-.144-.006-.31-.008-.476-.008-.166 0-.436.062-.664.31-.228.248-.87.854-1.218.87-1.218 0-.364.372-1.034 1.136-1.57.766-.538 2.37-1.31 3.256-1.59.888-.28 1.178-.228 1.634-.144.456.082 1.468.6 1.676 1.18.206.58.206 1.076.144 1.18-.062.104-.228.166-.476.29z"/>
         </svg>
     </a>
-</body>
-</html>`;
-
-            document.getElementById('result-box').classList.remove('hidden');
-            document.getElementById('kode-manual').value = outputCode;
-        }
-
-        function salinKeClipboard() {
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(outputCode).then(() => alert("📋 KODE BERHASIL DISALIN!"));
-            } else { alert("⚠️ Gunakan tombol DOWNLOAD HTML di sebelah kiri!"); }
-        }
-
-        function unduhHasilKoding() {
-            if(!outputCode) {
-                alert("Generate kode dulu Pakde!");
-                return;
-            }
-            const blob = new Blob([outputCode], { type: "text/html;charset=utf-8" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(blob);
-            link.download = "index.html";
-            link.click();
-            URL.revokeObjectURL(link.href);
-        }
-    </script>
 </body>
 </html>
