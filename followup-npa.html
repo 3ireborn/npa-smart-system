@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NPA Follow-Up Master V1.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: white; }
+        select { background-color: #1e293b !important; border: 1px solid #475569 !important; color: white !important; }
+        select:focus { border-color: #3b82f6 !important; outline: none; }
+    </style>
+</head>
+<body class="min-h-screen pb-20 bg-slate-950">
+
+    <header class="bg-slate-900 border-b border-blue-500/20 p-4 shadow-xl sticky top-0 z-50">
+        <div class="max-w-2xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 text-white px-2.5 py-1 rounded font-black text-xs shadow-md">NPA FOLLOW-UP</div>
+                <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Masterpiece CS</h1>
+            </div>
+            <div class="text-[10px] bg-slate-800 border border-blue-500/50 text-blue-400 px-2.5 py-1 rounded-full font-bold">Siap Closing!</div>
+        </div>
+    </header>
+
+    <main class="max-w-xl mx-auto p-4 sm:p-6 mt-4">
+        
+        <div class="text-center mb-6">
+            <h1 class="text-2xl sm:text-3xl font-black text-blue-400 tracking-wide mb-1">BANK SCRIPT NPA</h1>
+            <p class="text-xs text-slate-400 font-semibold tracking-widest uppercase">Senjata Closing 10 Kolam Prospek</p>
+        </div>
+
+        <div class="bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-2xl border border-slate-800 space-y-6">
+            
+            <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 space-y-4">
+                <div>
+                    <label class="block text-xs font-black text-blue-400 uppercase tracking-wider mb-2">🎯 Pilih Target Kolam Prospek</label>
+                    <select id="pilihan-kolam" class="w-full rounded-xl p-3 text-sm focus:ring-2 focus:ring-blue-500 transition" onchange="tampilkanScript()">
+                        <option value="" disabled selected>-- Pilih Kolam Prospek --</option>
+                        <option value="emak">1. Emak-Emak (Bisnis dari Rumah)</option>
+                        <option value="pedagang">2. Pedagang Pasar (Passive Income)</option>
+                        <option value="karyawan">3. Karyawan (Persiapan Resign)</option>
+                        <option value="driver">4. Driver Online (Stop Narik)</option>
+                        <option value="guru">5. Guru (Income Tambahan)</option>
+                        <option value="pensiun">6. Pensiunan (Masa Tua Tenang)</option>
+                        <option value="disabilitas">7. Disabilitas (Mandiri Finansial)</option>
+                        <option value="umkm">8. UMKM (Diversifikasi Aset)</option>
+                        <option value="genz">9. Gen Z (Investasi Muda)</option>
+                        <option value="freelancer">10. Freelancer (Income Stabil)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- HASIL SCRIPT -->
+            <div id="script-container" class="hidden space-y-5">
+                
+                <!-- SCRIPT AUTOREPLY (WHATSAUTO) -->
+                <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-emerald-500 shadow-inner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block">1. Auto-Reply (Pesan Pertama)</span>
+                        <button onclick="salinTeks('teks-autoreply')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
+                    </div>
+                    <p class="text-[10px] text-slate-500 mb-2 italic">Gunakan ini di WhatsAuto saat prospek baru masuk.</p>
+                    <textarea id="teks-autoreply" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                </div>
+
+                <!-- SCRIPT FOLLOW UP H+1 -->
+                <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-amber-500 shadow-inner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block">2. Follow-Up H+1 (Tanya Kabar)</span>
+                        <button onclick="salinTeks('teks-h1')" class="bg-amber-600 hover:bg-amber-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
+                    </div>
+                    <p class="text-[10px] text-slate-500 mb-2 italic">Kirim 1 hari setelah mereka baca Landing Page.</p>
+                    <textarea id="teks-h1" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                </div>
+
+                <!-- SCRIPT FOLLOW UP H+3 -->
+                <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-pink-500 shadow-inner">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block">3. Follow-Up H+3 (Call to Action)</span>
+                        <button onclick="salinTeks('teks-h3')" class="bg-pink-600 hover:bg-pink-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
+                    </div>
+                    <p class="text-[10px] text-slate-500 mb-2 italic">Kirim jika masih ragu, berikan dorongan mental.</p>
+                    <textarea id="teks-h3" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        const databaseFollowUp = {
+            "emak": {
+                auto: "🤖 *Beep... Boop!* Halo Bunda, selamat datang!\n\nWah, luar biasa semangat Bunda untuk membantu ekonomi keluarga meski sibuk di rumah! 👩‍🍳✨\n\nPakde Sugiarto punya sistem rahasia *Pabrik Uang Dari Dapur* yang terbukti bisa nambah uang belanja & pendidikan anak tanpa harus ninggalin rumah. Silakan klik link ini untuk mempelajarinya Bunda:\n\n👉 [MASUKKAN LINK LP EMAK DI SINI]\n\nNanti kalau ada yang mau ditanyakan, balas chat ini ya Bun. Pakde siap bantu!",
+                h1: "Halo Bunda, gimana kabarnya hari ini? Masak apa nih buat keluarga? 😊\n\nBtw, Bunda sudah sempat baca-baca link materi *Pabrik Uang Dari Dapur* yang kemarin Pakde kirim belum ya? Kalau ada bagian yang membingungkan soal cara kerjanya, jangan sungkan tanya Pakde ya Bun. Pakde siap bimbing dari nol sampai Bunda menghasilkan!",
+                h3: "Bunda, Pakde cuma mau ngingetin nih, waktu anak-anak bertumbuh itu cepat banget. Biaya pendidikan juga makin naik.\n\nMumpung sistem NPA Smart System ini lagi buka bimbingan khusus ibu rumah tangga, yuk kita mulai pelan-pelan bangun asetnya. Modal sisihkan uang belanja sedikit aja kok Bun. Mau Pakde bantu pendaftarannya hari ini?"
+            },
+            "pedagang": {
+                auto: "🤖 *Beep... Boop!* Halo Kang/Teh, selamat datang di NPA Smart System!\n\nLuar biasa semangat dagangnya! Tapi ingat, fisik kita ada batasnya. 🏪✨\n\nPakde Sugiarto punya rahasia *Bangun Keran Income Kedua* biar kalau warung lagi sepi atau kita lagi sakit, uang tetap masuk! Silakan pelajari sistemnya di link ini ya:\n\n👉 [MASUKKAN LINK LP PEDAGANG DI SINI]\n\nPelajari dulu santai-santai sambil jaga warung. Kalau ada pertanyaan, langsung chat Pakde ya!",
+                h1: "Halo Kang/Teh, gimana dagangan hari ini? Semoga laris manis berkah ya! 🤲\n\nOh ya, sudah sempat cek link materi yang Pakde kirim kemarin? Ingat lho, kita nggak bisa selamanya jaga warung dari pagi sampai malam. Aset digital ini penting banget buat dana darurat & pensiun kita nanti. Ada yang mau didiskusikan?",
+                h3: "Kang/Teh, modal bangun aset di 3iReborn ini setara kayak nabung keuntungan jualan harian aja kok. Nggak berat sama sekali, tapi hasilnya bisa jadi sekoci penyelamat keluarga di masa depan.\n\nJangan tunggu sampai fisik capek baru bertindak. Mau Pakde bantu registrasinya sekarang biar posisinya aman?"
+            },
+            "karyawan": {
+                auto: "🤖 *Beep... Boop!* Halo rekan pekerja keras, selamat datang!\n\nSiklus berangkat gelap pulang gelap memang melelahkan. 👔✨\n\nPakde Sugiarto sangat paham, makanya Pakde siapkan sistem *Pensiun Dini & Kebebasan Waktu* khusus buat Anda yang ingin punya backup income selain gaji kantor. Cek detailnya di sini:\n\n👉 [MASUKKAN LINK LP KARYAWAN DI SINI]\n\nSilakan dibaca sepulang kerja nanti. Pakde tunggu diskusinya ya!",
+                h1: "Halo Mas/Mbak, semangat kerjanya hari ini! Hati-hati di jalan ya. 🚦\n\nSekadar *check-in*, sudah sempat buka materi yang Pakde kirim kemarin? Membangun aset ini *part-time* kok, cukup dikerjakan lewat HP pas jam istirahat atau sepulang kerja. Kalau bingung bagi waktunya, chat Pakde ya, nanti Pakde ajarin triknya!",
+                h3: "Mas/Mbak, gaji bulanan memang nyaman, tapi kita butuh aset yang aman dari risiko PHK atau perampingan perusahaan.\n\nMemulai 3iReborn ini adalah langkah cerdas untuk nyicil kebebasan waktu Anda ke depan. Biar mesin NPA yang kerja cari prospek. Yuk, mulai amankan nama Anda hari ini, mumpung gajian masih fresh! Mau dibantu daftarnya?"
+            },
+            "driver": {
+                auto: "🤖 *Beep... Boop!* Halo Bang/Mbak, selamat datang!\n\nSemangat terus pejuang jalanan! Hati-hati di jalan ya. 🚗✨\n\nDaripada nunggu orderan cuma main game, mending pelajari rahasia Pakde Sugiarto *Ubah Setir Jadi Aset Masa Tua*. Cek di link ini:\n\n👉 [MASUKKAN LINK LP DRIVER DI SINI]\n\nPelajari santai aja pas lagi ngetem. Nanti kalau mau ngobrol, balas chat ini ya!",
+                h1: "Halo Bang/Mbak, gimana orderan hari ini? Gacor kan? 🚀\n\nOh ya, materi yang kemarin Pakde kirim sudah sempat dibaca pas lagi ngetem belum? Ingat Bang, aspal itu keras, kita butuh pegangan dan proteksi asuransi buat keluarga di rumah kalau terjadi apa-apa. Ada yang mau ditanyain soal sistemnya?",
+                h3: "Bang, nyisihin uang Rp 15 ribuan sehari dari hasil narik itu kecil banget, tapi kalau dimasukkan ke sistem 3iReborn, bisa jadi dana pensiun ratusan juta lho!\n\nJangan biarkan uang hasil keringat habis gitu aja. Yuk mulai sisihkan buat masa depan. Kalau mau daftar, kabari Pakde, nanti Pakde bantu arahkan prosesnya!"
+            },
+            "guru": {
+                auto: "🤖 *Beep... Boop!* Halo Bapak/Ibu Pahlawan Tanpa Tanda Jasa, selamat datang! 📚✨\n\nPakde Sugiarto sangat menghargai dedikasi Anda. Kami punya sistem *Income Tambahan Yang Terhormat* tanpa mengganggu jam mengajar. Silakan pelajari di sini:\n\n👉 [MASUKKAN LINK LP GURU DI SINI]\n\nSilakan dipelajari. Jika ada yang ingin didiskusikan, Pakde siap sedia!",
+                h1: "Halo Bapak/Ibu Guru, selamat beraktivitas dan mendidik generasi bangsa! 🇮🇩\n\nSudah sempat melihat materi *Income Tambahan* yang kemarin Pakde berikan? Banyak lho rekan-rekan pengajar yang sangat terbantu dengan sistem ini karena elegan dan profesional. Jika ada yang kurang jelas, silakan tanyakan ke Pakde ya.",
+                h3: "Bapak/Ibu, bisnis di 3iReborn ini pada dasarnya adalah mengedukasi masyarakat tentang pentingnya perencanaan keuangan. Sangat cocok dengan jiwa pendidik Bapak/Ibu.\n\nMari kita mulai bangun aset masa depan ini agar keluarga di rumah juga semakin sejahtera. Apakah Bapak/Ibu sudah siap untuk mengisi form registrasinya hari ini?"
+            },
+            "pensiun": {
+                auto: "🤖 *Beep... Boop!* Halo Bpk/Ibu, selamat datang di NPA Smart System!\n\nTerima kasih sudah merespon. Sangat luar biasa melihat semangat Bpk/Ibu merencanakan masa tua yang tenang! 🕋✨\n\nPakde Sugiarto punya strategi *Pensiun Bahagia & Mewujudkan Umrah*. Silakan klik link ini untuk melihat caranya:\n\n👉 [MASUKKAN LINK LP PENSIUN DI SINI]\n\nPelajari pelan-pelan ya. Jika ada yang ingin ditanyakan, balas chat ini. Pakde siap berdiskusi sambil ngopi! ☕",
+                h1: "Halo Bpk/Ibu, salam sehat dan bahagia selalu! Gimana kabarnya hari ini? 🌿\n\nBpk/Ibu sudah sempat membaca link materi yang Pakde kirim kemarin? Jangan khawatir soal gaptek atau repot, karena sistem digital NPA ini memang dirancang khusus agar mudah digunakan. Kalau ada bagian yang membingungkan, mari kita obrolkan pelan-pelan.",
+                h3: "Bpk/Ibu, masa tua itu enaknya diisi dengan ibadah, main sama cucu, dan tidak membebani anak-anak secara finansial.\n\nDengan sistem 3iReborn, kita tidak hanya menabung untuk diri sendiri, tapi ada nilai ibadah dan silaturahminya. Yuk, kita mulai program tabungan umroh atau dana pensiunnya. Biar Pakde yang bantu semua proses administrasinya ya. Bagaimana Bpk/Ibu?"
+            },
+            "disabilitas": {
+                auto: "🤖 *Beep... Boop!* Halo Kak, selamat datang!\n\nKeterbatasan fisik bukan halangan, karena semangat Kakak jauh melebihi itu! ♿✨\n\nPakde Sugiarto telah menyiapkan sistem *Kerja Cerdas & Mandiri Finansial* yang 100% bisa dikerjakan lewat HP dari rumah. Pelajari caranya di sini:\n\n👉 [MASUKKAN LINK LP DISABILITAS DI SINI]\n\nSilakan dibaca ya. Kalau butuh bantuan atau diskusi, Pakde ada di sini!",
+                h1: "Halo Kak! Semangat pagi dan terus berkarya ya! 💪\n\nSudah sempat baca-baca peluang kemandirian finansial yang kemarin Pakde kirim? Kakak tenang saja, untuk urusan presentasi atau cari orang, Asisten Robot AI NPA kita yang akan bekerja. Kakak cukup kontrol dari HP. Keren, kan? Ada yang mau ditanyakan?",
+                h3: "Kak, saatnya kita buktikan bahwa #disabilitaspunyakarya dan bisa sukses luar biasa secara finansial.\n\nKomunitas kita sangat suportif dan tidak membeda-bedakan. Mari bergabung dan bangun aset digital Kakak sendiri. Pendaftarannya sangat mudah, mau Pakde pandu langkah-langkahnya sekarang?"
+            },
+            "umkm": {
+                auto: "🤖 *Beep... Boop!* Halo Bosku, selamat datang!\n\nLuar biasa semangat usahanya! Tapi ingat, jangan taruh semua telur di satu keranjang. 📦✨\n\nPakde Sugiarto punya strategi *Diversifikasi Aset* untuk mengamankan profit usaha Bosku menjadi mesin uang kedua. Cek proposalnya di sini:\n\n👉 [MASUKKAN LINK LP UMKM DI SINI]\n\nPelajari dulu santai-santai. Nanti kita diskusi bisnis bareng Pakde!",
+                h1: "Halo Bos, gimana pergerakan omzet hari ini? Semoga profitnya naik terus ya! 📈\n\nSudah sempat mereview proposal *Diversifikasi Aset* yang Pakde berikan kemarin? Mengalihkan sebagian kecil laba ke sistem 3iReborn ini adalah langkah mitigasi risiko terbaik untuk pengusaha lho. Ada poin yang mau didiskusikan lebih dalam?",
+                h3: "Bos, bisnis utama memang penting, tapi punya 'Sekoci Penyelamat' berupa passive income dan proteksi jiwa itu jauh lebih penting untuk keamanan keluarga.\n\nSistemnya sudah auto-pilot lewat Landing Page, jadi nggak akan ganggu waktu ngurus bisnis utama. Yuk, amankan posisi kemitraannya hari ini. Mau Pakde kirimkan form pendaftarannya?"
+            },
+            "genz": {
+                auto: "🤖 *Beep... Boop!* Halo Bro/Sis, selamat datang!\n\nMasa muda emang waktunya gaspol bangun aset biar nanti bebas finansial! 📱✨\n\nPakde Sugiarto udah nyiapin *Sistem Cuan Ala Gen Z* yang cocok banget dikerjain pakai skill sosmed kamu. Cek blueprint-nya di sini:\n\n👉 [MASUKKAN LINK LP GEN Z DI SINI]\n\nPelajari dulu santai. Kalau udah paham, langsung chat Pakde ya!",
+                h1: "Halo Bro/Sis, lagi sibuk ngapain nih hari ini? 🎧\n\nUdah sempat baca blueprint yang Pakde kasih kemarin? Gimana, kebayang kan potensi passive income-nya? Daripada duit jajan habis buat nongkrong atau checkout e-commerce mulu, mending disisihin dikit buat bangun aset di 3iReborn. Ada yang masih kurang jelas?",
+                h3: "Bro/Sis, waktu adalah aset terbesar kamu sekarang. Mulai lebih awal berarti kamu bakal nikmatin financial freedom lebih cepat dari teman-teman seangkatanmu.\n\nSistem digital NPA udah siap bantu kamu nyari prospek lewat sosmed. Mumpung masih muda, yuk sikat peluangnya! Mau Pakde bantu registrasinya sekarang?"
+            },
+            "freelancer": {
+                auto: "🤖 *Beep... Boop!* Halo Kak, selamat datang pejuang work-from-anywhere!\n\nBiar nggak cemas nungguin invoice cair, mari kita bangun income yang pasti-pasti aja. 💻✨\n\nPakde Sugiarto punya sistem *Amankan Arus Kas Bulanan* khusus buat freelancer. Cek detail kerjanya di sini:\n\n👉 [MASUKKAN LINK LP FREELANCER DI SINI]\n\nSilakan dicek ya. Nanti kita ngobrol-ngobrol santai bahas sistemnya!",
+                h1: "Halo Kak! Gimana deadline project hari ini? Semoga aman terkendali ya! ☕\n\nSudah cek link sistem pengaman arus kas yang kemarin Pakde kirim? Menjadi mitra 3iReborn itu sangat fleksibel, persis seperti freelance, tapi dengan potensi passive income yang jauh lebih stabil untuk jangka panjang. Ada yang mau didiskusikan?",
+                h3: "Kak, punya asuransi jiwa plus investasi itu wajib banget buat kita yang kerjanya lepas dan nggak punya jaminan pensiun dari perusahaan.\n\nDaripada uang fee habis nggak berbekas, mari kita gulung jadi aset digital. Sistem automasi kita siap ngebantu Kakak jualan tanpa harus kelihatan jualan. Yuk, kita proses pendaftarannya hari ini?"
+            }
+        };
+
+        function tampilkanScript() {
+            const kolam = document.getElementById('pilihan-kolam').value;
+            const data = databaseFollowUp[kolam];
+            
+            if (data) {
+                document.getElementById('script-container').classList.remove('hidden');
+                document.getElementById('teks-autoreply').value = data.auto;
+                document.getElementById('teks-h1').value = data.h1;
+                document.getElementById('teks-h3').value = data.h3;
+            }
+        }
+
+        function salinTeks(elementId) {
+            const copyText = document.getElementById(elementId);
+            copyText.select();
+            copyText.setSelectionRange(0, 99999); // Untuk Mobile
+            navigator.clipboard.writeText(copyText.value).then(() => {
+                alert("📋 Teks berhasil disalin! Silakan paste ke WhatsApp.");
+            });
+        }
+    </script>
+</body>
+          </html>
+
