@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>NPA Follow-Up Master V2.0 - Formula 139</title>
+    <title>NPA Follow-Up Master V3.2 - 15 Kolam</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
@@ -20,7 +20,7 @@
                 <div class="bg-blue-600 text-white px-2.5 py-1 rounded font-black text-xs shadow-md">NPA FOLLOW-UP</div>
                 <h1 class="font-bold text-sm sm:text-base tracking-tight text-white">Masterpiece CS</h1>
             </div>
-            <div class="text-[10px] bg-slate-800 border border-blue-500/50 text-blue-400 px-2.5 py-1 rounded-full font-bold">Formula 1-3-9+30</div>
+            <div class="text-[10px] bg-slate-800 border border-blue-500/50 text-blue-400 px-2.5 py-1 rounded-full font-bold">15 Kolam Prospek!</div>
         </div>
     </header>
 
@@ -28,7 +28,7 @@
         
         <div class="text-center mb-6">
             <h1 class="text-2xl sm:text-3xl font-black text-blue-400 tracking-wide mb-1">BANK SCRIPT 139</h1>
-            <p class="text-xs text-slate-400 font-semibold tracking-widest uppercase">Senjata Closing 10 Kolam Prospek</p>
+            <p class="text-xs text-slate-400 font-semibold tracking-widest uppercase">Senjata Closing 15 Kolam Prospek</p>
         </div>
 
         <div class="bg-slate-900 p-5 sm:p-6 rounded-2xl shadow-2xl border border-slate-800 space-y-6">
@@ -48,61 +48,61 @@
                         <option value="umkm">8. UMKM (Diversifikasi Aset)</option>
                         <option value="genz">9. Gen Z (Investasi Muda)</option>
                         <option value="freelancer">10. Freelancer (Income Stabil)</option>
+                        <option value="abdi_negara">11. Abdi Negara/TNI/Polri (Purna Tugas)</option>
+                        <!-- 4 Kolam Tambahan -->
+                        <option value="tkw">12. TKW / PMI (Aset Pulang Kampung)</option>
+                        <option value="mahasiswa">13. Mahasiswa (Biaya Kuliah Mandiri)</option>
+                        <option value="pengusaha">14. Pengusaha Besar (Scale-Up Aset)</option>
+                        <option value="sekolah">15. Biaya Sekolah (Tabungan Pendidikan)</option>
                     </select>
                 </div>
             </div>
 
-            <!-- HASIL SCRIPT -->
             <div id="script-container" class="hidden space-y-5">
                 
-                <!-- SCRIPT AUTOREPLY (WHATSAUTO) -->
                 <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-emerald-500 shadow-inner">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest block">1. Auto-Reply (Pesan Pertama)</span>
                         <button onclick="salinTeks('teks-autoreply')" class="bg-emerald-600 hover:bg-emerald-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
                     </div>
-                    <p class="text-[10px] text-slate-500 mb-2 italic">Gunakan ini di WhatsAuto saat prospek baru masuk (Keyword sesuai target).</p>
-                    <textarea id="teks-autoreply" class="w-full h-28 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                    <p class="text-[10px] text-slate-500 mb-2 italic">Gunakan ini di WhatsAuto saat prospek baru masuk.</p>
+                    <textarea id="teks-autoreply" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
                 </div>
 
-                <!-- SCRIPT FOLLOW UP H+1 -->
                 <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-amber-500 shadow-inner">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-amber-400 uppercase tracking-widest block">2. Follow-Up H+1 (Tanya Kabar)</span>
                         <button onclick="salinTeks('teks-h1')" class="bg-amber-600 hover:bg-amber-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
                     </div>
                     <p class="text-[10px] text-slate-500 mb-2 italic">Kirim 1 hari setelah mereka baca Landing Page.</p>
-                    <textarea id="teks-h1" class="w-full h-28 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                    <textarea id="teks-h1" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
                 </div>
 
-                <!-- SCRIPT FOLLOW UP H+3 -->
                 <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-pink-500 shadow-inner">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-pink-400 uppercase tracking-widest block">3. Follow-Up H+3 (Call to Action)</span>
                         <button onclick="salinTeks('teks-h3')" class="bg-pink-600 hover:bg-pink-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
                     </div>
                     <p class="text-[10px] text-slate-500 mb-2 italic">Kirim edukasi urgency jika prospek masih ragu/diam.</p>
-                    <textarea id="teks-h3" class="w-full h-28 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                    <textarea id="teks-h3" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
                 </div>
 
-                <!-- SCRIPT FOLLOW UP H+9 -->
                 <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-red-500 shadow-inner">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-red-400 uppercase tracking-widest block">4. Follow-Up H+9 (Takeaway / Skip)</span>
                         <button onclick="salinTeks('teks-h9')" class="bg-red-600 hover:bg-red-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
                     </div>
                     <p class="text-[10px] text-slate-500 mb-2 italic">Tarik penawaran dengan halus. Buat mereka merasa rugi lalu SKIP.</p>
-                    <textarea id="teks-h9" class="w-full h-28 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                    <textarea id="teks-h9" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
                 </div>
 
-                <!-- SCRIPT FOLLOW UP H+30 -->
                 <div class="bg-slate-950 p-4 rounded-xl border-l-4 border-indigo-500 shadow-inner">
                     <div class="flex justify-between items-center mb-2">
                         <span class="text-xs font-bold text-indigo-400 uppercase tracking-widest block">5. Follow-Up H+30 (Jalur Langit)</span>
                         <button onclick="salinTeks('teks-h30')" class="bg-indigo-600 hover:bg-indigo-500 text-white text-[10px] font-bold py-1 px-3 rounded shadow transition">Salin</button>
                     </div>
                     <p class="text-[10px] text-slate-500 mb-2 italic">Sapaan alam semesta sebulan kemudian tanpa memaksa, berikan bukti.</p>
-                    <textarea id="teks-h30" class="w-full h-28 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
+                    <textarea id="teks-h30" class="w-full h-32 bg-slate-900 border border-slate-700 rounded-lg text-xs p-3 text-slate-300 leading-relaxed" readonly></textarea>
                 </div>
 
             </div>
@@ -181,6 +181,42 @@
                 h3: "Kak, punya asuransi jiwa plus investasi itu wajib banget buat kita yang kerjanya lepas dan nggak punya jaminan pensiun dari perusahaan.\n\nDaripada uang fee habis nggak berbekas, mari kita gulung jadi aset digital. Sistem automasi kita siap ngebantu Kakak. Yuk, kita proses pendaftarannya hari ini?",
                 h9: "Halo Kak, berhubung jadwal *mentoring* Pakde sudah *fully booked*, mohon maaf sebelumnya slot pendampingannya Pakde oper ke rekan-rekan *freelancer* lain yang sudah *deal* duluan ya. 🙏\n\nSemoga project-project Kakak makin banyak yang *approve*, invoice lancar cair, dan sukses selalu!",
                 h30: "Halo Kak! Semoga *project*-nya lagi nggak banyak revisi ya hari ini. ☕\n\nPakde ngelihat temen-temen *freelancer* di grup lagi pada santai banget bulan ini, soalnya *passive income* dari 3iReborn mereka udah mulai cair konsisten tiap bulan. Jadi kerjaan utama bebas tanpa *pressure* uang. Kalau Kakak tertarik nyusul ngebangun sistem yang sama, pintu Pakde selalu terbuka lebar. Semangat! 🤲"
+            },
+            "abdi_negara": {
+                auto: "🤖 *Beep... Boop!* Halo Ndan/Komandan, selamat datang!\n\nSiap! Luar biasa dedikasi Komandan untuk negara. Namun masa depan keluarga juga harus dijaga! 🎖️✨\n\nPakde Sugiarto punya sistem *Ketenangan Finansial Purna Tugas* khusus untuk Abdi Negara. Izin mengirimkan materinya, Ndan:\n\n👉 [MASUKKAN LINK LP ABDI NEGARA DI SINI]\n\nSilakan dipelajari saat sedang lepas dinas. Jika ada pertanyaan, balas chat ini ya, Ndan!",
+                h1: "Siap, halo Komandan! Bagaimana giat hari ini? Semoga lancar dan aman terkendali! 🇮🇩\n\nIzin bertanya, sudah sempat membaca materi *Purna Tugas* yang kemarin Pakde kirim? Sistem NPA ini didesain agar berjalan otomatis tanpa mengganggu jam dinas Komandan. Jika ada yang ingin didiskusikan, Pakde siap sedia!",
+                h3: "Komandan, mengabdi pada negara memang tugas mulia, namun menyiapkan 'sekoci' aset untuk masa pensiun juga tak kalah pentingnya.\n\nMari kita mulai bangun aset masa depan ini sedini mungkin. Apakah Komandan sudah siap untuk mengisi form registrasinya hari ini? Biar Pakde bantu prosesnya!",
+                h9: "Siap Komandan! Mengingat padatnya jadwal dinas Komandan dan belum adanya konfirmasi, izin kuota bimbingan bulan ini Pakde prioritaskan untuk rekan-rekan lain yang sudah siap start ya. 🙏\n\nTerima kasih atas pengabdiannya. Sehat selalu dan sukses untuk karir Komandan!",
+                h30: "Siap, halo Komandan! Semoga selalu dalam lindungan-Nya dan tugas-tugas berjalan lancar. ☕\n\nAlhamdulillah, bulan ini beberapa rekan berseragam di komunitas kita sangat terbantu dengan bonus dari sistem ini, pikiran jadi tenang saat bertugas. Kapan pun Komandan merasa siap membangun aset masa depan, pintu Pakde selalu terbuka. Semangat bertugas, Ndan! 🤲"
+            },
+            // --- 4 SCRIPT KOLAM TERBARU ---
+            "tkw": {
+                auto: "🤖 *Beep... Boop!* Halo Pahlawan Devisa, selamat datang!\n\nLuar biasa perjuangannya jauh dari keluarga demi masa depan! ✈️✨\n\nPakde Sugiarto punya sistem *Ubah Gaji Jadi Aset Ratusan Juta di Kampung*. Biar pulang nanti nggak bingung mau usaha apa. Cek panduannya di sini:\n\n👉 [MASUKKAN LINK LP TKW DI SINI]\n\nPelajari santai saat jam istirahat kerja ya. Kalau ada yang bingung, chat Pakde aja!",
+                h1: "Halo Mbak/Mas di rantau! Gimana kabarnya hari ini? Sehat-sehat selalu ya jaga kesehatan di negeri orang. 🌿\n\nSudah sempat baca panduan bangun aset yang kemarin Pakde kirim? Tenang aja, sistem ini 100% online jadi bisa dikerjain dari negara mana aja tanpa harus repot kirim barang. Ada yang mau ditanyain?",
+                h3: "Mbak/Mas, kerja ikut orang di luar negeri kan nggak mungkin selamanya. Makanya gaji sekarang harus disisihin buat jaring pengaman kalau nanti mau kumpul lagi bareng keluarga di Indonesia.\n\nYuk mulai cicil bangun asetnya bareng 3iReborn. Mau Pakde bantu daftarkan sekarang biar aman dan tenang?",
+                h9: "Halo Mbak/Mas, berhubung kuota bimbingan khusus pekerja migran Pakde minggu ini sudah full dan belum ada kabar dari Mbak/Mas, slot bimbingannya Pakde kasih ke teman-teman pahlawan devisa lain yang sudah transfer duluan ya. 🙏\n\nSemoga pekerjaannya lancar, majikannya baik-baik, dan cepat sukses bisa kumpul sama keluarga di Indonesia!",
+                h30: "Halo Pahlawan Devisa! Apa kabar di rantau? Semoga gaji bulanan aman dan kesehatan selalu terjaga ya. ☕\n\nPakde terharu banget, kemarin ada teman kita eks-pekerja migran di komunitas ini yang akhirnya bisa buka warung di kampung halaman pakai tabungan aset dari 3iReborn, nggak perlu balik lagi ke luar negeri. Kalau Mbak/Mas udah siap merencanakan kepulangan yang tenang, pintu Pakde selalu terbuka. Semangat kerjanya! 🤲"
+            },
+            "mahasiswa": {
+                auto: "🤖 *Beep... Boop!* Halo Bro/Sis Mahasiswa, selamat datang!\n\nKeren banget jiwa mandirinya, masih kuliah udah mikirin masa depan! 🎓✨\n\nPakde Sugiarto ada *Sistem Mahasiswa Mandiri* biar kamu bisa bayar UKT sendiri dan punya passive income sebelum wisuda. Cek caranya di sini:\n\n👉 [MASUKKAN LINK LP MAHASISWA DI SINI]\n\nBaca pelan-pelan ya. Nanti kalau ada yang kepo, langsung bales chat ini!",
+                h1: "Halo Bro/Sis! Gimana tugas kuliah hari ini? Aman kan nggak ada yang revisian? 😂\n\nUdah sempat buka materi yang kemarin Pakde kasih? Jangan takut ganggu jadwal kuliah, bisnis ini jalannya lewat sistem Landing Page & AI, persis kayak anak muda zaman *now*! Ada yang mau ditanyain?",
+                h3: "Bro/Sis, banyak banget yang lulus kuliah tapi susah cari kerja lho. Makanya kamu harus curi *start* ngebangun aset jaringan dari sekarang.\n\nCuma modal nyisihin duit nongkrong di cafe aja kok. Biar pas lulus nanti kamu udah punya income tetap yang jalan terus. Mau Pakde bantu registrasinya hari ini?",
+                h9: "Halo Bro/Sis Mahasiswa, karena jadwal *mentoring* Pakde udah padat merayap dan belum ada kepastian dari kamu, seat bimbingannya Pakde berikan ke temen-temen mahasiswa lain yang udah transfer duluan ya. 🙏\n\nSukses terus kuliahnya, semoga IPK-nya *cumlaude* dan lancar skripsinya!",
+                h30: "Halo Bro/Sis! Apa kabar dunia perkuliahan? Semoga nggak pusing mikirin dosen pembimbing ya. 🚀\n\nPakde cuma mau *share* cerita keren, minggu lalu ada mahasiswa di tim kita yang akhirnya bisa bayar sisa semesteran murni dari bonus 3iReborn tanpa nodong ortu lagi! Keren banget. Kalau kamu sewaktu-waktu siap mandiri dan pengen mulai, langsung japri Pakde aja ya. Semangat! 🤲"
+            },
+            "pengusaha": {
+                auto: "🤖 *Beep... Boop!* Halo Bpk/Ibu Pengusaha, selamat datang!\n\nLuar biasa pergerakan bisnis Bpk/Ibu. Namun, diversifikasi portofolio itu hal yang wajib di era sekarang. 🏢✨\n\nPakde Sugiarto punya sistem *Scale-Up Aset Autopilot* untuk mengamankan nilai aset Bpk/Ibu. Izin melampirkan proposalnya di sini:\n\n👉 [MASUKKAN LINK LP PENGUSAHA DI SINI]\n\nSilakan dipelajari. Pakde siap berdiskusi bisnis lebih lanjut dengan Bpk/Ibu!",
+                h1: "Halo Bpk/Ibu, bagaimana pergerakan bisnis hari ini? Semoga semua target perusahaan tercapai dengan mulus ya! 📈\n\nIzin memastikan, apakah Bpk/Ibu sudah sempat membaca proposal diversifikasi aset yang Pakde kirim kemarin? Sistem ini sangat cocok untuk pengusaha karena berjalan secara *auto-pilot* tanpa menambah beban operasional. Ada yang ingin didiskusikan?",
+                h3: "Bpk/Ibu, sehebat apapun sebuah bisnis, mengalokasikan dana ke instrumen investasi yang diawasi OJK adalah bentuk manajemen risiko yang sangat cerdas dan bijak.\n\nSistem ini akan memberikan passive income jangka panjang sekaligus proteksi nilai aset. Apakah Bpk/Ibu berkenan jika Pakde bantu proses registrasi kemitraannya hari ini?",
+                h9: "Halo Bpk/Ibu, melihat kesibukan Bpk/Ibu dalam mengelola bisnis utama dan belum adanya konfirmasi lanjutan, izin untuk sementara waktu prioritas *networking* ini Pakde alihkan ke rekan-rekan pengusaha lain yang sudah siap start ya. 🙏\n\nSemoga bisnis Bpk/Ibu semakin berekspansi dan sukses memenangkan persaingan pasar!",
+                h30: "Halo Bpk/Ibu! Semoga kesehatan dan kejayaan bisnis Bpk/Ibu selalu menyertai hari ini. ☕\n\nPakde baru selesai evaluasi bulanan, banyak rekan pengusaha di ring 1 kita yang merasa jauh lebih aman karena portofolio investasi 3iReborn mereka terus bertumbuh dan stabil tanpa harus dikawal setiap hari. Jika suatu saat Bpk/Ibu membutuhkan 'kendaraan kedua' untuk mem-backup aset perusahaan, Pakde selalu siap sedia berdiskusi. Sukses selalu, Bpk/Ibu! 🤲"
+            },
+            "sekolah": {
+                auto: "🤖 *Beep... Boop!* Halo Ayah/Bunda, selamat datang!\n\nPakde salut banget sama Ayah/Bunda yang sudah kepikiran masa depan pendidikan buah hati sejak dini! 📚✨\n\nPakde Sugiarto punya *Solusi Cerdas Dana Pendidikan* yang aman dan terproteksi dari inflasi biaya sekolah. Cek panduannya di link ini ya:\n\n👉 [MASUKKAN LINK LP SEKOLAH DI SINI]\n\nPelajari dulu santai-santai. Nanti kalau ada pertanyaan, balas aja chat ini Bun/Yah!",
+                h1: "Halo Ayah/Bunda, gimana kabarnya? Semoga anak-anak sehat dan ceria selalu ya hari ini! 🧸\n\nSudah sempat membaca materi Tabungan Pendidikan yang kemarin Pakde kirim? Jangan tunggu anak sudah besar baru pusing cari biaya pangkal sekolah ya Bun/Yah, lebih ringan kalau dicicil disiapkan dari sekarang. Ada yang mau diobrolin dulu?",
+                h3: "Ayah/Bunda, kita tahu inflasi biaya pendidikan itu naiknya cepat banget tiap tahun. Belum lagi risiko kehidupan kalau suatu saat pencari nafkah utama terjadi risiko (amit-amit).\n\nProgram 3iReborn ini memberikan proteksi jiwa sekaligus investasi tabungan dana pendidikan anak. Ayo kita mulai amankan masa depan pendidikan mereka. Mau Pakde pandu pendaftarannya hari ini?",
+                h9: "Halo Ayah/Bunda, karena kuota bimbingan Pakde untuk program dana pendidikan ini sangat terbatas, dengan berat hati kuotanya Pakde oper dulu ke para orang tua lain yang sudah mengumpulkan berkas ya. 🙏\n\nSemoga keluarga Ayah/Bunda selalu diberikan limpahan rezeki agar masa depan pendidikan anak-anak terjamin. Sehat selalu untuk keluarga!",
+                h30: "Halo Ayah/Bunda! Gimana perkembangan si kecil di sekolah? Semoga makin pintar dan membanggakan ya. 🌿\n\nPakde cuma mau *share* kabar seneng, kemarin ada salah satu mitra kita yang cairin sebagian dana investasinya untuk bayar uang pangkal masuk kuliah anaknya tanpa harus bingung pinjam uang sana-sini. Tenang banget rasanya. Kalau Ayah/Bunda udah siap komitmen menyiapkan dana pendidikan si kecil bareng 3iReborn, hubungi Pakde kapan aja ya. Salam sehat buat keluarga! 🤲"
             }
         };
 
