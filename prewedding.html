@@ -64,7 +64,6 @@
         .btn-generate:hover {
             box-shadow: 0 5px 15px rgba(205, 163, 79, 0.4);
         }
-        /* Loader Animation */
         #loader {
             display: none;
             text-align: center;
@@ -72,7 +71,6 @@
             font-weight: bold;
             color: #cda34f;
         }
-        /* Result Section */
         #result-section {
             display: none;
             margin-top: 30px;
@@ -85,7 +83,6 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        /* Funneling Closing Box */
         .promo-box {
             background: #fff8e1;
             padding: 20px;
@@ -139,22 +136,6 @@
                 <option>Vintage / Retro Style</option>
             </select>
         </div>
-        <div class="form-group">
-            <label>📐 Aspek Rasio</label>
-            <select>
-                <option>1:1 (Square - Instagram Feed)</option>
-                <option>9:16 (Potret - Reels / Story)</option>
-                <option>16:9 (Landscape - Undangan Web)</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>🎥 Angle & Pencahayaan</label>
-            <select>
-                <option>Eye Level + Soft Light (Natural)</option>
-                <option>Cinematic Lighting (Dramatis)</option>
-                <option>Bright & Airy (Cerah ala Korea)</option>
-            </select>
-        </div>
         
         <button class="btn-generate" onclick="generateAI()">Proses Gambar AI 🪄</button>
     </div>
@@ -166,8 +147,8 @@
     <!-- HASIL DAN TEMBAKAN CLOSING -->
     <div id="result-section">
         <h3 style="color: #cda34f;">Tadaa! Ini Hasilnya 😍</h3>
-        <!-- Gambar Dummy yang Ngadep Depan -->
-        <img src="https://images.unsplash.com/photo-1532712938736-66cb148b11a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hasil Prewedding AI" class="result-img">
+        <!-- Gambar Dummy Tangguh dari Pexels -->
+        <img src="https://images.pexels.com/photos/256737/pexels-photo-256737.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Hasil Prewedding AI" class="result-img">
         
         <div class="promo-box">
             <h4>Fotonya Udah Keren, Masa Nikahnya Cuma Halu? 🤭</h4>
@@ -175,19 +156,17 @@
                 Jangan sampai rencana pernikahanmu terus tertunda karena masalah dana. Yuk, siapkan Dana Pernikahan impianmu dari sekarang bersama <b>Program 3iReborn!</b><br><br>
                 Mulai sisihkan <b>Rp 350.000/bulan</b> saja, target nikah tahun depan pasti terwujud plus dapat proteksi asuransi & peluang income tambahan!
             </p>
-            <!-- Nanti kalau sudah Fix, ganti angka 6281234567890 dengan nomor WA Jenderal -->
-            <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20habis%20coba%20AI%20Prewed.%20Saya%20tertarik%20konsultasi%20Program%20Persiapan%20Dana%20Pernikahan%203iReborn." class="btn-wa">📱 Konsultasi Dana Nikah Sekarang</a>
+            <!-- Link WA Api yang Anti Error. JANGAN LUPA GANTI NOMORNYA NDAN! -->
+            <a href="https://api.whatsapp.com/send?phone=6281234567890&text=Halo%20Admin,%20saya%20habis%20coba%20AI%20Prewed.%20Saya%20tertarik%20konsultasi%20Program%20Persiapan%20Dana%20Pernikahan%203iReborn." class="btn-wa">📱 Konsultasi Dana Nikah Sekarang</a>
         </div>
     </div>
 </div>
 
 <script>
     function generateAI() {
-        // Sembunyikan form dan tampilkan loader
         document.getElementById('form-section').style.display = 'none';
         document.getElementById('loader').style.display = 'block';
 
-        // Simulasi waktu proses AI (3 detik)
         setTimeout(function() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('result-section').style.display = 'block';
