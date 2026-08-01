@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdfaf6; /* Warna krem lembut elegan */
+            background-color: #fdfaf6;
             color: #333;
             margin: 0;
             padding: 20px;
@@ -22,7 +22,7 @@
         }
         h2 {
             text-align: center;
-            color: #cda34f; /* Warna Emas */
+            color: #cda34f;
             margin-bottom: 5px;
         }
         p.subtitle {
@@ -92,11 +92,13 @@
             border-radius: 10px;
             border: 1px solid #ffe082;
             margin-top: 20px;
+            text-align: left;
         }
         .promo-box h4 {
             margin-top: 0;
             color: #d84315;
             margin-bottom: 10px;
+            text-align: center;
         }
         .btn-wa {
             display: inline-block;
@@ -109,6 +111,7 @@
             font-weight: bold;
             margin-top: 15px;
             box-sizing: border-box;
+            text-align: center;
         }
     </style>
 </head>
@@ -157,22 +160,23 @@
     </div>
 
     <div id="loader">
-        <p>⏳ Sistem AI sedang merakit foto Anda... (Mohon tunggu)</p>
+        <p>⏳ Sistem AI sedang merakit wajah Anda... (Mohon tunggu)</p>
     </div>
 
     <!-- HASIL DAN TEMBAKAN CLOSING -->
     <div id="result-section">
-        <h3>Tadaa! Ini Hasilnya 😍</h3>
-        <!-- Gambar Dummy Hasil AI (Nanti diganti API asli Jenderal) -->
-        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hasil AI" class="result-img">
+        <h3 style="color: #cda34f;">Tadaa! Ini Hasilnya 😍</h3>
+        <!-- Gambar Dummy yang Ngadep Depan -->
+        <img src="https://images.unsplash.com/photo-1532712938736-66cb148b11a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hasil Prewedding AI" class="result-img">
         
         <div class="promo-box">
             <h4>Fotonya Udah Keren, Masa Nikahnya Cuma Halu? 🤭</h4>
-            <p style="font-size: 14px; color: #555;">
+            <p style="font-size: 14px; color: #555; line-height: 1.5;">
                 Jangan sampai rencana pernikahanmu terus tertunda karena masalah dana. Yuk, siapkan Dana Pernikahan impianmu dari sekarang bersama <b>Program 3iReborn!</b><br><br>
-                Mulai sisihkan <b>Rp 350.000/bulan</b> saja, target nikah tahun depan pasti terwujud plus dapat proteksi asuransi!
+                Mulai sisihkan <b>Rp 350.000/bulan</b> saja, target nikah tahun depan pasti terwujud plus dapat proteksi asuransi & peluang income tambahan!
             </p>
-            <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20tertarik%20konsultasi%20Program%20Persiapan%20Dana%20Pernikahan%203iReborn." class="btn-wa">📱 Konsultasi Dana Nikah Sekarang</a>
+            <!-- Nanti kalau sudah Fix, ganti angka 6281234567890 dengan nomor WA Jenderal -->
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20habis%20coba%20AI%20Prewed.%20Saya%20tertarik%20konsultasi%20Program%20Persiapan%20Dana%20Pernikahan%203iReborn." class="btn-wa">📱 Konsultasi Dana Nikah Sekarang</a>
         </div>
     </div>
 </div>
@@ -183,7 +187,7 @@
         document.getElementById('form-section').style.display = 'none';
         document.getElementById('loader').style.display = 'block';
 
-        // Simulasi waktu proses AI (3 detik) lalu munculkan hasil & penawaran
+        // Simulasi waktu proses AI (3 detik)
         setTimeout(function() {
             document.getElementById('loader').style.display = 'none';
             document.getElementById('result-section').style.display = 'block';
