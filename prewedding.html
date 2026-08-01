@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Prewedding Generator - NPA Smart System</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdfaf6; /* Warna krem lembut elegan */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        h2 {
+            text-align: center;
+            color: #cda34f; /* Warna Emas */
+            margin-bottom: 5px;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        input[type="file"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+        }
+        .btn-generate {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #cda34f, #e5c158);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .btn-generate:hover {
+            box-shadow: 0 5px 15px rgba(205, 163, 79, 0.4);
+        }
+        /* Loader Animation */
+        #loader {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+            color: #cda34f;
+        }
+        /* Result Section */
+        #result-section {
+            display: none;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px dashed #eee;
+            text-align: center;
+        }
+        .result-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        /* Funneling Closing Box */
+        .promo-box {
+            background: #fff8e1;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #ffe082;
+            margin-top: 20px;
+        }
+        .promo-box h4 {
+            margin-top: 0;
+            color: #d84315;
+            margin-bottom: 10px;
+        }
+        .btn-wa {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #25d366;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>✨ AI Prewedding ✨</h2>
+    <p class="subtitle">Wujudkan Foto Prewed Impianmu dalam Hitungan Detik!</p>
+
+    <div id="form-section">
+        <div class="form-group">
+            <label>📸 Upload Wajah Pria (Close-up)</label>
+            <input type="file" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label>📸 Upload Wajah Wanita (Close-up)</label>
+            <input type="file" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label>🖼️ Tema Latar Belakang</label>
+            <select>
+                <option>Studio Klasik Elegan (Putih/Emas)</option>
+                <option>Outdoor Romantis (Pantai Sunset)</option>
+                <option>Nature & Floral (Taman Bunga)</option>
+                <option>Vintage / Retro Style</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>📐 Aspek Rasio</label>
+            <select>
+                <option>1:1 (Square - Instagram Feed)</option>
+                <option>9:16 (Potret - Reels / Story)</option>
+                <option>16:9 (Landscape - Undangan Web)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>🎥 Angle & Pencahayaan</label>
+            <select>
+                <option>Eye Level + Soft Light (Natural)</option>
+                <option>Cinematic Lighting (Dramatis)</option>
+                <option>Bright & Airy (Cerah ala Korea)</option>
+            </select>
+        </div>
+        
+        <button class="btn-generate" onclick="generateAI()">Proses Gambar AI 🪄</button>
+    </div>
+
+    <div id="loader">
+        <p>⏳ Sistem AI sedang merakit foto Anda... (Mohon tunggu)</p>
+    </div>
+
+    <!-- HASIL DAN TEMBAKAN CLOSING -->
+    <div id="result-section">
+        <h3>Tadaa! Ini Hasilnya 😍</h3>
+        <!-- Gambar Dummy Hasil AI (Nanti diganti API asli Jenderal) -->
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hasil AI" class="result-img">
+        
+        <div class="promo-box">
+            <h4>Fotonya Udah Keren, Masa Nikahnya Cuma Halu? 🤭</h4>
+            <p style="font-size: 14px; color: #555;">
+                Jangan sampai rencana pernikahanmu terus tertunda karena masalah dana. Yuk, siapkan Dana Pernikahan impianmu dari sekarang bersama <b>Program 3iReborn!</b><br><br>
+                Mulai sisihkan <b>Rp 350.000/bulan</b> saja, target nikah tahun depan pasti terwujud plus dapat proteksi asuransi!
+            </p>
+            <a href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20tertarik%20konsultasi%20Program%20Persiapan%20Dana%20Pernikahan%203iReborn." class="btn-wa">📱 Konsultasi Dana Nikah Sekarang</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function generateAI() {
+        // Sembunyikan form dan tampilkan loader
+        document.getElementById('form-section').style.display = 'none';
+        document.getElementById('loader').style.display = 'block';
+
+        // Simulasi waktu proses AI (3 detik) lalu munculkan hasil & penawaran
+        setTimeout(function() {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('result-section').style.display = 'block';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
